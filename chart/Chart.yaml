@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Deploy based on GitLab's Auto-deploy
+name: auto-deploy
+version: 0.0.1

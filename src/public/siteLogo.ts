@@ -1,0 +1,1 @@
+export * as siteLogo from "/public/images/logo.svg"

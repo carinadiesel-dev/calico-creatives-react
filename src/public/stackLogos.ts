@@ -1,0 +1,8 @@
+export * as cvaLogo from "/public/images/stack-logos/cva.svg"
+export * as formikLogo from "/public/images/stack-logos/formik.svg"
+export * as radixLogo from "/public/images/stack-logos/radix.svg"
+export * as storybookLogo from "/public/images/stack-logos/story.svg"
+export * as typescriptLogo from "/public/images/stack-logos/ts.svg"
+export * as tailwindLogo from "/public/images/stack-logos/tw.svg"
+export * as zodLogo from "/public/images/stack-logos/zod.png"
+export * as reactLogo from "/public/images/stack-logos/react.svg"
