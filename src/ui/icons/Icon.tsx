@@ -21,11 +21,6 @@ import {IconHeart} from '@/ui/icons/IconHeart'
 import {IconLightning} from '@/ui/icons/IconLightning'
 import {IconPointer} from '@/ui/icons/IconPointer'
 import {IconSun} from '@/ui/icons/IconSun'
-import {IconEmail} from '@/ui/icons/IconEmail';
-import {IconWeb} from '@/ui/icons/IconWeb';
-import {IconFacebook} from '@/ui/icons/IconFacebook';
-import {IconInsta} from '@/ui/icons/IconInsta';
-import {IconWhatsapp} from '@/ui/icons/IconWhatsapp';
 
 const _icons = {
   "grid": IconGrid,
@@ -50,11 +45,6 @@ const _icons = {
   "lightning": IconLightning,
   "pointer": IconPointer,
   "sun": IconSun,
-  "email": IconEmail,
-  "web": IconWeb,
-  "facebook": IconFacebook,
-  "instagram": IconInsta,
-  "whatsapp": IconWhatsapp,
 
 }
 

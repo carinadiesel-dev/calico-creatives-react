@@ -12,7 +12,7 @@ export default {
 } as ComponentMeta<typeof AppNavigation>;
 
 const Template: ComponentStory<typeof AppNavigation> = (args) =>
-  <div className="w-screen">
+  <div className="w-[267px]">
     <AppNavigation {...args} />
   </div>
 ;

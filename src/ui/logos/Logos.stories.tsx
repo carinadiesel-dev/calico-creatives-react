@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import {CCLogo} from '@/ui/logos/CCLogo'
+import {MCPLogo} from '@/ui/logos/MCPLogo'
 
 export default {
   title: 'Components/Logos',
@@ -10,16 +10,10 @@ export default {
   }
 }
 
-const CCLogoTemplate: ComponentStory<typeof CCLogo> = args => <CCLogo {...args} />;
+const MCPLogoTemplate: ComponentStory<typeof MCPLogo> = args => <MCPLogo {...args} />;
 
-export const CCLogoSmall = CCLogoTemplate.bind({});
-CCLogoSmall.args = {
-  width: 212,
-  height: 96
-}
-
-export const CCLogoLarge = CCLogoTemplate.bind({});
-CCLogoSmall.args = {
-  width: 1024,
-  height: 600
+export const MCPLogo1 = MCPLogoTemplate.bind({});
+MCPLogo1.args = {
+  width: 107,
+  height: 100
 }

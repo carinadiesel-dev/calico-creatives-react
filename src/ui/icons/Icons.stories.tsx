@@ -19,11 +19,6 @@ import {IconHourglass} from './IconHourglass'
 import {IconCheckmarkCircle} from './IconCheckmarkCircle'
 import {IconXCircle} from './IconXCircle'
 import {IconLock} from './IconLock'
-import {IconEmail} from './IconEmail'
-import {IconWeb} from './IconWeb'
-import {IconFacebook} from './IconFacebook'
-import {IconInsta} from './IconInsta'
-import {IconWhatsapp} from './IconWhatsapp'
 
 export default {
   title: 'Components/SVGIcons',
@@ -75,17 +70,3 @@ CheckmarkCircle.args = { ...args }
 export const XCircle: ComponentStory<typeof IconXCircle> = args => <IconXCircle {...args} />;
 XCircle.args = { ...args }
 
-export const Email: ComponentStory<typeof IconEmail> = args => <IconEmail {...args} />;
-Email.args = { ...args }
-
-export const Web: ComponentStory<typeof IconWeb> = args => <IconWeb {...args} />;
-Web.args = { ...args }
-
-export const Facebook: ComponentStory<typeof IconFacebook> = args => <IconFacebook {...args} />;
-Facebook.args = { ...args }
-
-export const Instagram: ComponentStory<typeof IconInsta> = args => <IconInsta {...args} />;
-Instagram.args = { ...args }
-
-export const Whatsapp: ComponentStory<typeof IconWhatsapp> = args => <Whatsapp {...args} />;
-Whatsapp.args = { ...args }
