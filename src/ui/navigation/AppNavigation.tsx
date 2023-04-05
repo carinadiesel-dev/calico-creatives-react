@@ -1,79 +1,47 @@
 import React, {AnchorHTMLAttributes, PropsWithChildren} from 'react'
-import {MCPLogo} from '@/ui/logos/MCPLogo'
-import {IconGrid} from '@/ui/icons/IconGrid'
-import {IconChat} from '@/ui/icons/IconChat'
-import {IconChecklist} from '@/ui/icons/IconChecklist'
-import {IconInbox} from '@/ui/icons/IconInbox'
-import {IconTeam} from '@/ui/icons/IconTeam'
-import {IconSettings} from '@/ui/icons/IconSettings'
-import {IconBook} from '@/ui/icons/IconBook'
+import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import {CCLogo} from '@/ui/logos/CCLogo'
 
 type AppNavigationProps = {}
 
 export const AppNavigation = ({}: AppNavigationProps) => {
-  return <div className="bg-orange-gradient-vertical rounded-r-2xl min-h-screen flex flex-col justify-between">
-    <div>
-      <div className="flex justify-center px-4 py-8">
-        <MCPLogo />
+  return <div className="bg-calicoPink-100 rounded-r-2xl w-screen flex justify-between px-16">
+    <div className='flex my-4'>
+      <div className='mt-2'>
+        <CCLogo />
       </div>
 
-      <div className="mt-8">
-        <nav className="text-white">
-          <ul>
-            <li>
-              <NavButton>
-                <IconGrid />
-                Overview
-              </NavButton>
-            </li>
-            <li>
-              <NavButton>
-                <IconTeam />
-                Team
-              </NavButton>
-            </li>
-            <li>
-              <NavButton>
-                <IconInbox />
-                Inbox
-              </NavButton>
-            </li>
+      <div className="flex pl-8">
+        <nav className="text-calicoRedOrange-400 text-xl font-bold gap-8">
+          <ul className='flex justify-around'>
             <li>
               <NavButton active>
-                <IconChecklist />
-                Projects
+                Home
               </NavButton>
             </li>
             <li>
               <NavButton>
-                <IconChat />
-                Chat
+                Photography
+              </NavButton>
+            </li>
+            <li>
+              <NavButton>
+                Graphic Design
+              </NavButton>
+            </li>
+            <li>
+              <NavButton>
+                Photo Gallery
+              </NavButton>
+            </li>
+            <li>
+              <NavButton>
+                Contact
               </NavButton>
             </li>
           </ul>
         </nav>
       </div>
-    </div>
-
-    <div>
-      <hr className="text-white my-8" />
-
-      <nav className="text-white pb-10">
-        <ul>
-          <li>
-            <NavButton compact>
-              <IconSettings />
-              Settings
-            </NavButton>
-          </li>
-          <li>
-            <NavButton compact>
-              <IconBook />
-              Help
-            </NavButton>
-          </li>
-        </ul>
-      </nav>
     </div>
 
   </div>;
@@ -85,22 +53,20 @@ type NavButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 }
 
 const NavButton = ({ active = false, compact = false, ...rest }: NavButtonProps) => {
-  const className = `flex items-center gap-8 px-6 font-light cursor-pointer relative
-    ${compact ? "h-[55px]":"h-[85px]"}
+  const className = `flex items-center gap-8 px-8 font-light cursor-pointer relative
+    ${compact ? "h-[55px]":"h-[96px]"}
     transition
-    hover:bg-orange-600
-    group-[.active]:bg-orange-600
-    group-[.active]:font-semibold
-    group-[.active]:before:content-['']
-    group-[.active]:before:block
-    group-[.active]:before:absolute
-    group-[.active]:before:bg-white
-    group-[.active]:before:w-[10px]
-    group-[.active]:before:h-full
-    group-[.active]:before:left-0
+    hover:bg-calicoRedOrange-400
+    hover:text-calicoPink-200
+    hover:rounded-2xl
+    group-[.active]:bg-calicoRedOrange-400
+    group-[.active]:text-calicoWhite-300
+    group-[.active]:font-bold
+    group-[.active]:rounded-2xl
   `;
 
   return <span className={`group ${active ? "active":""}`}>
     <a className={className} {...rest} />
   </span>
 }
+
