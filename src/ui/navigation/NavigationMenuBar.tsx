@@ -25,9 +25,9 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
   `
 ;   
   return (
-    <NavigationMenu.Root className="bg-calicoPink-100 bg-opacity-60 rounded-r-2xl relative z-[1] flex w-screen justify-around">
-      <NavigationMenu.List className="flex items-center">
-        <div>
+    <NavigationMenu.Root className="bg-calicoPink-100 bg-opacity-60 relative z-[1] flex w-screen px-16">
+      <NavigationMenu.List className="flex justify-around items-center">
+        <div className='mt-2'>
         <CCLogo />
         </div>
       
@@ -35,8 +35,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
           <NavigationMenu.Link
             className={navButton}
             href="#"
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             Home
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -45,8 +44,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
           <NavigationMenu.Link
             className={navButton}
             href="#"
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             Photography
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -55,8 +53,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
           <NavigationMenu.Link
             className={navButton}
             href="#"
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             Graphic Design
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -65,8 +62,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
           <NavigationMenu.Link
             className={navButton}
             href="#"
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             Photo Gallery
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -75,8 +71,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
           <NavigationMenu.Link
             className={navButton}
             href="#"
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             Contact
           </NavigationMenu.Link>
         </NavigationMenu.Item>
