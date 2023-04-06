@@ -1,6 +1,7 @@
 import React, {AnchorHTMLAttributes, PropsWithChildren, useState} from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import classNames from 'classnames';
+import { CaretDownIcon } from '@radix-ui/react-icons';
 import {CCLogo} from '@/ui/logos/CCLogo'
 
 type NavigationMenuBarProps = {}
@@ -50,12 +51,35 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Link
-            className={navButton}
-            href="#"
-            onClick={handleClick}>
-            Graphic Design
-          </NavigationMenu.Link>
+        <NavigationMenu.Trigger className={navButton}>
+            Graphic Design{' '}
+            <CaretDownIcon
+              className="text-calicoRedOrange-400 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
+              aria-hidden
+            />
+          </NavigationMenu.Trigger>
+          <NavigationMenu.Content className="absolute top-0 right-5 w-full sm:w-auto">
+            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
+              <ListItem title="Logo Design" href="#">
+              We create professional logos from scratch based on your needs and preferences.
+              </ListItem>
+              <ListItem title="Animated Graphics" href="#">
+              To bring a uniqueness to your logo, we can add some motion.
+              </ListItem>
+              <ListItem title="Web Design" href="#">
+              You are currently viewing one of our websites.
+              </ListItem>
+              <ListItem title="Branding & Social" href="#">
+              Social media increases the amount of exposure a brand receives and increases traffic
+              </ListItem>
+              <ListItem title="Stationary" href="#">
+              We offer luxury stationery for all of life’s special celebrations and events.
+              </ListItem>
+              <ListItem title="Posters & Ads" href="#">
+              Turn anything into a poster
+              </ListItem>
+            </ul>
+          </NavigationMenu.Content>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
@@ -87,3 +111,21 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
     </NavigationMenu.Root>
   );
 };
+
+const ListItem = React.forwardRef(({ className, children, title, ...props }, forwardedRef) => (
+  <li>
+    <NavigationMenu.Link asChild>
+      <a
+        className={classNames(
+          'focus:shadow-[0_0_0_2px] focus:shadow-violet7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors',
+          className
+        )}
+        {...props}
+        href={forwardedRef}
+      >
+        <div className="text-calicoRedOrange-400 mb-[5px] font-medium leading-[1.2]">{title}</div>
+        <p className="text-calicoGray-400 leading-[1.4]">{children}</p>
+      </a>
+    </NavigationMenu.Link>
+  </li>
+));
