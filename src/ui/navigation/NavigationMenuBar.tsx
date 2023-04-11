@@ -2,29 +2,52 @@ import React, {AnchorHTMLAttributes, PropsWithChildren, useState} from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import classNames from 'classnames';
 import { CaretDownIcon } from '@radix-ui/react-icons';
+import { z } from "zod";
 import {CCLogo} from '@/ui/logos/CCLogo'
+
+type NavItemButton = typeof z.object({
+  title: z.string(),
+  link: z.string(),
+  isActive: z.boolean()
+});
+
+const navButton =`flex items-center justify-start gap-8 px-8 font-bold  cursor-pointer relative h-[96px] transition hover:bg-calicoRedOrange-400 hover:text-calicoPink-200 text-calicoRedOrange-400`;
+
+const navButtonActive = `bg-calicoRedOrange-400 text-calicoWhite-300 `;
+
+const NavItem : FunctionComponent<NavItemButton> = ({
+  title,
+  link,
+  isActive
+}) => {
+<NavigationMenu.Item>
+          <NavigationMenu.Link
+            className={navButton}
+            href={link}>
+            {title}
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+}
+
+type NavItem = {
+
+}
+
+type NavItemProps = {
+  title: string
+  navItems: NavItem[]
+}
+
 
 type NavigationMenuBarProps = {}
 
+export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {  
 
+  
+  
+  
 
-
-export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleClick = () => {
-    setIsActive(current => !current);
-  }
-
-  const navButton =`flex items-center justify-start gap-8 px-8 font-bold text-calicoRedOrange-400 cursor-pointer relative
-  h-[96px]
-  transition
-  hover:bg-calicoRedOrange-400
-  hover:text-calicoPink-200
-  ${isActive && 'bg-calicoRedOrange-400'}
-  ${isActive && 'text-calicoWhite-300'}
-  `
-;   
+  // const className = `[data-active] ? ${navButtonActive} : ${navButton}`;
   return (
     <NavigationMenu.Root className="bg-calicoPink-100 bg-opacity-60 relative z-[1] flex w-screen px-16">
       <NavigationMenu.List className="flex justify-around items-center">
@@ -36,7 +59,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
           <NavigationMenu.Link
             className={navButton}
             href="#"
-            onClick={handleClick}>
+            >
             Home
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -44,8 +67,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
         <NavigationMenu.Item>
           <NavigationMenu.Link
             className={navButton}
-            href="#"
-            onClick={handleClick}>
+            href="#">
             Photography
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -55,10 +77,9 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
             Graphic Design{' '}
             <CaretDownIcon
               className="text-calicoRedOrange-400 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
-              aria-hidden
-            />
+              aria-hidden/>
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute top-0 right-5 w-full sm:w-auto">
+          <NavigationMenu.Content className="absolute top-0  w-full sm:w-auto">
             <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
               <ListItem title="Logo Design" href="#">
               We create professional logos from scratch based on your needs and preferences.
@@ -85,8 +106,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
         <NavigationMenu.Item>
           <NavigationMenu.Link
             className={navButton}
-            href="#"
-            onClick={handleClick}>
+            href="#">
             Photo Gallery
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -95,7 +115,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
           <NavigationMenu.Link
             className={navButton}
             href="#"
-            onClick={handleClick}>
+            >
             Contact
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -121,7 +141,7 @@ const ListItem = React.forwardRef(({ className, children, title, ...props }, for
           className
         )}
         {...props}
-        href={forwardedRef}
+        ref={forwardedRef}
       >
         <div className="text-calicoRedOrange-400 mb-[5px] font-medium leading-[1.2]">{title}</div>
         <p className="text-calicoGray-400 leading-[1.4]">{children}</p>
@@ -129,3 +149,4 @@ const ListItem = React.forwardRef(({ className, children, title, ...props }, for
     </NavigationMenu.Link>
   </li>
 ));
+
