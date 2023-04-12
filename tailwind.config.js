@@ -48,15 +48,15 @@ module.exports = {
       
       fontFamily: {
         sans: [
+          '"Helvetica Neue"',
+          'Roboto',
+          'Arial',
           'ClashDisplay',
           'ui-sans-serif',
           'system-ui',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
           '"Noto Sans"',
           'sans-serif',
           '"Apple Color Emoji"',

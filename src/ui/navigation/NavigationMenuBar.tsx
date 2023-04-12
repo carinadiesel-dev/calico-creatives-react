@@ -11,7 +11,7 @@ type NavItemButton = {
   // subMenu?: object[]
 };
 
-const navButton =`flex items-center justify-start gap-8 px-8 font-[Helvetica_Neue] font-bold text-2xl cursor-pointer relative h-[96px] transition hover:bg-calicoRedOrange-400 hover:text-calicoPink-200 text-calicoRedOrange-400`;
+const navButton =`flex items-center justify-start gap-8 px-8 font-sans font-bold text-2xl cursor-pointer relative h-[96px] transition hover:bg-calicoRedOrange-400 hover:text-calicoPink-200 text-calicoRedOrange-400`;
 
 const navButtonActive = `bg-calicoRedOrange-400 text-calicoWhite-300 `;
 
@@ -78,7 +78,7 @@ export const NavigationMenuBar = ({title, navItems}: NavigationMenuBarProps) => 
               className="text-calicoRedOrange-400 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
               aria-hidden/>
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute top-0  w-full sm:w-auto">
+          <NavigationMenu.Content className="absolute top-0  w-full sm:w-auto border-none">
             <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
               <ListItem title="Logo Design" href="#">
               We create professional logos from scratch based on your needs and preferences.
