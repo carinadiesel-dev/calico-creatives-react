@@ -65,6 +65,9 @@ module.exports = {
           '"Noto Color Emoji"',
         ],
         'brilon': 'brilon-regular' 
+      },
+      backgroundImage: {
+        'cloud': 'url(../../public/images/vectorimages/cloud.png)'
       }
     },
   },

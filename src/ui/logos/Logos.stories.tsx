@@ -19,7 +19,7 @@ CCLogoSmall.args = {
 }
 
 export const CCLogoLarge = CCLogoTemplate.bind({});
-CCLogoSmall.args = {
+CCLogoLarge.args = {
   width: 1024,
   height: 600
 }
