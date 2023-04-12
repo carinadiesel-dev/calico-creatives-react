@@ -67,7 +67,7 @@ module.exports = {
         'brilon': 'brilon-regular' 
       },
       backgroundImage: {
-        'cloud': 'url(../../public/images/vectorimages/cloud.png)'
+        'cloud': 'url(../../public/images/vectorimages/cloud.png)',
       }
     },
   },
