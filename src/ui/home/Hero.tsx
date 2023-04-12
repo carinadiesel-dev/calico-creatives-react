@@ -3,6 +3,7 @@ import { CCLogo } from '../logos/CCLogo';
 import React from 'react';
 import HeroImg from '../../../public/images/home-images/HeroImg.png';
 
+
 export const Hero = () => {
     const [screenWidth, setScreenWidth] = useState<number>(
         window.innerWidth

@@ -64,7 +64,7 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
-        'brilon': 'brilon-regular' 
+        'brilon': 'BrilonRegular' 
       },
       backgroundImage: {
         'cloud': 'url(../../public/images/vectorimages/cloud.png)',
