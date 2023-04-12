@@ -26,6 +26,7 @@ import {IconWeb} from '@/ui/icons/IconWeb';
 import {IconFacebook} from '@/ui/icons/IconFacebook';
 import {IconInsta} from '@/ui/icons/IconInsta';
 import {IconWhatsapp} from '@/ui/icons/IconWhatsapp';
+import {IconCloud} from '@/ui/icons/IconCloud'
 
 const _icons = {
   "grid": IconGrid,
@@ -55,6 +56,7 @@ const _icons = {
   "facebook": IconFacebook,
   "instagram": IconInsta,
   "whatsapp": IconWhatsapp,
+  "cloud": IconCloud,
 
 }
 

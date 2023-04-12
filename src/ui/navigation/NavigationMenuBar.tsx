@@ -2,22 +2,16 @@ import React, {AnchorHTMLAttributes, FunctionComponent, PropsWithChildren, useSt
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import classNames from 'classnames';
 import { CaretDownIcon } from '@radix-ui/react-icons';
-import { z } from "zod";
 import {CCLogo} from '@/ui/logos/CCLogo'
 
-const navSubItems = z.object({
-  title: z.string(),
-  description: z.string()
-})
+type NavItemButton = {
+  title: string,
+  link: string,
+  isActive: boolean,
+  // subMenu?: object[]
+};
 
-type NavItemButton = typeof z.object({
-  title: z.string(),
-  link: z.string(),
-  isActive: z.boolean(),
-  subMenu?: z.array(navSubItems)
-});
-
-const navButton =`flex items-center justify-start gap-8 px-8 font-bold  cursor-pointer relative h-[96px] transition hover:bg-calicoRedOrange-400 hover:text-calicoPink-200 text-calicoRedOrange-400`;
+const navButton =`flex items-center justify-start gap-8 px-8 font-[Helvetica_Neue] font-bold text-2xl cursor-pointer relative h-[96px] transition hover:bg-calicoRedOrange-400 hover:text-calicoPink-200 text-calicoRedOrange-400`;
 
 const navButtonActive = `bg-calicoRedOrange-400 text-calicoWhite-300 `;
 
@@ -25,7 +19,7 @@ const NavItem : FunctionComponent<NavItemButton> = ({
   title,
   link,
   isActive,
-  subMenu
+  // subMenu
 }) => {
 <NavigationMenu.Item>
           <NavigationMenu.Link
@@ -40,15 +34,13 @@ type NavItem = {
 
 }
 
-type NavItemProps = {
+type NavigationMenuBarProps = {
   title: string
   navItems: NavItem[]
 }
 
 
-type NavigationMenuBarProps = {}
-
-export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {  
+export const NavigationMenuBar = ({title, navItems}: NavigationMenuBarProps) => {  
 
   
   
@@ -65,7 +57,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
         <NavigationMenu.Item>
           <NavigationMenu.Link
             className={navButton}
-            href="#home"
+            href="#"
             >
             Home
           </NavigationMenu.Link>
@@ -144,7 +136,7 @@ const ListItem = React.forwardRef(({ className, children, title, ...props }, for
     <NavigationMenu.Link asChild>
       <a
         className={classNames(
-          'focus:shadow-[0_0_0_2px] focus:shadow-violet7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors',
+          'focus:shadow-[0_0_0_2px] focus:shadow-calicoRedOrange-400 hover:bg-calicoPink-200 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors',
           className
         )}
         {...props}

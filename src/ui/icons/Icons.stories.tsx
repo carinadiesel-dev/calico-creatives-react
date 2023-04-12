@@ -24,6 +24,7 @@ import {IconWeb} from './IconWeb'
 import {IconFacebook} from './IconFacebook'
 import {IconInsta} from './IconInsta'
 import {IconWhatsapp} from './IconWhatsapp'
+import {IconCloud} from './IconCloud'
 
 export default {
   title: 'Components/SVGIcons',
@@ -89,3 +90,6 @@ Instagram.args = { ...args }
 
 export const Whatsapp: ComponentStory<typeof IconWhatsapp> = args => <Whatsapp {...args} />;
 Whatsapp.args = { ...args }
+
+export const Cloud: ComponentStory<typeof IconCloud> = args => <Cloud {...args} />;
+Cloud.args = { ...args }
