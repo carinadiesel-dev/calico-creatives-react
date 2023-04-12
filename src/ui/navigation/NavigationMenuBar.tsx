@@ -1,14 +1,20 @@
-import React, {AnchorHTMLAttributes, PropsWithChildren, useState} from 'react'
+import React, {AnchorHTMLAttributes, FunctionComponent, PropsWithChildren, useState} from 'react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import classNames from 'classnames';
 import { CaretDownIcon } from '@radix-ui/react-icons';
 import { z } from "zod";
 import {CCLogo} from '@/ui/logos/CCLogo'
 
+const navSubItems = z.object({
+  title: z.string(),
+  description: z.string()
+})
+
 type NavItemButton = typeof z.object({
   title: z.string(),
   link: z.string(),
-  isActive: z.boolean()
+  isActive: z.boolean(),
+  subMenu?: z.array(navSubItems)
 });
 
 const navButton =`flex items-center justify-start gap-8 px-8 font-bold  cursor-pointer relative h-[96px] transition hover:bg-calicoRedOrange-400 hover:text-calicoPink-200 text-calicoRedOrange-400`;
@@ -18,7 +24,8 @@ const navButtonActive = `bg-calicoRedOrange-400 text-calicoWhite-300 `;
 const NavItem : FunctionComponent<NavItemButton> = ({
   title,
   link,
-  isActive
+  isActive,
+  subMenu
 }) => {
 <NavigationMenu.Item>
           <NavigationMenu.Link
@@ -58,7 +65,7 @@ export const NavigationMenuBar = ({}: NavigationMenuBarProps) => {
         <NavigationMenu.Item>
           <NavigationMenu.Link
             className={navButton}
-            href="#"
+            href="#home"
             >
             Home
           </NavigationMenu.Link>
