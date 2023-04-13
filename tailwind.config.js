@@ -68,7 +68,10 @@ module.exports = {
       },
       backgroundImage: {
         'cloud': 'url(../../public/images/vectorimages/cloud.png)',
-      }
+      },
+      screens: {
+        'xs': '475px',
+      },
     },
   },
   plugins: [],

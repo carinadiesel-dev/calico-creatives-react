@@ -12,21 +12,6 @@ export default {
 
 const Template: ComponentStory<typeof Footer> = args => <Footer {...args} />;
 
-// let footerPink = {
-//     backgroundColor: 'bg-calicoPink-400'
-// }
-
-// let footerPeach = {
-//     backgroundColor: 'bg-calicoPeach-400'
-// }
-
-// let footerOrange = {
-//     backgroundColor: 'bg-calicoOrange-400'
-// }
-
-// const footerTypes = [footerPink,footerPeach,footerOrange]
-
-
 export const footerPink = Template.bind({});
 footerPink.args = {
   credits: "Created by Calico Creatives",
