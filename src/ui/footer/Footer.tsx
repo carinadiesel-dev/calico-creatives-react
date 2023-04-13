@@ -12,18 +12,15 @@ const footerColor = {
     orange: 'bg-calicoOrange-400'
 }
 
-type FooterType = {
-
-}
 
 type FooterProps = {
-    credit : string
-    
+    credit?: string
+    backgroundColor: 'bg-calicoPink-400' | 'bg-calicoOrange-400' | 'bg-calicoPeach-400'
 }
 
-export const Footer = ({credit}: FooterProps) => {
+export const Footer = ({credit, backgroundColor}: FooterProps) => {
     return (
-    <div className={`bg-calicoPink-400 flex flex-col items-center justify-around h-72`}>
+    <div className={`${backgroundColor} flex flex-col items-center justify-around h-72`}>
         <div className='flex py-5 gap-4'>
             <a href="#"><IconEmail /></a>
             <a href="#"><IconWeb /></a>
