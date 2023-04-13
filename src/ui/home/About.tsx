@@ -1,41 +1,10 @@
 import React, { FunctionComponent } from "react";
 
-type aboutCard = {
-    backgroundColor : 'bg-calicoPink-400' | 'bg-calicoOrange-400' | 'bg-calicoPeach-400'
-    image?: string // Testing (CHANGE BACK !!!)
-    btnText: string 
-}
+ type AboutProps = {
 
-const cardClasses = 'h-[627px] w-1/3';
-const btnContainerClasses = 'bg-white/60';
-const buttonClasses = "font-brilon text-[40px] text-center text-calicoGray-400 py-4 rounded-3xl";
+ }
 
-const Card: FunctionComponent<aboutCard> = ({
-    backgroundColor,
-    image,
-    btnText
-}) => {
-    return (
-<div className={`${backgroundColor} ${cardClasses}`}>
-                    <div className={btnContainerClasses}>
-                        <a className={buttonClasses} 
-                        href="#">
-                            Photography</a>
-                    </div>   
-                </div>
-    )
-}
-
-
-
-type Card = {
-
-}
-
-type AboutProps = {
-    cards: Card[]
-}
-export const About = ({cards}: AboutProps) => {
+export const About = ({}: AboutProps) => {
     return (
     <div className="flex flex-col h-[760px]">
         <div className="">
@@ -44,13 +13,6 @@ export const About = ({cards}: AboutProps) => {
         </p>
      </div>
     
-    
-        <div className="flex gap-4">
-            {cards.map(card =>{
-                return (
-                <Card {...card}/>
-            )})}
-        </div>
     </div>
 
     )
