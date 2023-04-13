@@ -8,7 +8,7 @@ type CardRow = {
 }
 
 const cardClasses = 'flex items-end h-[627px]';
-const btnContainerClasses = 'w-full';
+const btnContainerClasses = 'w-full mx-3 mb-2';
 const buttonClasses = "bg-white/60 w-full font-brilon text-[40px] text-center text-calicoGray-400 py-4 rounded-3xl";
 
 const Card: FunctionComponent<CardRow> = ({
@@ -46,7 +46,7 @@ export const Cards = ({cards}: CardsProps) => {
             )})} */}
             <div className={`${cardClasses} bg-calicoPink-400`}>
                     <div className={btnContainerClasses}>
-                    <img src={graphicDesign} alt="" />
+                    {/* <img src={graphicDesignImg} alt="" /> */}
                         <a className={buttonClasses} 
                         href="#">
                             Photography</a>
@@ -57,7 +57,7 @@ export const Cards = ({cards}: CardsProps) => {
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
                         href="#">
-                            Photography</a>
+                            Graphic Design</a>
                     </div>   
                 </div>
 
@@ -65,7 +65,7 @@ export const Cards = ({cards}: CardsProps) => {
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
                         href="#">
-                            Photography</a>
+                            Travel</a>
                     </div>   
                 </div>
             
