@@ -30,5 +30,5 @@ const footerTypes = [footerPink,footerPeach,footerOrange]
 export const Default = Template.bind({});
 Default.args = {
   credits: "Created by Calico Creatives",
-  backgroundColor: 'bg-calicoPink-400'
+//   backgroundColor: 'bg-calicoPink-400'
 }
