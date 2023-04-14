@@ -8,14 +8,14 @@ import { IconWhatsapp } from '../icons/IconWhatsapp';
 
 const footerColor = {
     pink: 'bg-calicoPink-400',
-    peach: 'bg-calicoPeach-400',
+    peach: 'bg-calicoPeach-300',
     orange: 'bg-calicoOrange-400'
 }
 
 
 type FooterProps = {
     credit?: string
-    backgroundColor: 'bg-calicoPink-400' | 'bg-calicoOrange-400' | 'bg-calicoPeach-400'
+    backgroundColor: 'bg-calicoPink-400' | 'bg-calicoOrange-400' | 'bg-calicoPeach-300'
 }
 
 export const Footer = ({credit, backgroundColor}: FooterProps) => {

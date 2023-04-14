@@ -28,5 +28,5 @@ footerOrange.args = {
 export const footerPeach = Template.bind({});
 footerPeach.args = {
   credits: "Created by Calico Creatives",
-  backgroundColor: 'bg-calicoPeach-400'
+  backgroundColor: 'bg-calicoPeach-300'
 }
