@@ -25,6 +25,8 @@ import {IconFacebook} from './IconFacebook'
 import {IconInsta} from './IconInsta'
 import {IconWhatsapp} from './IconWhatsapp'
 import {IconCloud} from './IconCloud'
+import {IconCircleFilled} from './IconCircleFilled'
+import {IconOvalFilled} from './IconOvalFilled'
 
 export default {
   title: 'Components/SVGIcons',
@@ -93,3 +95,9 @@ Whatsapp.args = { ...args }
 
 export const Cloud: ComponentStory<typeof IconCloud> = args => <Cloud {...args} />;
 Cloud.args = { ...args }
+
+export const CircleFilled: ComponentStory<typeof IconCircleFilled> = args => <CircleFilled {...args} />;
+CircleFilled.args = { ...args }
+
+export const OvalFilled: ComponentStory<typeof IconOvalFilled> = args => <IconOvalFilled {...args} />;
+OvalFilled.args = { ...args }

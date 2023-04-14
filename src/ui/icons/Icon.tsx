@@ -27,6 +27,8 @@ import {IconFacebook} from '@/ui/icons/IconFacebook';
 import {IconInsta} from '@/ui/icons/IconInsta';
 import {IconWhatsapp} from '@/ui/icons/IconWhatsapp';
 import {IconCloud} from '@/ui/icons/IconCloud'
+import {IconCircleFilled} from '@/ui/icons/IconCircleFilled'
+import { IconOvalFilled } from './IconOvalFilled';
 
 const _icons = {
   "grid": IconGrid,
@@ -57,6 +59,8 @@ const _icons = {
   "instagram": IconInsta,
   "whatsapp": IconWhatsapp,
   "cloud": IconCloud,
+  "circleFilled": IconCircleFilled,
+  "ovalFilled": IconOvalFilled,
 
 }
 
