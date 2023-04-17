@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import {CCLogo} from '@/ui/logos/CCLogo'
 import {CMELogo} from '@/ui/logos/CMELogo'
+import {AOCLogo} from '@/ui/logos/AOCLogo'
 
 export default {
   title: 'Components/Logos',
@@ -29,8 +30,8 @@ const CMELogoTemplate: ComponentStory<typeof CMELogo> = args => <CMELogo {...arg
 
 export const CMELogoNormal = CMELogoTemplate.bind({});
 CMELogo.args = {
-  width: 911.491,
-  height: 591.898
+  width: 748,
+  height: 592
 }
 
 const AOCLogoTemplate: ComponentStory<typeof AOCLogo> = args => <AOCLogo {...args} />;
@@ -40,4 +41,5 @@ AOCLogo.args = {
   width: 1185.479,
   height: 614.711
 }
+
 
