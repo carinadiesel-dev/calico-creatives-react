@@ -11,7 +11,7 @@ module.exports = {
     "@storybook/addon-postcss",
   ],
   "staticDirs": [
-    "../public/"
+    "../public/images/"
   ],
   "framework": "@storybook/react",
   "core": {

@@ -1,7 +1,9 @@
 import { FunctionComponent,useState, useEffect } from 'react';
 import { CCLogo } from '../logos/CCLogo';
 import React from 'react';
-import HeroImg from '../../../public/images/home-images/HeroImg.png';
+import HeroImg from './Assets/HeroImg.png'
+
+const heroImg = HeroImg;
 
 
 export const Hero = () => {
@@ -31,7 +33,7 @@ export const Hero = () => {
                 </div>
             </div>
             <div>
-                <img src={HeroImg} alt="" />
+                <img src={heroImg} alt="" />
             </div>
         </div>
     )
