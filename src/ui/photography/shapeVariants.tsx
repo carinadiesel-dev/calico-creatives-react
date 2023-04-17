@@ -1,11 +1,11 @@
 const variants = {
   leftAligned: {
-    wrapper: "",
+    wrapper: "order-first",
     circle: "left-[480px]",
     cloud: "left-40"
   },
   rightAligned: {
-    wrapper: "justify-self-end",
+    wrapper: "order-last",
     circle: "-left-3",
     cloud: "-left-40"
   },

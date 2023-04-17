@@ -9,7 +9,10 @@ export default {
     variant: {
         options:["leftAligned", "rightAligned"],
         control: { type: "select"}
-    }
+    },
+    priceText: {
+        control: {type: "text"}
+      } 
     
   }
 } 
