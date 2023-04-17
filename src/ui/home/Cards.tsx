@@ -1,4 +1,7 @@
 import React, { FunctionComponent } from "react";
+import {IconPhotography} from '@/ui/icons/IconPhotography'
+import {IconGraphicDesign} from '@/ui/icons/IconGraphicDesign'
+import {IconTravel} from '@/ui/icons/IconTravel'
 
 type CardRow = {
     backgroundColor : string
@@ -7,13 +10,13 @@ type CardRow = {
     btnText: string 
 }
 
-const cardClasses = 'flex items-end h-[627px]';
-const btnContainerClasses = 'w-full mx-3 mb-2';
-const buttonClasses = "bg-white/60 w-full font-brilon text-[40px] text-center text-calicoGray-400 py-4 rounded-3xl";
+const cardClasses = 'flex flex-col h-[627px]';
+const btnContainerClasses = 'flex w-full';
+const buttonClasses = "bg-white/60 font-brilon text-[40px] text-center text-calicoGray-400 py-4 rounded-3xl hover:bg-white";
 
 const Card: FunctionComponent<CardRow> = ({
     backgroundColor,
-    // image,
+    image,
     btnText
 }) => {
     return (
@@ -39,34 +42,39 @@ type CardsProps = {
 
 export const Cards = ({cards}: CardsProps) => {
     return (
-    <div className="flex flex-col xl:flex-row h-[627px] px-24 gap-8">
+    <div className="flex flex-col xl:flex-row justify-around h-[627px] gap-8">
             {/* {cards.map(card =>{
                 return (
                 <Card {...cards}/>
             )})} */}
             <div className={`${cardClasses} bg-calicoPink-400`}>
+            
                     <div className={btnContainerClasses}>
-                    {/* <img src={graphicDesignImg} alt="" /> */}
                         <a className={buttonClasses} 
                         href="#">
                             Photography</a>
                     </div>   
+                    <IconPhotography />
                 </div>
 
-                <div className={`${cardClasses} bg-calicoOrange-400`}>
+                <div className={`${cardClasses} bg-calicoOrange-400 `}>
+                
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
                         href="#">
                             Graphic Design</a>
                     </div>   
+                    <IconGraphicDesign />
                 </div>
 
                 <div className={`${cardClasses} bg-calicoPeach-400`}>
+                
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
                         href="#">
                             Travel</a>
                     </div>   
+                    <IconTravel />
                 </div>
             
     </div>

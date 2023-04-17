@@ -27,6 +27,9 @@ import {IconWhatsapp} from './IconWhatsapp'
 import {IconCloud} from './IconCloud'
 import {IconCircleFilled} from './IconCircleFilled'
 import {IconOvalFilled} from './IconOvalFilled'
+import {IconPhotography} from './IconPhotography'
+import {IconGraphicDesign} from './IconGraphicDesign'
+import {IconTravel} from './IconTravel'
 
 export default {
   title: 'Components/SVGIcons',
@@ -101,3 +104,12 @@ CircleFilled.args = { ...args }
 
 export const OvalFilled: ComponentStory<typeof IconOvalFilled> = args => <IconOvalFilled {...args} />;
 OvalFilled.args = { ...args }
+
+export const Photography: ComponentStory<typeof IconPhotography> = args => <IconPhotography {...args} />;
+Photography.args = { ...args }
+
+export const GraphicDesign: ComponentStory<typeof IconGraphicDesign> = args => <IconGraphicDesign {...args} />;
+GraphicDesign.args = { ...args }
+
+export const Travel: ComponentStory<typeof IconTravel> = args => <IconTravel {...args} />;
+Travel.args = { ...args }
