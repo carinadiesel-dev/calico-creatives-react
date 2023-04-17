@@ -5,6 +5,7 @@ type IconWebProps = SVGProps<SVGSVGElement> & { size?: number }
 export const IconWeb = ({ size = 1, ...rest }: IconWebProps) => {
   return (
     <svg
+    className="hover:fill-calicoRedOrange-400"
       width={95 * size}
       height={95 * size}
       viewBox="0 0 95 95"
