@@ -69,6 +69,9 @@ module.exports = {
       backgroundImage: {
         'cloud': 'url(../../public/images/vectorimages/cloud.png)',
         'single' : 'linear-gradient(to right, rgba(255, 255, 255, 0.53), rgba(245, 168, 146, 1)), url(../../public/images/vectorimages/cloud.png)',
+        'photography': 'url(../../public/images/vectorimages/Photography.png)',
+        'graphicDesign': 'url(../../public/images/vectorimages/GraphicDesign.png)',
+        'travel': 'url(../../public/images/vectorimages/Travel.png)'
       },
       screens: {
         'xs': '475px',

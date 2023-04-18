@@ -1,18 +1,14 @@
 import React, { FunctionComponent } from "react";
-import {IconPhotography} from '@/ui/icons/IconPhotography'
-import {IconGraphicDesign} from '@/ui/icons/IconGraphicDesign'
-import {IconTravel} from '@/ui/icons/IconTravel'
 
 type CardRow = {
     backgroundColor : string
-    // 'bg-calicoPink-400' | 'bg-calicoOrange-400' | 'bg-calicoPeach-400'
     image?: string // Testing (CHANGE BACK !!!)
     btnText: string 
 }
 
-const cardClasses = 'flex flex-col h-[627px]';
-const btnContainerClasses = 'flex w-full';
-const buttonClasses = "bg-white/60 font-brilon text-[40px] text-center text-calicoGray-400 py-4 rounded-3xl hover:bg-white";
+const cardClasses = 'flex flex-col justify-end items-center w-1/3 bg-contain bg-no-repeat bg-bottom';
+const btnContainerClasses = 'flex w-11/12 my-4';
+const buttonClasses = "bg-white/80 w-full font-brilon text-[40px] text-center text-calicoGray-400 py-4 rounded-full hover:bg-white";
 
 const Card: FunctionComponent<CardRow> = ({
     backgroundColor,
@@ -20,7 +16,7 @@ const Card: FunctionComponent<CardRow> = ({
     btnText
 }) => {
     return (
-<div className={`${cardClasses} ${backgroundColor}`}>
+<div className={`${cardClasses} ${backgroundColor} ${image}`}>
                     <div className={btnContainerClasses}>
                         
                         <a className={buttonClasses} 
@@ -28,7 +24,6 @@ const Card: FunctionComponent<CardRow> = ({
                             {btnText}</a>
                     </div>   
                 </div>
-
     )
 }
 
@@ -43,40 +38,33 @@ type CardsProps = {
 export const Cards = ({cards}: CardsProps) => {
     return (
     <div className="flex flex-col xl:flex-row justify-around h-[627px] gap-8">
-            {/* {cards.map(card =>{
+            {cards.map(card =>{
                 return (
-                <Card {...cards}/>
-            )})} */}
-            <div className={`${cardClasses} bg-calicoPink-400`}>
-            
+                <Card {...card}/>
+            )})}
+            {/* <div className={`${cardClasses} bg-calicoPink-400 bg-photography `}>
+
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
                         href="#">
                             Photography</a>
                     </div>   
-                    <IconPhotography />
-                </div>
-
-                <div className={`${cardClasses} bg-calicoOrange-400 `}>
-                
+            </div>
+                <div className={`${cardClasses} bg-calicoOrange-400 bg-graphicDesign `}>
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
                         href="#">
                             Graphic Design</a>
                     </div>   
-                    <IconGraphicDesign />
                 </div>
 
-                <div className={`${cardClasses} bg-calicoPeach-400`}>
-                
+                <div className={`${cardClasses} bg-calicoPeach-400 bg-travel`}>
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
                         href="#">
                             Travel</a>
                     </div>   
-                    <IconTravel />
-                </div>
-            
+            </div> */}
     </div>
 
     )
