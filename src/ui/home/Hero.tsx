@@ -24,13 +24,13 @@ export const Hero = () => {
       const logoSize:number[] = (screenWidth >= 640 ? [1024 , 600] : [414, 192]);
     
     return (
-        <div className="bg-homeGradient bg-contain bg-center bg-no-repeat flex h-[1000px]">
+        <div className="m-0 p-0 relative bg-homeGradient bg-contain bg-center bg-no-repeat flex h-[1000px] w-screen xl:overflow-hidden">
             <div className='relative xl:w-[60%]'>
                 <div className='xl:absolute xl:top-[345px] xl:left-[100px]'>
                  <CCLogo width={logoSize[0]} height={logoSize[1]}/>
                 </div>
             </div>
-            <div className='overflow-hidden xl:absolute xl:top-[-110px] xl:-right-20'>
+            <div className='absolute xl:top-[-110px] xl:-right-20 xl:overflow-hidden'>
         <Image     
       src={heroImg}
       alt="Picture of the founder"

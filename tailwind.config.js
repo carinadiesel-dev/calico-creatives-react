@@ -69,7 +69,7 @@ module.exports = {
       backgroundImage: {
         'cloud': 'url(../../public/images/vectorimages/cloud.png)',
 
-        'homeGradient': 'linear-gradient(to right, rgba(245, 168, 146, 1), rgba(255, 255, 255, 1)),  url(../../public/images/vectorimages/cloud.png)',
+        'homeGradient': "linear-gradient(to right, rgba(245, 168, 146, 1), rgba(255, 255, 255, 1)), url(../../public/images/vectorimages/cloud.png)",
 
         'heroImg': 'url(../../public/images/hero-images/HeroImg.png)',
 
