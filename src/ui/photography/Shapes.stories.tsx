@@ -19,6 +19,9 @@ export default {
     priceText: {
         control: {type: "text"}
       },
+    circleText: {
+      control: {type: "text"}
+    }
     // src: {
     //   options:[ weddingImg , studioImg , newbornImg , lifestyleImg, engagementsImg],
     //   control: {type: "select"}

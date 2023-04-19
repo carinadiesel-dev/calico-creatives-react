@@ -14,9 +14,10 @@ type ShapesProps = {
 priceText? : number
 variant?: keyof typeof variants
 src: `${weddingImg}` | `${studioImg}` | `${newbornImg}` | `${lifestyleImg} | ${engagementsImg}` 
+circleText?: string
 }
 
-export const Shapes = ({priceText,variant = "leftAligned",src}: ShapesProps) => {
+export const Shapes = ({priceText,variant = "leftAligned",src, circleText}: ShapesProps) => {
 const shapeWrapperClasses = `relative pt-44`;
 const circleClasses = `absolute top-40 `;
 const cloudClasses = `absolute -top-12`;
@@ -31,7 +32,7 @@ const photoClasses = `absolute top-3 z-10`
         />
             <IconOvalFilled />
             <div className={`${circleClasses} ${variants[variant].circle}`}>
-                <IconCircleFilled />
+                <IconCircleFilled circleText={circleText}/>
             </div>
             <div className={`${cloudClasses} ${variants[variant].cloud}`}>
                 <IconCloud size={cloudSize}/>
