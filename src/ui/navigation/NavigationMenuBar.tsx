@@ -41,15 +41,10 @@ type NavigationMenuBarProps = {
 
 
 export const NavigationMenuBar = ({title, navItems}: NavigationMenuBarProps) => {  
-
-  
-  
-  
-
   // const className = `[data-active] ? ${navButtonActive} : ${navButton}`;
   return (
     <NavigationMenu.Root className="bg-calicoPink-100 bg-opacity-60 relative z-[1] flex w-screen px-16">
-      <NavigationMenu.List className="flex justify-around items-center">
+      <NavigationMenu.List className="flex items-center justify-around">
         <div className='mt-2'>
         <CCLogo />
         </div>
@@ -78,8 +73,8 @@ export const NavigationMenuBar = ({title, navItems}: NavigationMenuBarProps) => 
               className="text-calicoRedOrange-400 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
               aria-hidden/>
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute top-0  w-full sm:w-auto border-none">
-            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
+          <NavigationMenu.Content className="absolute top-0 w-full border-none sm:w-auto">
+            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3 ">
               <ListItem title="Logo Design" href="#">
               We create professional logos from scratch based on your needs and preferences.
               </ListItem>
@@ -124,7 +119,7 @@ export const NavigationMenuBar = ({title, navItems}: NavigationMenuBarProps) => 
         </NavigationMenu.Indicator>
       </NavigationMenu.List>
 
-      <div className="perspective-[2000px] absolute top-full left-0 flex w-full justify-center">
+      <div className="perspective-[2000px] absolute top-full flex w-full justify-center -translate-x-60 ">
         <NavigationMenu.Viewport className="data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />
       </div>
     </NavigationMenu.Root>
@@ -136,7 +131,7 @@ const ListItem = React.forwardRef(({ className, children, title, ...props }, for
     <NavigationMenu.Link asChild>
       <a
         className={classNames(
-          'focus:shadow-[0_0_0_2px] focus:shadow-calicoRedOrange-400 hover:bg-calicoPink-200 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors',
+          'focus:shadow-[0_0_0_2px] focus:shadow-calicoRedOrange-400 hover:ring-calicoRedOrange-400 hover:ring-2 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors',
           className
         )}
         {...props}
