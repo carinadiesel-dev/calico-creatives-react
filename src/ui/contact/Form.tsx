@@ -1,6 +1,12 @@
-import * as Label from '@radix-ui/react-label';
+import * as FormRadix from '@radix-ui/react-form';
 import { z } from 'zod';
-import { Formik } from 'formik';
+import { 
+    Formik,
+    Field,
+    Form,
+    useField,
+    FieldAttributes,
+    FieldArray } from 'formik';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
 
 const Schema = z.object({
@@ -9,10 +15,30 @@ const Schema = z.object({
 });
 
 export const Form = () => {
-return (<Formik
-    validationSchema={toFormikValidationSchema(Schema)}
-  >
+return (
+<div>
+<Formik
+initialValues={{
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  }}
+  validationSchema={toFormikValidationSchema(Schema)}
+onSubmit={(data, { setSubmitting }) => {setSubmitting(true);
+    // make async call
+    console.log("submit: ", data);
+    setSubmitting(false);}}
+    
+  >{({ values, errors, isSubmitting }) => (
+    <div>
+        <Form>
+            
+</Form>
+    </div>
+  )}
   </Formik>
+  </div>
 )
 }
 
@@ -32,3 +58,16 @@ return (<Formik
   
 //   export default LabelDemo;
   
+{/* <Form.Root>
+    <Form.Field>
+      <Form.Label />
+      <Form.Control />
+      <Form.Message />
+      <Form.ValidityState />
+    </Form.Field>
+
+    <Form.Message />
+    <Form.ValidityState />
+
+    <Form.Submit />
+  </Form.Root> */}
