@@ -11,10 +11,14 @@ module.exports = {
     "@storybook/addon-postcss",
   ],
   "staticDirs": [
-    "../public/images/"
+    "../public"
   ],
   "framework": "@storybook/react",
   "core": {
     "builder": "@storybook/builder-webpack5"
-  }
+  },
+  previewHead: (head) => (`
+    ${head}
+    <link rel="stylesheet" href="../src/styles/brilon-regular.css" />
+  `)
 }

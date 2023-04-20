@@ -47,6 +47,7 @@ module.exports = {
       },
       
       fontFamily: {
+        'brilon': 'BrilonRegular',
         sans: [
           '"Helvetica Neue"',
           'Roboto',
@@ -64,7 +65,7 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
-        'brilon': 'BrilonRegular' 
+         
       },
       backgroundImage: {
         'cloud': 'url(../../public/images/vectorimages/cloud.png)',
