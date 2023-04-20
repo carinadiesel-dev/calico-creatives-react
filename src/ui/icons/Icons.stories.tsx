@@ -30,6 +30,7 @@ import {IconOvalFilled} from './IconOvalFilled'
 import {IconPhotography} from './IconPhotography'
 import {IconGraphicDesign} from './IconGraphicDesign'
 import {IconTravel} from './IconTravel'
+import {IconHamburger} from './IconHamburger'
 
 export default {
   title: 'Components/SVGIcons',
@@ -113,3 +114,6 @@ GraphicDesign.args = { ...args }
 
 export const Travel: ComponentStory<typeof IconTravel> = args => <IconTravel {...args} />;
 Travel.args = { ...args }
+
+export const Hamburger: ComponentStory<typeof IconHamburger> = args => <IconHamburger {...args} />;
+Hamburger.args = { ...args }

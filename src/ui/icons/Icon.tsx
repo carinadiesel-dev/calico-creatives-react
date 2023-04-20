@@ -32,6 +32,7 @@ import { IconOvalFilled } from './IconOvalFilled';
 import {IconPhotography} from './IconPhotography'
 import {IconGraphicDesign} from './IconGraphicDesign'
 import {IconTravel} from './IconTravel'
+import { IconHamburger } from './IconHamburger';
 
 const _icons = {
   "grid": IconGrid,
@@ -66,7 +67,8 @@ const _icons = {
   "ovalFilled": IconOvalFilled,
   "photography": IconPhotography,
   "graphicDesign": IconGraphicDesign,
-  "travel": IconTravel
+  "travel": IconTravel,
+  "hamburger": IconHamburger,
 
 }
 
