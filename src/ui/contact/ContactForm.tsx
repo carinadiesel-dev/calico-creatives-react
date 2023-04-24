@@ -14,7 +14,7 @@ const Schema = z.object({
   age: z.number(),
 });
 
-export const Form = () => {
+export const ContactForm = () => {
 return (
 <div>
 <Formik
