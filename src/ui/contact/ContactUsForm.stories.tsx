@@ -1,16 +1,16 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ContactForm } from '@/ui/contact/ContactForm'; 
+import { ContactUsForm } from '@/ui/contact/ContactUsForm'; 
 
 export default {
-  title: 'Components/ContactForm',
+  title: 'Components/ContactUsForm',
   argTypes: {
     
   }
 } 
 
-const Template: ComponentStory<typeof ContactForm> = args => <ContactForm {...args} />;
+const Template: ComponentStory<typeof ContactUsForm> = args => <ContactUsForm {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

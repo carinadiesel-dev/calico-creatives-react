@@ -1,5 +1,5 @@
 import { publicProcedure, router } from '../trpc'
-import {ContactSchema} from '@/ui/forms/ContactForm'
+import {ContactSchema} from '@/ui/forms/Form'
 import sendMail from '@/server/lib/sendMail'
 
 export const mainRouter = router({
