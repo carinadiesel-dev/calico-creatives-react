@@ -18,9 +18,10 @@ import { navigationMenuTriggerStyle, } from "@/components/ui/navigation-menu";
 type NavRow = {
   title: string
   link: string
+  // subMenu?: { title: string; href: string; description?: string }[]
 }
 
-const components: { title: string; href: string; description?: string }[] = [
+const subMenu: { title: string; href: string; description?: string }[] = [
   {
     title: "Logo Design",
     href: "#",
@@ -89,7 +90,13 @@ return (
   <div className='ml-10 translate-y-2'>
   <CCLogo width={223}/>
   </div>
-
+  
+  {/* {navItems.map(navItem =>{
+            return (
+            <NavItem {...navItem}/>
+            )
+        })} */}
+  
   <NavigationMenuItem>
   <Link href="#" legacyBehavior passHref>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -106,24 +113,23 @@ return (
   </Link>
 </NavigationMenuItem>
 
-<NavigationMenuItem>
+
   <NavigationMenuItem>
       <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
       <NavigationMenuContent className='bg-calicoPink-100'>
         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-        {components.map((component) => (
+        {subMenu.map((subMenu) => (
                 <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
+                  key={subMenu.title}
+                  title={subMenu.title}
+                  href={subMenu.href}
                 >
-                  {component.description}
+                  {subMenu.description}
                 </ListItem>
               ))}
         </ul>
       </NavigationMenuContent>
     </NavigationMenuItem>
-</NavigationMenuItem>
 
 <NavigationMenuItem>
   <Link href="#" legacyBehavior passHref>
