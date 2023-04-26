@@ -18,10 +18,10 @@ import { navigationMenuTriggerStyle, } from "@/components/ui/navigation-menu";
 type NavRow = {
   title: string
   link: string
-  // subMenu?: { title: string; href: string; description?: string }[]
+  subMenu?: { title: string; href: string; description?: string }[]
 }
 
-const subMenu: { title: string; href: string; description?: string }[] = [
+const subMenu: { title: string; href: string; description: string }[] = [
   {
     title: "Logo Design",
     href: "#",
@@ -59,21 +59,6 @@ const subMenu: { title: string; href: string; description?: string }[] = [
   },
 ]
 
-const NavItem : FunctionComponent<NavRow> = ({
-  title,
-  link
-}) => {
-  return (
-  <NavigationMenuItem>
-  <Link href={link} legacyBehavior passHref>
-    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-      {title}
-    </NavigationMenuLink>
-  </Link>
-</NavigationMenuItem>
-  )
-}
-
 type NavItem = {
 
 }
@@ -81,6 +66,40 @@ type NavItem = {
 type NavigationMenuBarProps = {
   navItems: NavItem[]
 }
+
+const NavItem : FunctionComponent<NavRow> = ({
+  title,
+  link,
+  subMenu
+}) => {
+  const hasSubMenu = subMenu ? true : false;
+  return (
+  <NavigationMenuItem>
+    {hasSubMenu === true ?
+      <><NavigationMenuTrigger>{title}</NavigationMenuTrigger><NavigationMenuContent className='bg-calicoPink-100'>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {subMenu && subMenu.map((item) => (
+                <ListItem
+                  key={item.title}
+                  title={item.title}
+                  href={item.href}
+                >
+                  {item.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent></>
+      :
+  <Link href={link} legacyBehavior passHref>
+    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+      {title}
+    </NavigationMenuLink>
+  </Link>
+}
+</NavigationMenuItem>
+  )
+}
+
 
 export const NavigationMenuBar = ({navItems}:NavigationMenuBarProps) => {
 return (
@@ -91,13 +110,13 @@ return (
   <CCLogo width={223}/>
   </div>
   
-  {/* {navItems.map(navItem =>{
+  {navItems.map(navItem =>{
             return (
             <NavItem {...navItem}/>
             )
-        })} */}
+        })}
   
-  <NavigationMenuItem>
+  {/* <NavigationMenuItem>
   <Link href="#" legacyBehavior passHref>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
       Home
@@ -118,13 +137,13 @@ return (
       <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
       <NavigationMenuContent className='bg-calicoPink-100'>
         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-        {subMenu.map((subMenu) => (
+        {subMenu.map((item) => (
                 <ListItem
-                  key={subMenu.title}
-                  title={subMenu.title}
-                  href={subMenu.href}
+                  key={item.title}
+                  title={item.title}
+                  href={item.href}
                 >
-                  {subMenu.description}
+                  {item.description}
                 </ListItem>
               ))}
         </ul>
@@ -145,7 +164,7 @@ return (
     Contact
     </NavigationMenuLink>
   </Link>
-</NavigationMenuItem>
+</NavigationMenuItem> */}
   </NavigationMenuList>
 </NavigationMenu>
 )
