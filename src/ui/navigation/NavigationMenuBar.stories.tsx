@@ -17,19 +17,18 @@ const Template: ComponentStory<typeof NavigationMenuBar> = (args) =>
     let navItemHome = {
       title: 'Home',
       link: '#',
-      isActive: true
     }
 
     let navItemPhotography = {
       title: 'Photography',
       link: '#',
-      isActive: false
+
     }
 
     let navItemGraphicDesign = {
       title: 'Graphic Design',
       link: '#',
-      isActive: false
+
       // subMenu: [
 
       //   {
@@ -62,17 +61,15 @@ const Template: ComponentStory<typeof NavigationMenuBar> = (args) =>
     let navItemPhotoGallery = {
       title: 'Photo Gallery',
       link: '#',
-      isActive: false
     }
 
     let navItemContact = {
       title: 'Contact',
       link: '#',
-      isActive: false
     }
 ;
 
-let navItems= [navItemHome,navItemPhotography, navItemGraphicDesign, navItemPhotoGallery, navItemContact]
+let navItems = [navItemHome,navItemPhotography, navItemGraphicDesign, navItemPhotoGallery, navItemContact]
 
 export const Default = Template.bind({});
 Default.args = {
