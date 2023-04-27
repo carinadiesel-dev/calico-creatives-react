@@ -1,10 +1,12 @@
 import React, {ComponentProps, HTMLAttributes} from 'react';
-import {TextInput} from '@/ui/inputs/TextInput';
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import {Formik} from 'formik';
 import { z } from 'zod';
 import _ from 'lodash';
 import {toFormikValidationSchema} from 'zod-formik-adapter'
-import * as Label from '@radix-ui/react-label';
+
 
 
 type InputGroupProps = HTMLAttributes<HTMLDivElement>
@@ -44,46 +46,45 @@ export const ContactUsForm = ({ initialValues, ...rest }: ContactUsFormProps) =>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 bg-calicoPink-400">
 
         <InputGroup>
-          <label className='font-sans font-bold text-calicoGray-400'>First name</label>
-          <TextInput
-            name={"firstName"}
+          <Label htmlFor="firstName">First Name</Label>
+          <Input id="firstName" placeholder="First Name"  name={"firstName"}
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.firstName}
-            invalid={!!errors.firstName}
-            placeholder="FirstName" />
+            />
         </InputGroup>
 
         <InputGroup>
-          <label className='font-sans font-bold text-calicoGray-400'>Last name</label>
-          <TextInput
+        <Label htmlFor="firstName">Last Name</Label>
+          <Input
             name={"lastName"}
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.lastName}
-            invalid={!!errors.lastName}
+            // invalid={!!errors.lastName}
             placeholder="LastName" />
         </InputGroup>
 
         <InputGroup>
-          <label className='font-sans font-bold text-calicoGray-400'>Email</label>
-          <TextInput
+        <Label htmlFor="firstName">Email</Label>
+          <Input
             name={"email"}
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
-            invalid={!!errors.email}
+            // invalid={!!errors.email}
             placeholder="Enter your email" />
         </InputGroup>
 
         <InputGroup>
-          <label className='font-sans font-bold text-calicoGray-400'>Message</label>
-          <TextInput
+        <Label htmlFor="firstName">Message</Label>
+        
+          <Textarea
             name={"message"}
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.message}
-            invalid={!!errors.message}
+            // invalid={!!errors.message}
             placeholder="Enter your message" />
         </InputGroup>
 

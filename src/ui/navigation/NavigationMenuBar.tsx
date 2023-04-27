@@ -18,7 +18,7 @@ import { navigationMenuTriggerStyle, } from "@/components/ui/navigation-menu";
 type NavRow = {
   title: string
   link: string
-  subMenu?: { title: string; href: string; description?: string }[]
+  subMenu?: { title: string; href: string; description: string }[]
 }
 
 const subMenu: { title: string; href: string; description: string }[] = [
@@ -72,7 +72,7 @@ const NavItem : FunctionComponent<NavRow> = ({
   link,
   subMenu
 }) => {
-  const hasSubMenu = subMenu ? true : false;
+  const hasSubMenu = subMenu !== undefined ? true : false;
   return (
   <NavigationMenuItem>
     {hasSubMenu === true ?
@@ -110,13 +110,14 @@ return (
   <CCLogo width={223}/>
   </div>
   
+  {/* <div>
   {navItems.map(navItem =>{
             return (
             <NavItem {...navItem}/>
             )
         })}
-  
-  {/* <NavigationMenuItem>
+  </div> */}
+  <NavigationMenuItem>
   <Link href="#" legacyBehavior passHref>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
       Home
@@ -164,7 +165,7 @@ return (
     Contact
     </NavigationMenuLink>
   </Link>
-</NavigationMenuItem> */}
+</NavigationMenuItem>
   </NavigationMenuList>
 </NavigationMenu>
 )

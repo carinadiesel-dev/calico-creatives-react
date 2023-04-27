@@ -31,6 +31,7 @@ import {IconPhotography} from './IconPhotography'
 import {IconGraphicDesign} from './IconGraphicDesign'
 import {IconTravel} from './IconTravel'
 import {IconHamburger} from './IconHamburger'
+import { IconEnvelope } from './IconEnvelope';
 
 export default {
   title: 'Components/SVGIcons',
@@ -117,3 +118,6 @@ Travel.args = { ...args }
 
 export const Hamburger: ComponentStory<typeof IconHamburger> = args => <IconHamburger {...args} />;
 Hamburger.args = { ...args }
+
+export const Envelope: ComponentStory<typeof IconEnvelope> = args => <IconEnvelope {...args} />;
+Envelope.args = { ...args }
