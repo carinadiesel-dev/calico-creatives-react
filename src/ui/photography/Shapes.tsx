@@ -19,7 +19,7 @@ circleText?: string
 
 export const Shapes = ({priceText,variant = "leftAligned",src, circleText}: ShapesProps) => {
 const shapeWrapperClasses = `relative pt-44`;
-const circleClasses = `absolute top-40 `;
+const circleClasses = `absolute flex items-center justify-center top-40 `;
 const cloudClasses = `absolute -top-12`;
 const cloudSize = 0.9;
 const photoClasses = `absolute top-3 z-10`
@@ -32,7 +32,8 @@ const photoClasses = `absolute top-3 z-10`
         />
             <IconOvalFilled />
             <div className={`${circleClasses} ${variants[variant].circle}`}>
-                <IconCircleFilled circleText={circleText}/>
+                <IconCircleFilled/>
+                <span className="absolute text-5xl font-brilon text-calicoGray-400">{circleText}</span>
             </div>
             <div className={`${cloudClasses} ${variants[variant].cloud}`}>
                 <IconCloud size={cloudSize}/>

@@ -102,7 +102,7 @@ const NavItem : FunctionComponent<NavRow> = ({
 }
 
 
-export const NavigationMenuBar = ({navItems}:NavigationMenuBarProps) => {
+export const NavigationMobile = ({navItems}:NavigationMenuBarProps) => {
 return (
 
 <NavigationMenu orientation='vertical'>
