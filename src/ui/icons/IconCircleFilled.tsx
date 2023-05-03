@@ -1,6 +1,6 @@
 import React, {SVGProps} from 'react'
 
-type IconCircleFilledProps = SVGProps<SVGSVGElement> & { size?: number, circleText?: string }
+type IconCircleFilledProps = SVGProps<SVGSVGElement> & { size?: number, }
 
 export const IconCircleFilled = ({ size = 1, circleText = "Text", ...rest }: IconCircleFilledProps) => {
   return <svg width={369 * size} height={352 * size} viewBox="0 0 369 352" xmlns="http://www.w3.org/2000/svg" {...rest}>
