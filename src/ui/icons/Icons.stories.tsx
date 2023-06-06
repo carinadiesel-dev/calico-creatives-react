@@ -25,6 +25,13 @@ import {IconFacebook} from './IconFacebook'
 import {IconInsta} from './IconInsta'
 import {IconWhatsapp} from './IconWhatsapp'
 import {IconCloud} from './IconCloud'
+import {IconCircleFilled} from './IconCircleFilled'
+import {IconOvalFilled} from './IconOvalFilled'
+import {IconPhotography} from './IconPhotography'
+import {IconGraphicDesign} from './IconGraphicDesign'
+import {IconTravel} from './IconTravel'
+import {IconHamburger} from './IconHamburger'
+import { IconEnvelope } from './IconEnvelope';
 
 export default {
   title: 'Components/SVGIcons',
@@ -93,3 +100,24 @@ Whatsapp.args = { ...args }
 
 export const Cloud: ComponentStory<typeof IconCloud> = args => <Cloud {...args} />;
 Cloud.args = { ...args }
+
+export const CircleFilled: ComponentStory<typeof IconCircleFilled> = args => <CircleFilled {...args} />;
+CircleFilled.args = { ...args }
+
+export const OvalFilled: ComponentStory<typeof IconOvalFilled> = args => <IconOvalFilled {...args} />;
+OvalFilled.args = { ...args }
+
+export const Photography: ComponentStory<typeof IconPhotography> = args => <IconPhotography {...args} />;
+Photography.args = { ...args }
+
+export const GraphicDesign: ComponentStory<typeof IconGraphicDesign> = args => <IconGraphicDesign {...args} />;
+GraphicDesign.args = { ...args }
+
+export const Travel: ComponentStory<typeof IconTravel> = args => <IconTravel {...args} />;
+Travel.args = { ...args }
+
+export const Hamburger: ComponentStory<typeof IconHamburger> = args => <IconHamburger {...args} />;
+Hamburger.args = { ...args }
+
+export const Envelope: ComponentStory<typeof IconEnvelope> = args => <IconEnvelope {...args} />;
+Envelope.args = { ...args }

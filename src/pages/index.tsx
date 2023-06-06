@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 import * as gtag from '@/utils/gtag'
 
 import {Avatar} from '@/ui/avatars/Avatar'
-import {ContactForm} from '@/ui/forms/ContactForm'
+import {ContactForm} from '@/ui/forms/Form'
 import {CookieConsentPopup as _CookieConsentPopup} from '@/ui/popups/CookieConsentPopup'
 
 import { siteLogo } from '@/public/siteLogo'

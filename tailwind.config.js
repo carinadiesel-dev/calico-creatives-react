@@ -47,16 +47,17 @@ module.exports = {
       },
       
       fontFamily: {
+        'brilon': 'BrilonRegular',
         sans: [
+          '"Helvetica Neue"',
+          'Roboto',
+          'Arial',
           'ClashDisplay',
           'ui-sans-serif',
           'system-ui',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
           '"Noto Sans"',
           'sans-serif',
           '"Apple Color Emoji"',
@@ -64,8 +65,26 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
-        'brilon': 'brilon-regular' 
-      }
+         
+      },
+      backgroundImage: {
+        'cloud': 'url(../../public/images/vectorimages/cloud.png)',
+
+        'homeGradient': "linear-gradient(to right, rgba(245, 168, 146, 1), rgba(255, 255, 255, 1)), url(../../public/images/vectorimages/cloud.png)",
+
+        'heroImg': 'url(../../public/images/hero-images/HeroImg.png)',
+
+        'single' : 'linear-gradient(to right, rgba(255, 255, 255, 0.53), rgba(245, 168, 146, 1)), url(../../public/images/vectorimages/cloud.png)',
+
+        'photography': 'url(../../public/images/vectorimages/Photography.png)',
+
+        'graphicDesign': 'url(../../public/images/vectorimages/GraphicDesign.png)',
+
+        'travel': 'url(../../public/images/vectorimages/Travel.png)'
+      },
+      screens: {
+        'xs': '475px',
+      },
     },
   },
   plugins: [],
