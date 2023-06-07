@@ -7,7 +7,7 @@ const text = "text-calicoGray-400";
 const hoverText = "hover:text-calicoWhite-400"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md transition-colors font-brilon text-2xl xl:text-[40px] w-[605px] py-4 border-8 rounded-full",
+  "inline-flex items-center justify-center rounded-md transition-colors font-brilon text-4xl lg:text-4xl xl:text-[2.5rem] w-[95vw] md:w-[90vw] lg:w-[38rem] py-6 border-8 rounded-full",
   {
     variants: {
       variant: {

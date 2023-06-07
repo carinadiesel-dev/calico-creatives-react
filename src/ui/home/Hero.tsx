@@ -6,23 +6,6 @@ import heroImg from './Assets/HeroImg.png'
 import heroLarge from './Assets/hero-large.png'
 
 export const Hero = () => {
-    const [screenWidth, setScreenWidth] = useState<number>(
-        window.innerWidth
-      );
-
-      useEffect(() => {
-        const handleWindowResize = () => {
-          setScreenWidth(window.innerWidth);
-        };
-    
-        window.addEventListener('resize', handleWindowResize);
-    
-        return () => {
-          window.removeEventListener('resize', handleWindowResize);
-        };
-      });
-
-      const logoSize:number[] = ( screenWidth >= 1024 && screenWidth < 1280 ? [768, 400] : screenWidth >= 1280 ? [1024 , 600] : [414, 192]);
     
     return (
     //     <div className="relative bg-homeGradient bg-contain bg-center bg-no-repeat flex h-[1000px] w-screen xl:overflow-hidden">

@@ -15,9 +15,15 @@ export default function Stationary(){
         <div>
             <PageTitle title="Stationary & Events" backgroundGradient="bg-gradient-to-r from-calicoWhite-300 to-calicoPeach-300" titleColor="text-calicoPink-400" />
             <Paragraph text={`We offer luxury stationery for all of life’s special celebrations and events. Birthdays, Weddings, Corporate, Baby Showers`} />
+            <div className="grid place-items-center">
+                
+            
+            <div className="px-5 md:px-12 lg:w-2/3">
             <StationaryGallery />
-            <div className="py-28">
+            </div>
+            <div className="px-5 py-16 lg:py-28 md:px-12 lg:px-0">
                 <Button variant={"peach"}>Get a Quote</Button>
+            </div>
             </div>
         </div>
     )
