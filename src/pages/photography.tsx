@@ -1,15 +1,43 @@
 import { PageTitle } from "@/ui/pageTitle/PageTitle"
+import { Shapes } from "@/ui/photography/Shapes"
+import shapeVariants from "@/ui/photography/shapeVariants"
+import { Button } from "@/ui/buttons/Button"
+import { buttonVariants } from "@/components/ui/button"
+
+import EngagementImg from "public/images/photography/engagements.jpg"
+import LifestyleImg from "public/images/photography/lifestyle.jpg"
+import NewbornImg from "public/images/photography/newborn.png"
+import StudioImg from "public/images/photography/studio.jpg"
+import WeddingImg from "public/images/photography/wedding.jpg"
+
 
 type PhotographyProps = {
-    title: string
-    titleColor: 'text-calicoPink-400'| 'text-calicoPeach-400'
-    backgroundGradient: 'bg-gradient-to-r from-calicoWhite-200 to-calicoPink-400' | 'bg-gradient-to-r from-calicoWhite-100 to-calicoOrange-400' | 'bg-gradient-to-r from-calicoWhite-300 to-calicoPeach-300'
+    priceText? : number
+    shapeVariant?: keyof typeof shapeVariants
+    buttonVariant: keyof typeof buttonVariants
+    src: typeof WeddingImg | typeof StudioImg | typeof NewbornImg | typeof LifestyleImg | typeof EngagementImg 
+    circleText?: string
+
 }
 
-export default function Photography(){
+export default function Photography({}:PhotographyProps){
     return (
         <div>
             <PageTitle title="Photography" backgroundGradient="bg-gradient-to-r from-calicoWhite-200 to-calicoPink-400" titleColor="text-calicoPeach-400" />
+            <div className="px-5 md:px-12 lg:px-16 xl:px-20 2xl:px-28">
+            <div className="grid py-28 lg:gap-36">
+                <Shapes variant="leftAligned" circleText="Wedding" priceText={7000} src={WeddingImg}/>
+                <Shapes variant="rightAligned" circleText="Engagements" priceText={750} src={EngagementImg}/>
+                <Shapes variant="leftAligned" circleText="Newborn" priceText={1200} src={NewbornImg}/>
+                <Shapes variant="rightAligned" circleText="Lifestyle" priceText={750} src={LifestyleImg}/>
+                <Shapes variant="leftAligned" circleText="Studio" priceText={1000} src={StudioImg}/>
+            </div>
+            <div className="grid gap-8 py-48 place-items-center">
+            <Button variant="pinkFocus" buttonText="View Gallery" />
+            <Button variant="pink"  buttonText="Get a Quote"/>
+            </div>
+            
+            </div>
         </div>
     )
 }

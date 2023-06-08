@@ -4,7 +4,7 @@ type CCLogoProps = {
   width?: number
   height?: number
 }
-export const CCLogo = ({ width = 107, height = 100 }: CCLogoProps) => {
+export const CCLogo = ({ width, height }: CCLogoProps) => {
   return <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={width} height={height} viewBox="0 0 1039 616">
   <defs>
     <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1871 1111">

@@ -6,12 +6,12 @@ import Map from './Assets/map.jpg';
 
 export const PostersGallery = () => {
     return (
-        <div className="grid gap-8 grid-col-3 place-items-center">
-            <Image src={Travel1} alt="" width={547} height={726}/>
-            <Image src={Travel2} alt="" width={547} height={726}/>
-            <Image src={Travel3} alt="" width={547} height={726}/>
+        <div className="grid grid-cols-1 gap-16 lg:gap-8 lg:grid-cols-3 place-items-center">
+            <Image src={Travel1} alt=""/>
+            <Image src={Travel2} alt=""/>
+            <Image src={Travel3} alt=""/>
 
-            <div className="col-span-3 pt-16">
+            <div className="pt-16 lg:col-span-3">
             <Image src={Map} alt="" width={1446} />
             </div>
         </div>

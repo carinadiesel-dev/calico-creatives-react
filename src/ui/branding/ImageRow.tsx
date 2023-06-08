@@ -4,9 +4,13 @@ import FacebookMockup from './Assets/Facebook-Mockup.jpg'
 
 export const ImageRow = () => {
     return (
-        <div className="flex items-center justify-around gap-4">
-            <Image src={CellphoneMockup} alt="" width={612} height={816}/>
-            <Image src={FacebookMockup} alt="" width={874} height={585}/>
+        <div className="flex flex-col items-center justify-around gap-16 lg:gap-12 lg:flex-row">
+            <div>
+                <Image src={CellphoneMockup} alt=""/>
+            </div>
+            <div>
+                <Image src={FacebookMockup} alt=""/>
+            </div>
         </div>
     )
 }

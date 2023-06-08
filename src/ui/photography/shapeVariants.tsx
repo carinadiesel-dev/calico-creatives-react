@@ -1,7 +1,7 @@
 const variants = {
   leftAligned: {
     wrapper: "order-first",
-    circle: "left-[480px]",
+    circle: "left-[31rem]",
     cloud: "left-40",
     photo: ""
   },

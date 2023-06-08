@@ -6,9 +6,9 @@ type CardRow = {
     btnText: string 
 }
 
-const cardClasses = 'flex flex-col justify-end items-center w-1/3 bg-contain bg-no-repeat bg-bottom';
+const cardClasses = 'flex flex-col justify-end items-center h-full lg:w-1/3 bg-contain bg-no-repeat bg-bottom';
 const btnContainerClasses = 'flex w-11/12 my-4';
-const buttonClasses = "bg-white/80 w-full font-brilon text-[40px] text-center text-calicoGray-400 py-4 rounded-full hover:bg-white";
+const buttonClasses = "bg-white/80 w-full font-brilon text-[2.5rem] lg:text-3xl text-center text-calicoGray-400 py-4 rounded-full hover:bg-white";
 
 const Card: FunctionComponent<CardRow> = ({
     backgroundColor,
@@ -37,7 +37,7 @@ type CardsProps = {
 
 export const Cards = ({cards}: CardsProps) => {
     return (
-    <div className="flex flex-col xl:flex-row justify-around h-[627px] gap-8">
+    <div className="flex flex-col lg:flex-row justify-around h-[100rem] md:h-[130rem] lg:h-[27rem] xl:h-[30rem] 2xl:h-[39rem]  gap-12 lg:gap-8">
             {cards.map(card =>{
                 return (
                 <Card {...card}/>
