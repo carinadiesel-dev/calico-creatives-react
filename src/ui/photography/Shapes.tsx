@@ -3,17 +3,17 @@ import { IconOvalFilled } from "../icons/IconOvalFilled";
 import { IconCloud } from "../icons/IconCloud";
 import variants from '@/ui/photography/shapeVariants'
 import Image from 'next/image'
-import weddingImg from './Assets/wedding.jpg'
-import studioImg from './Assets/studio.jpg'
-import newbornImg from './Assets/newborn.png'
-import lifestyleImg from './Assets/lifestyle.jpg'
-import engagementsImg from './Assets/engagements.jpg'
+import WeddingImg from './Assets/wedding.jpg'
+import StudioImg from './Assets/studio.jpg'
+import NewbornImg from './Assets/newborn.png'
+import LifestyleImg from './Assets/lifestyle.jpg'
+import EngagementsImg from './Assets/engagements.jpg'
 
 
 type ShapesProps = {
 priceText? : number
 variant?: keyof typeof variants
-src: `${weddingImg}` | `${studioImg}` | `${newbornImg}` | `${lifestyleImg} | ${engagementsImg}` 
+src: typeof WeddingImg | typeof StudioImg | typeof NewbornImg | typeof LifestyleImg | typeof EngagementsImg 
 circleText?: string
 }
 
@@ -24,7 +24,7 @@ const cloudClasses = `absolute -top-12`;
 const cloudSize = 0.9;
 const photoClasses = `absolute top-3 z-10`
     return (
-    <div className="flex justify-between">
+    <div className="flex flex-col justify-between lg:flex-row">
         <div className={`${shapeWrapperClasses} ${variants[variant].wrapper}`}>
 
         <Image src={src} alt='/'
@@ -39,8 +39,8 @@ const photoClasses = `absolute top-3 z-10`
                 <IconCloud size={cloudSize}/>
             </div>
         </div>
-        <div className="flex items-center">
-        <span className="text-[40px] text-center font-brilon text-calicoGray-400">Starting from R{priceText}</span>
+        <div className="flex items-center py-8 lg:py-0">
+        <span className="text-[2.5rem] text-center font-brilon text-calicoGray-400">Starting from R{priceText}</span>
         </div>
     </div>
     
