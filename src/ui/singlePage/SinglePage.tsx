@@ -1,14 +1,17 @@
 import { SingleHeader } from "./SingleHeader"
 
-export const SinglePage = () => {
+type SinglePageProps = {
+    headerText: string
+    headerPosition : 'self-end' | 'self-center'
+}
+
+
+export const SinglePage = ({headerText,headerPosition}:SinglePageProps) => {
     return (
-      <div className="grid bg-single bg-contain bg-center bg-no-repeat h-[1000px]">
-        <div className="self-end pl-16">
-          <SingleHeader title="Travel Blog" />
+      <div className="grid h-screen bg-center bg-no-repeat bg-contain lg:bg-single bg-none">
+        <div className={`${headerPosition} pl-16`}>
+          <SingleHeader title={headerText} />
         </div>
-         {/* <div className="self-center pl-16">
-          <SingleHeader title="Contact Us" />
-        </div> */}
       </div> 
     )
 }
