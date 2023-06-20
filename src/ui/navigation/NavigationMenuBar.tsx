@@ -24,36 +24,36 @@ type NavRow = {
 const subMenu: { title: string; href: string; description: string }[] = [
   {
     title: "Logo Design",
-    href: "#",
+    href: "/graphic-design/logo-design",
     description:
       "We create professional logos from scratch based on your needs and preferences",
   },
   {
     title: "Animated Graphics",
-    href: "#",
+    href: "/graphic-design/logo-design",
     description:
       "To bring a uniqueness to your logo, we can add some motion.",
   },
   {
     title: "Web Design",
-    href: "#",
+    href: "/graphic-design/web-design",
     description:
       "You are currently viewing one of our websites.",
   },
   {
     title: "Branding & Social",
-    href: "#",
+    href: "/graphic-design/branding-and-social",
     description: "Social media increases the amount of exposure a brand receives and increases traffic",
   },
   {
     title: "Stationary'",
-    href: "#",
+    href: "/graphic-design/stationary",
     description:
       "We offer luxury stationery for all of life’s special celebrations and events.",
   },
   {
     title: "Poster & Ads",
-    href: "#",
+    href: "/graphic-design/posters-and-ads",
     description:
       "Turn anything into a poster",
   },
@@ -77,7 +77,7 @@ const NavItem : FunctionComponent<NavRow> = ({
   <NavigationMenuItem>
     {hasSubMenu === true ?
       <><NavigationMenuTrigger>{title}</NavigationMenuTrigger><NavigationMenuContent className='bg-calicoPink-100'>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
               {subMenu && subMenu.map((item) => (
                 <ListItem
                   key={item.title}
@@ -118,7 +118,7 @@ return (
         })}
   </div> */}
   <NavigationMenuItem>
-  <Link href="#" legacyBehavior passHref>
+  <Link href="/" legacyBehavior passHref>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
       Home
     </NavigationMenuLink>
@@ -126,7 +126,7 @@ return (
 </NavigationMenuItem>
 
 <NavigationMenuItem>
-  <Link href="#" legacyBehavior passHref>
+  <Link href="/photography" legacyBehavior passHref>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photography
     </NavigationMenuLink>
@@ -137,7 +137,7 @@ return (
   <NavigationMenuItem>
       <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
       <NavigationMenuContent className='bg-calicoPink-100'>
-        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+        <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
         {subMenu.map((item) => (
                 <ListItem
                   key={item.title}
@@ -151,16 +151,16 @@ return (
       </NavigationMenuContent>
     </NavigationMenuItem>
 
-<NavigationMenuItem>
+{/* <NavigationMenuItem>
   <Link href="#" legacyBehavior passHref>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photo Gallery
     </NavigationMenuLink>
   </Link>
-</NavigationMenuItem>
+</NavigationMenuItem> */}
 
 <NavigationMenuItem>
-  <Link href="#" legacyBehavior passHref>
+  <Link href="/contact" legacyBehavior passHref>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Contact
     </NavigationMenuLink>
@@ -181,7 +181,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-[15px]hover:ring-calicoRedOrange-400 hover:ring-2",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-xs xl:text-base hover:ring-calicoRedOrange-400 hover:ring-2",
             className
           )}
           {...props}
