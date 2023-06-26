@@ -1,26 +1,31 @@
 import React, {AnchorHTMLAttributes, FunctionComponent, PropsWithChildren, useState} from 'react'
 import {CCLogo} from '@/ui/logos/CCLogo';
-import { IconHamburger } from '../icons/IconHamburger';
 import Link from 'next/link';
 import { cn } from '@/utils/cn';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  DropdownMenuPortal,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-} from "@/components/ui/dropdown-menu"
-import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import { navigationMenuTriggerStyle, } from "@/components/ui/navigation-menu";
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 type NavRow = {
   title: string
@@ -31,111 +36,213 @@ type NavRow = {
 const subMenu: { title: string; href: string; description: string }[] = [
   {
     title: "Logo Design",
-    href: "#",
+    href: "/graphic-design/logo-design",
     description:
       "We create professional logos from scratch based on your needs and preferences",
   },
   {
     title: "Animated Graphics",
-    href: "#",
+    href: "/graphic-design/logo-design",
     description:
       "To bring a uniqueness to your logo, we can add some motion.",
   },
   {
     title: "Web Design",
-    href: "#",
+    href: "/graphic-design/web-design",
     description:
       "You are currently viewing one of our websites.",
   },
   {
     title: "Branding & Social",
-    href: "#",
+    href: "/graphic-design/branding-and-social",
     description: "Social media increases the amount of exposure a brand receives and increases traffic",
   },
   {
     title: "Stationary'",
-    href: "#",
+    href: "/graphic-design/stationary",
     description:
       "We offer luxury stationery for all of life’s special celebrations and events.",
   },
   {
     title: "Poster & Ads",
-    href: "#",
+    href: "/graphic-design/posters-and-ads",
     description:
       "Turn anything into a poster",
   },
 ]
 
-// type NavItem = {
+type NavItem = {
 
-// }
-
-type NavigationMobileProps = {
-  // navItems: NavItem[]
 }
 
-// const NavItem : FunctionComponent<NavRow> = ({
-//   title,
-//   link,
-//   subMenu
-// }) => {
-//   const hasSubMenu = subMenu !== undefined ? true : false;
-//   return (
-//   <NavigationMenuItem>
-//     {hasSubMenu === true ?
-//       <><NavigationMenuTrigger>{title}</NavigationMenuTrigger><NavigationMenuContent className='bg-calicoPink-100'>
-//             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-//               {subMenu && subMenu.map((item) => (
-//                 <ListItem
-//                   key={item.title}
-//                   title={item.title}
-//                   href={item.href}
-//                 >
-//                   {item.description}
-//                 </ListItem>
-//               ))}
-//             </ul>
-//           </NavigationMenuContent></>
-//       :
-//   <Link href={link} legacyBehavior passHref>
-//     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-//       {title}
-//     </NavigationMenuLink>
-//   </Link>
-// }
-// </NavigationMenuItem>
-//   )
-// }
+type NavigationMenuBarProps = {
+  navItems: NavItem[]
+}
+
+const NavItem : FunctionComponent<NavRow> = ({
+  title,
+  link,
+  subMenu
+}) => {
+  const hasSubMenu = subMenu !== undefined ? true : false;
+  return (
+  <NavigationMenuItem className='h-full'>
+    {hasSubMenu === true ?
+      <>
+      {/* <NavigationMenuTrigger>{title}</NavigationMenuTrigger><NavigationMenuContent className='bg-calicoPink-100'> */}
+     {/* //       <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
+
+      //           <ListItem
+      //             key={item.title}
+      //             title={item.title}
+      //             href={item.href}
+      //           >
+      //             {item.description}
+      //           </ListItem>
+      //         ))}
+      //       </ul>
+      //     </NavigationMenuContent>
+    */}
+          <Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>{title}</AccordionTrigger>
+    <AccordionContent>
+    <ul>
+    {subMenu && subMenu.map((item) => (
+                <ListItem
+                  key={item.title}
+                  title={item.title}
+                  href={item.href}
+                />
+              ))}
+    </ul>
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+</>
+      :
+  <Link href={link} legacyBehavior passHref>
+    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+      {title}
+    </NavigationMenuLink>
+  </Link>
+}
+</NavigationMenuItem>
+  )
+}
 
 
-export const NavigationMobile = ({}:NavigationMobileProps) => {
+export const NavigationMobile = ({navItems}:NavigationMenuBarProps) => {
 return (
-  <div className='flex justify-between'>
-    <div className='ml-10 translate-y-2'>
-  <CCLogo/>
+<Popover>
+  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverContent>
+    <NavigationMenu>
+  <NavigationMenuList>
+  <div className='ml-10 translate-y-2'>
+  <CCLogo width={223}/>
   </div>
-  <DropdownMenu>
-  <DropdownMenuTrigger>
-    <div>
-    <HamburgerMenuIcon aria-setsize={2} />
-    </div>
-    
-  </DropdownMenuTrigger>
-  <DropdownMenuPortal>
-  <DropdownMenuContent>
-    <DropdownMenuItem>Home</DropdownMenuItem>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem>Photography</DropdownMenuItem>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem>Graphic Design</DropdownMenuItem>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem>Photo Gallery</DropdownMenuItem>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem>Contact</DropdownMenuItem>
-    <DropdownMenuSeparator />
-  </DropdownMenuContent>
-  </DropdownMenuPortal>
-</DropdownMenu>
-  </div>
+  
+  {/* <div>
+  {navItems.map(navItem =>{
+            return (
+            <NavItem {...navItem}/>
+            )
+        })}
+  </div> */}
+  <NavigationMenuItem>
+  <Link href="/" legacyBehavior passHref>
+    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+      Home
+    </NavigationMenuLink>
+  </Link>
+</NavigationMenuItem>
+
+<NavigationMenuItem>
+  <Link href="/photography" legacyBehavior passHref>
+    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+    Photography
+    </NavigationMenuLink>
+  </Link>
+</NavigationMenuItem>
+
+
+
+
+  <NavigationMenuItem>
+  <Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Graphic Design</AccordionTrigger>
+    <AccordionContent>
+    <ul>
+      <ListItem key={'Logo Design'}
+                  title={'Logo Design'}
+                   href={'/graphic-design/logo-design'} />
+    </ul>
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+      {/* <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
+      <NavigationMenuContent className='bg-calicoPink-100'>
+        <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
+        {subMenu.map((item) => (
+                <ListItem
+                  key={item.title}
+                  title={item.title}
+                  href={item.href}
+                >
+                  {item.description}
+                </ListItem>
+              ))}
+        </ul>
+      </NavigationMenuContent>
+    </NavigationMenuItem> */}
+
+{/* <NavigationMenuItem>
+  <Link href="#" legacyBehavior passHref>
+    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+    Photo Gallery
+    </NavigationMenuLink>
+  </Link>*/}
+</NavigationMenuItem> 
+
+<NavigationMenuItem>
+  <Link href="/contact" legacyBehavior passHref>
+    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+    Contact
+    </NavigationMenuLink>
+  </Link>
+</NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu></PopoverContent>
+</Popover>
+
+
 )
 }
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-xs xl:text-base hover:ring-calicoRedOrange-400 hover:ring-2",
+            className
+          )}
+          {...props}
+        >
+          <div className="font-bold leading-none text-md text-calicoRedOrange-400">{title}</div>
+          <p className="text-sm leading-snug line-clamp-2 text-muted-foreground text-calicoGray-400">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"

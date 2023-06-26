@@ -23,8 +23,9 @@ const circleClasses = `absolute flex items-center justify-center top-40 `;
 const cloudClasses = `absolute -top-12`;
 const cloudSize = 0.9;
 const photoClasses = `absolute top-3 z-10`
+const textClasses = `flex items-center py-8 lg:py-12 xl:py-0`
     return (
-    <div className="flex flex-col justify-between lg:flex-row">
+    <div className="flex flex-col justify-between xl:flex-row">
         <div className={`${shapeWrapperClasses} ${variants[variant].wrapper}`}>
 
         <Image src={src} alt='/'
@@ -39,8 +40,8 @@ const photoClasses = `absolute top-3 z-10`
                 <IconCloud size={cloudSize}/>
             </div>
         </div>
-        <div className="flex items-center py-8 lg:py-0">
-        <span className="text-[2.5rem] text-center font-brilon text-calicoGray-400">Starting from R{priceText}</span>
+        <div className={`${textClasses} ${variants[variant].mobileTextAligned}`}>
+        <span className="text-[2.5rem]  text-center font-brilon text-calicoGray-400">Starting from R{priceText}</span>
         </div>
     </div>
     

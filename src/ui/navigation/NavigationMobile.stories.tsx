@@ -80,7 +80,7 @@ const Template: ComponentStory<typeof NavigationMobile> = (args) =>
     }
 ;
 
-let navItems = [navItemHome,navItemPhotography, navItemGraphicDesign, navItemPhotoGallery, navItemContact]
+let navItems = [navItemHome,navItemPhotography, navItemGraphicDesign, navItemPhotoGallery, navItemContact];
 
 export const Default = Template.bind({});
 Default.args = {
