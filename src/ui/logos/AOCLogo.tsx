@@ -5,7 +5,7 @@ type AOCLogoProps = {
   height?: number
 }
 export const AOCLogo = ({ width, height }: AOCLogoProps) => {
-  return <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={width} height={height} viewBox="0 0 1185.479 614.711">
+  return <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={width} height={height} viewBox="0 0 950 614.711">
   
   <defs>
     <clipPath id="clip-path">

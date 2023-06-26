@@ -22,11 +22,11 @@ export const Footer = ({credit, backgroundColor}: FooterProps) => {
     return (
     <div className={`${backgroundColor} flex flex-col items-center justify-around h-64 xl:h-72`}>
         <div className='flex gap-2 py-5 xl:gap-4'>
-            <a href="#"><IconEmail /></a>
+            <a href="mailto:info@calicocreatives.net"><IconEmail /></a>
             <a href="#"><IconWeb /></a>
-            <a href="#"><IconFacebook /></a>
-            <a href="#"><IconInsta /></a>
-            <a href="#"><IconWhatsapp /></a>
+            <a href="https://www.facebook.com/profile.php?id=100089310905944&mibextid=LQQJ4d"><IconFacebook /></a>
+            <a href="https://instagram.com/calico.creatives?igshid=NTc4MTIwNjQ2YQ=="><IconInsta /></a>
+            <a href="https://wa.me/27763124321"><IconWhatsapp /></a>
         </div>
         <div>
             <span className='text-2xl text-calicoWhite-400'>Created by Calico Creatives</span>

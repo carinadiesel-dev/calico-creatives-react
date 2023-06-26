@@ -17,70 +17,70 @@ const Template: ComponentStory<typeof NavigationMenuBar> = (args) =>
 
     let navItemHome = {
       title: 'Home',
-      link: '#',
+      link: '/',
     }
 
     let navItemPhotography = {
       title: 'Photography',
-      link: '#',
+      link: '/photography',
 
     }
 
     let navItemGraphicDesign = {
       title: 'Graphic Design',
-      link: '#',
+      link: '/graphic-design',
       subMenu:
       [
         {
           title: "Logo Design",
-          href: "#",
+          href: "/graphic-design/logo-design",
           description:
             "We create professional logos from scratch based on your needs and preferences",
         },
         {
           title: "Animated Graphics",
-          href: "#",
+          href: "/graphic-design/logo-design",
           description:
             "To bring a uniqueness to your logo, we can add some motion.",
         },
         {
           title: "Web Design",
-          href: "#",
+          href: "/graphic-design/web-design",
           description:
             "You are currently viewing one of our websites.",
         },
         {
           title: "Branding & Social",
-          href: "#",
+          href: "/graphic-design/branding-and-social",
           description: "Social media increases the amount of exposure a brand receives and increases traffic",
         },
         {
           title: "Stationary'",
-          href: "#",
+          href: "/graphic-design/stationary",
           description:
             "We offer luxury stationery for all of life’s special celebrations and events.",
         },
         {
           title: "Poster & Ads",
-          href: "#",
+          href: "/graphic-design/posters-and-ads",
           description:
             "Turn anything into a poster",
         },
       ]
     }
 
-    let navItemPhotoGallery = {
-      title: 'Photo Gallery',
-      link: '#',
-    }
+    // let navItemPhotoGallery = {
+    //   title: 'Photo Gallery',
+    //   link: '#',
+    // }
 
     let navItemContact = {
       title: 'Contact',
-      link: '#',
+      link: '/contact',
     }
 ;
 
-let navItems = [navItemHome,navItemPhotography, navItemGraphicDesign, navItemPhotoGallery, navItemContact]
+let navItems = [navItemHome,navItemPhotography, navItemGraphicDesign, navItemContact]
 
 export const Default = Template.bind({});
 Default.args = {

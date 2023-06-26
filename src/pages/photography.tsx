@@ -24,8 +24,8 @@ export default function Photography({}:PhotographyProps){
     return (
         <div>
             <PageTitle title="Photography" backgroundGradient="bg-gradient-to-r from-calicoWhite-200 to-calicoPink-400" titleColor="text-calicoPeach-400" />
-            <div className="px-5 md:px-12 lg:px-16 xl:px-20 2xl:px-28">
-            <div className="grid py-28 lg:gap-36">
+            <div className="px-5 md:px-12 xl:px-20 2xl:px-28">
+            <div className="grid py-28 md:gap-28 lg:gap-36">
                 <Shapes variant="leftAligned" circleText="Wedding" priceText={7000} src={WeddingImg}/>
                 <Shapes variant="rightAligned" circleText="Engagements" priceText={750} src={EngagementImg}/>
                 <Shapes variant="leftAligned" circleText="Newborn" priceText={1200} src={NewbornImg}/>
