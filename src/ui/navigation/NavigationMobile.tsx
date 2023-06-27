@@ -134,14 +134,17 @@ const NavItem : FunctionComponent<NavRow> = ({
 
 export const NavigationMobile = ({navItems}:NavigationMenuBarProps) => {
 return (
+  <div className='flex justify-between'>
+<div className='translate-y-2'>
+  <CCLogo width={223}/>
+  </div>
+  
 <Popover>
   <PopoverTrigger>Open</PopoverTrigger>
   <PopoverContent>
     <NavigationMenu>
   <NavigationMenuList>
-  <div className='ml-10 translate-y-2'>
-  <CCLogo width={223}/>
-  </div>
+  
   
   {/* <div>
   {navItems.map(navItem =>{
@@ -178,6 +181,21 @@ return (
       <ListItem key={'Logo Design'}
                   title={'Logo Design'}
                    href={'/graphic-design/logo-design'} />
+      <ListItem key={'Animated Graphics'}
+                  title={'Animated Graphics'}
+                   href={'/graphic-design/animated-graphics'} />
+      <ListItem key={'Web Design'}
+                  title={'Web Design'}
+                   href={'/graphic-design/web-design'} />
+      <ListItem key={'Branding & Social'}
+                  title={'Branding & Social'}
+                   href={'/graphic-design/branding-and-social'} />
+      <ListItem key={'Stationary'}
+                  title={'Stationary'}
+                   href={'/graphic-design/stationary'} />
+      <ListItem key={'Poster & Ads'}
+                  title={'Poster & Ads'}
+                   href={'/graphic-design/posters-and-ads'} />
     </ul>
     </AccordionContent>
   </AccordionItem>
@@ -216,7 +234,7 @@ return (
   </NavigationMenuList>
 </NavigationMenu></PopoverContent>
 </Popover>
-
+</div>
 
 )
 }
