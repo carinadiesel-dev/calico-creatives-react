@@ -179,7 +179,7 @@ return (
   <AccordionItem value="item-1">
     <AccordionTrigger>Graphic Design</AccordionTrigger>
     <AccordionContent>
-    <ul>
+    <ul className='space-y-2'>
       <ListItem key={'Logo Design'}
                   title={'Logo Design'}
                    href={'/graphic-design/logo-design'} />
@@ -251,12 +251,12 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-xs xl:text-base hover:ring-calicoRedOrange-400 hover:ring-2",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-4xl xl:text-base hover:ring-calicoRedOrange-400 hover:ring-2",
             className
           )}
           {...props}
         >
-          <div className="font-bold leading-none text-md text-calicoRedOrange-400">{title}</div>
+          <div className="text-4xl font-bold leading-none text-calicoRedOrange-400">{title}</div>
           <p className="text-sm leading-snug line-clamp-2 text-muted-foreground text-calicoGray-400">
             {children}
           </p>
