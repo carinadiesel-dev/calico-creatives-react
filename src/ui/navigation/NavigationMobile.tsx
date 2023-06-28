@@ -27,6 +27,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+import { IconHamburger } from '../icons/IconHamburger';
+
 type NavRow = {
   title: string
   link: string
@@ -134,13 +136,13 @@ const NavItem : FunctionComponent<NavRow> = ({
 
 export const NavigationMobile = ({navItems}:NavigationMenuBarProps) => {
 return (
-  <div className='flex justify-between'>
-<div className='translate-y-2'>
+  <div className='flex justify-between px-6 bg-calicoPink-100 bg-opacity-60'>
+<div className='translate-y-4'>
   <CCLogo width={223}/>
   </div>
   
 <Popover>
-  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverTrigger><IconHamburger size={2}/></PopoverTrigger>
   <PopoverContent>
     <NavigationMenu>
   <NavigationMenuList>
