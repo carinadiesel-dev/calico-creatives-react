@@ -46,7 +46,7 @@ const subMenu: { title: string; href: string; description: string }[] = [
     description: "Social media increases the amount of exposure a brand receives and increases traffic",
   },
   {
-    title: "Stationary'",
+    title: "Stationary",
     href: "/graphic-design/stationary",
     description:
       "We offer luxury stationery for all of life’s special celebrations and events.",

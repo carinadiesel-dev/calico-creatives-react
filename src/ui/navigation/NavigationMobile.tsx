@@ -27,6 +27,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+import { IconHamburger } from '../icons/IconHamburger';
+
 type NavRow = {
   title: string
   link: string
@@ -134,14 +136,17 @@ const NavItem : FunctionComponent<NavRow> = ({
 
 export const NavigationMobile = ({navItems}:NavigationMenuBarProps) => {
 return (
+  <div className='flex justify-between px-6 bg-calicoPink-100 bg-opacity-60'>
+<div className='translate-y-4'>
+  <CCLogo width={223}/>
+  </div>
+  
 <Popover>
-  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverTrigger><IconHamburger size={2}/></PopoverTrigger>
   <PopoverContent>
     <NavigationMenu>
   <NavigationMenuList>
-  <div className='ml-10 translate-y-2'>
-  <CCLogo width={223}/>
-  </div>
+  
   
   {/* <div>
   {navItems.map(navItem =>{
@@ -174,10 +179,25 @@ return (
   <AccordionItem value="item-1">
     <AccordionTrigger>Graphic Design</AccordionTrigger>
     <AccordionContent>
-    <ul>
+    <ul className='space-y-2'>
       <ListItem key={'Logo Design'}
                   title={'Logo Design'}
                    href={'/graphic-design/logo-design'} />
+      <ListItem key={'Animated Graphics'}
+                  title={'Animated Graphics'}
+                   href={'/graphic-design/animated-graphics'} />
+      <ListItem key={'Web Design'}
+                  title={'Web Design'}
+                   href={'/graphic-design/web-design'} />
+      <ListItem key={'Branding & Social'}
+                  title={'Branding & Social'}
+                   href={'/graphic-design/branding-and-social'} />
+      <ListItem key={'Stationary'}
+                  title={'Stationary'}
+                   href={'/graphic-design/stationary'} />
+      <ListItem key={'Poster & Ads'}
+                  title={'Poster & Ads'}
+                   href={'/graphic-design/posters-and-ads'} />
     </ul>
     </AccordionContent>
   </AccordionItem>
@@ -216,7 +236,7 @@ return (
   </NavigationMenuList>
 </NavigationMenu></PopoverContent>
 </Popover>
-
+</div>
 
 )
 }
@@ -231,12 +251,12 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-xs xl:text-base hover:ring-calicoRedOrange-400 hover:ring-2",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-4xl xl:text-base hover:ring-calicoRedOrange-400 hover:ring-2",
             className
           )}
           {...props}
         >
-          <div className="font-bold leading-none text-md text-calicoRedOrange-400">{title}</div>
+          <div className="text-4xl font-bold leading-none text-calicoRedOrange-400">{title}</div>
           <p className="text-sm leading-snug line-clamp-2 text-muted-foreground text-calicoGray-400">
             {children}
           </p>
