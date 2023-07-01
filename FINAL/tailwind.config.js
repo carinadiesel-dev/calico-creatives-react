@@ -50,7 +50,6 @@ module.exports = {
           '"Helvetica Neue"',
           'Roboto',
           'Arial',
-          'ClashDisplay',
           'ui-sans-serif',
           'system-ui',
           '-apple-system',

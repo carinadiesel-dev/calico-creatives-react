@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+@font-face {
+  font-family: 'BrilonRegular';
+  src: url('/fonts/Brilon-Regular.otf') format('otf'),
+       url('/fonts/Brilon-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: normal;
+       font-style: normal;
+}
