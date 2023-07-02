@@ -32,17 +32,16 @@ type Card = {
 }
 
 type CardsProps = {
-    cards: Card[]
 }
 
-export const Cards = ({cards}: CardsProps) => {
+export const Cards = ({}: CardsProps) => {
     return (
     <div className="flex flex-col lg:flex-row justify-around h-[100rem] md:h-[130rem] lg:h-[27rem] xl:h-[30rem] 2xl:h-[39rem]  gap-12 lg:gap-8">
-            {cards.map(card =>{
+            {/* {cards.map(card =>{
                 return (
                 <Card {...card}/>
-            )})}
-            {/* <div className={`${cardClasses} bg-calicoPink-400 bg-photography `}>
+            )})} */}
+            <div className={`${cardClasses} bg-calicoPink-400 bg-photography `}>
 
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
@@ -64,7 +63,7 @@ export const Cards = ({cards}: CardsProps) => {
                         href="#">
                             Travel</a>
                     </div>   
-            </div> */}
+            </div>
     </div>
 
     )

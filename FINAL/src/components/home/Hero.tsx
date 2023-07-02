@@ -1,12 +1,10 @@
 import { FunctionComponent,useState, useEffect } from 'react';
 import { CCLogo } from '../logos/CCLogo';
 import React from 'react';
-import Image from 'next/image'
 import heroImg from './Assets/HeroImg.png'
 import heroLarge from './Assets/hero-large.png'
 
-export const Hero = () => {
-    
+export default function Hero(){
     return (
     //     <div className="relative bg-homeGradient bg-contain bg-center bg-no-repeat flex h-[1000px] w-screen xl:overflow-hidden">
     //         <div className='relative xl:w-[60%]'>
@@ -29,7 +27,7 @@ export const Hero = () => {
 
 <div className='relative flex flex-1'>
   <div className='lg:overflow-hidden'>
-  <Image     
+  <img     
 src={heroLarge}
 alt="Picture of the founder"
 />
