@@ -1,6 +1,7 @@
 import React from "react";
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop";
 import { NavigationMobile } from "./NavigationMobile";
+import "../../App.css";
 
 let navItemHome = {
   title: "Home",

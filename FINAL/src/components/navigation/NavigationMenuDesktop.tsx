@@ -1,6 +1,7 @@
 import React, {AnchorHTMLAttributes, FunctionComponent, PropsWithChildren, useState} from 'react'
 import { CCLogo } from '../logos/CCLogo';
 import { cn } from '@/lib/utils';
+import "../../App.css";
 import {
   NavigationMenu,
   NavigationMenuContent,
