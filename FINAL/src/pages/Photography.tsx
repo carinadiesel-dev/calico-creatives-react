@@ -2,7 +2,7 @@ import { PageTitle } from "@/components/pageTitle/PageTitle"
 import { Shapes } from "@/components/photography/Shapes"
 import shapeVariants from "@/components/photography/shapeVariants"
 import {Button} from "@/components/buttons/Button"
-import variants from "@/components/buttons/variants"
+import buttonVariants from "@/components/buttons/variants"
 
 import EngagementImg from "public/images/photography/engagements.jpg"
 import LifestyleImg from "public/images/photography/lifestyle.jpg"
@@ -14,7 +14,7 @@ import WeddingImg from "public/images/photography/wedding.jpg"
 type PhotographyProps = {
     priceText? : number
     shapeVariant?: keyof typeof shapeVariants
-    buttonVariant: keyof typeof buttonVariants
+    variant: keyof typeof buttonVariants
     src: typeof WeddingImg | typeof StudioImg | typeof NewbornImg | typeof LifestyleImg | typeof EngagementImg 
     circleText?: string
 

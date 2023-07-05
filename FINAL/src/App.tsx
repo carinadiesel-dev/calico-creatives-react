@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import "./index.css"
 import "./App.css"
 
@@ -10,44 +8,36 @@ import { Paragraph } from "@/components/paragraph/Paragraph";
 
 function App() {
   const [count, setCount] = useState(0)
-  // let card1 = {
-  //   backgroundColor: "bg-calicoPink-400",
-  //   image: "bg-photography",
-  //   btnText: "Photography",
-  // };
+  let card1 = {
+    backgroundColor: "bg-calicoPink-400",
+    image: "bg-photography",
+    btnText: "Photography",
+  };
 
-  // let card2 = {
-  //   backgroundColor: "bg-calicoOrange-400",
-  //   image: "bg-graphicDesign",
-  //   btnText: "Graphic Design",
-  // };
+  let card2 = {
+    backgroundColor: "bg-calicoOrange-400",
+    image: "bg-graphicDesign",
+    btnText: "Graphic Design",
+  };
 
-  // let card3 = {
-  //   backgroundColor: "bg-calicoPeach-400",
-  //   image: "bg-travel",
-  //   btnText: "Travel",
-  // };
+  let card3 = {
+    backgroundColor: "bg-calicoPeach-400",
+    image: "bg-travel",
+    btnText: "Travel",
+  };
 
-  // const cards = [card1, card2, card3];
+  const cards = [card1, card2, card3];
   return (
     
-      <div className="flex flex-col items-center justify-between mx-auto">
+      <div className="flex flex-col items-center justify-between mx-auto overflow-hidden">
         <Hero />
-         <div>
          <div>
        <Paragraph text="Once upon there was a south african girly girl named Suané. She was always drawn to light and beauty, so she decided to paint with light to show off the colours this world have to offer. She studied graphic design in vancouver, canada. Never defined by a place or a thing, she always aims to try and be a master of all trades, a jack of none." />
          </div>
          <div className="w-full px-16 pb-16">
-           <Cards/>
+           <Cards cards={cards}/>
          </div>
        </div>
-      <a href="https://vitejs.dev" target="_blank">
-        <img src={viteLogo} className="logo" alt="Vite logo" />
-      </a>
-      <a href="https://react.dev" target="_blank">
-        <img src={reactLogo} className="logo react" alt="React logo" />
-      </a>
-    </div>
   );
 }
 
