@@ -21,7 +21,7 @@ const shapeWrapperClasses = `relative pt-44`;
 const circleClasses = `absolute flex items-center justify-center top-40 `;
 const cloudClasses = `absolute -top-12`;
 const cloudSize = 0.9;
-const photoClasses = `absolute top-3 z-10`
+const photoClasses = `absolute top-2 xl:-top-4 z-10 w-[30rem] xl:w-7/12`
 const textClasses = `flex items-center py-8 lg:py-12 xl:py-0`
     return (
     <div className="flex flex-col justify-between xl:flex-row">
