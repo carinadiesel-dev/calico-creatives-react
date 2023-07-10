@@ -1,7 +1,7 @@
 import { PageTitle } from "@/components/pageTitle/PageTitle"
 import { Shapes } from "@/components/photography/Shapes"
 import shapeVariants from "@/components/photography/shapeVariants"
-import {Button} from "@/components/buttons/Button"
+import {CustomButton} from "@/components/buttons/Button"
 import buttonVariants from "@/components/buttons/variants"
 import { Footer } from "@/components/footer/Footer"
 
@@ -34,8 +34,8 @@ export default function Photography() {
                 <Shapes variant="leftAligned" circleText="Studio" priceText={1000} src={StudioImg}/>
             </div>
             <div className="grid gap-8 py-48 place-items-center">
-            <Button variant="pinkFocus" buttonText="View Gallery" />
-            <Button variant="pink"  buttonText="Get a Quote"/>
+            <CustomButton variant="pinkFocus" buttonText="View Gallery" />
+            <CustomButton variant="pink"  buttonText="Get a Quote"/>
             </div>
             
             </div>
