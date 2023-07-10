@@ -1,5 +1,6 @@
 import { PageTitle } from "@/components/pageTitle/PageTitle"
 import { Paragraph } from "@/components/paragraph/Paragraph"
+import { Footer } from "@/components/footer/Footer"
 
 import { CMELogo } from "@/components/logos/CMELogo"
 import { AOCLogo } from "@/components/logos/AOCLogo"
@@ -26,6 +27,7 @@ export default function LogoDesign(){
                 <CustomButton buttonText="Get a Quote" variant="orange" /> 
                 </div>
             </div>
+            <Footer backgroundColor="bg-calicoOrange-400" />
         </div>
     )
 }
