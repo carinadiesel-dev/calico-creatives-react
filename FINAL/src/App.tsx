@@ -7,6 +7,7 @@ import Navbar from "./components/navigation";
 import Home from "./pages/home";
 import Photography from "./pages/photography";
 import LogoDesign from "./pages/graphic-design/logo-design";
+import WebDesign from "./pages/graphic-design/web-design";
 
 
 // Pages coming soon
@@ -20,6 +21,7 @@ export default function App() {
       <Route path="/" element={<Home/>} />
       <Route path="/photography" element={<Photography />} />
       <Route path="/graphic-design/logo-design" element={<LogoDesign/>} />
+      <Route path="/graphic-design/web-design" element={<WebDesign/>} />
       {/* Pages coming soon */}
       <Route path="/travel-blog" element={<TravelBlog />} />
     </Routes>
