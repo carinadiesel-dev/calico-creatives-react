@@ -26,9 +26,7 @@ export default function WebDesign() {
           <img src={WebDesignImg} alt="" />
         </div>
         <div className="py-28">
-          <CustomButton variant={"pink"} buttonText="Get a quote">
-            Get a Quote
-          </CustomButton>
+          <CustomButton variant={"pink"} buttonText="Get a quote"/>
         </div>
       </div>
       <Footer backgroundColor="bg-calicoPink-400" />
