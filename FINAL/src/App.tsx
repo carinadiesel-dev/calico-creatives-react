@@ -9,6 +9,7 @@ import Photography from "./pages/photography";
 import LogoDesign from "./pages/graphic-design/logo-design";
 import WebDesign from "./pages/graphic-design/web-design";
 import BrandingAndSM from "./pages/graphic-design/branding-and-social-media";
+import StationaryAndEvents from "./pages/graphic-design/stationary-and-events";
 
 
 // Pages coming soon
@@ -23,7 +24,8 @@ export default function App() {
       <Route path="/photography" element={<Photography />} />
       <Route path="/graphic-design/logo-design" element={<LogoDesign/>} />
       <Route path="/graphic-design/web-design" element={<WebDesign/>} />                  
-      <Route path="/graphic-design/branding-and-social-media" element={<BrandingAndSM />}/>                  
+      <Route path="/graphic-design/branding-and-social-media" element={<BrandingAndSM />}/> 
+      <Route path="/graphic-design/stationary-and-events" element={<StationaryAndEvents/>} />                 
       {/* Pages coming soon */}
       <Route path="/travel-blog" element={<TravelBlog />} />
     </Routes>
