@@ -11,6 +11,7 @@ import WebDesign from "./pages/graphic-design/web-design";
 import BrandingAndSM from "./pages/graphic-design/branding-and-social-media";
 import StationaryAndEvents from "./pages/graphic-design/stationary-and-events";
 import PostersAndAds from "./pages/graphic-design/posters-and-ads";
+import AnimatedGraphics from "./pages/graphic-design/animated-graphics";
 
 
 // Pages coming soon
@@ -24,7 +25,8 @@ export default function App() {
       <Route path="/" element={<Home/>} />
       <Route path="/photography" element={<Photography />} />
       <Route path="/graphic-design/logo-design" element={<LogoDesign/>} />
-      <Route path="/graphic-design/web-design" element={<WebDesign/>} />                  
+      <Route path="/graphic-design/web-design" element={<WebDesign/>} />
+      <Route path="/graphic-design/animated-graphics" element={<AnimatedGraphics/>} />                  
       <Route path="/graphic-design/branding-and-social-media" element={<BrandingAndSM />}/> 
       <Route path="/graphic-design/stationary-and-events" element={<StationaryAndEvents/>} />                 
       <Route path="/graphic-design/posters-and-ads" element={<PostersAndAds/>} />
