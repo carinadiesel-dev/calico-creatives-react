@@ -12,6 +12,7 @@ import BrandingAndSM from "./pages/graphic-design/branding-and-social-media";
 import StationaryAndEvents from "./pages/graphic-design/stationary-and-events";
 import PostersAndAds from "./pages/graphic-design/posters-and-ads";
 import AnimatedGraphics from "./pages/graphic-design/animated-graphics";
+import Contact from "./pages/contact";
 
 
 // Pages coming soon
@@ -30,6 +31,8 @@ export default function App() {
       <Route path="/graphic-design/branding-and-social-media" element={<BrandingAndSM />}/> 
       <Route path="/graphic-design/stationary-and-events" element={<StationaryAndEvents/>} />                 
       <Route path="/graphic-design/posters-and-ads" element={<PostersAndAds/>} />
+
+      <Route path="/contact" element={<Contact />} />
       {/* Pages coming soon */}
       <Route path="/travel-blog" element={<TravelBlog />} />
     </Routes>

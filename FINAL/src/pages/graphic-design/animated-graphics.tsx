@@ -4,6 +4,7 @@ import { CustomButton } from "@/components/buttons/Button";
 import buttonVariants from "@/components/buttons/variants";
 import { Footer } from "@/components/footer/Footer";
 import video from "../../assets/video/CME-animated-logo.mp4"
+import { IconPlay } from "@/components/icons/IconPlay";
 
 export default function AnimatedGraphics(){
     return (
