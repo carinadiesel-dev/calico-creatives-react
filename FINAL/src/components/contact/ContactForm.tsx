@@ -49,7 +49,7 @@ export function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-3 bg-calicoPink-400"
+        className="flex flex-col gap-8 px-16 py-20 bg-calicoPink-400"
       >
         <FormField
           control={form.control}
