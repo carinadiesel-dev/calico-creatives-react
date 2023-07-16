@@ -4,6 +4,7 @@ import { Paragraph } from "@/components/paragraph/Paragraph"
 import { CustomButton } from "@/components/buttons/Button";
 import buttonVariants from "@/components/buttons/variants";
 import { Footer } from "@/components/footer/Footer";
+import {Link, Route, Routes} from 'react-router-dom';
 
 type PostersAndAdsProps = {
     title: string
@@ -24,7 +25,7 @@ export default function PostersAndAds(){
                 <PostersGallery />
             </div>
             <div className="py-28">
-                <CustomButton variant={"peach"} buttonText="Get a Quote"/>
+            <Link to="/contact"> <CustomButton variant={"peach"} buttonText="Get a Quote"/> </Link>
             </div>
             </div>
             <Footer backgroundColor="bg-calicoPeach-300" />

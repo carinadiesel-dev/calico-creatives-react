@@ -3,7 +3,9 @@ import { Paragraph } from "@/components/paragraph/Paragraph"
 import { CustomButton } from "@/components/buttons/Button";
 import buttonVariants from "@/components/buttons/variants";
 import { Footer } from "@/components/footer/Footer";
-import { ImageRow } from "@/components/branding/ImageRow"
+import { ImageRow } from "@/components/branding/ImageRow";
+import {Link, Route, Routes} from 'react-router-dom';
+
 
 // type BrandingAndSocialProps = {
 //     title: string
@@ -23,7 +25,7 @@ export default function BrandingAndSM(){
                 <ImageRow />
                 </div>
                 <div className="py-28">
-                <CustomButton variant={"orange"} buttonText="Get a Quote" />
+                <Link to="/contact"><CustomButton variant={"orange"} buttonText="Get a Quote" /> </Link>
                 </div>
                 
             </div>

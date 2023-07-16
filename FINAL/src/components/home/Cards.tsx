@@ -2,8 +2,9 @@ import React, { FunctionComponent } from "react";
 
 type CardRow = {
     backgroundColor : string
-    image?: string // Testing (CHANGE BACK !!!)
-    btnText: string 
+    image: string
+    btnText: string
+    link: string 
 }
 
 const cardClasses = 'flex flex-col justify-end items-center h-full lg:w-1/3 bg-contain bg-no-repeat bg-bottom';
@@ -13,14 +14,15 @@ const buttonClasses = "bg-white/80 w-full font-brilon text-[2.5rem] lg:text-3xl 
 const Card: FunctionComponent<CardRow> = ({
     backgroundColor,
     image,
-    btnText
+    btnText,
+    link
 }) => {
     return (
 <div className={`${cardClasses} ${backgroundColor} ${image}`}>
                     <div className={btnContainerClasses}>
                         
                         <a className={buttonClasses} 
-                        href="#">
+                        href={link}>
                             {btnText}</a>
                     </div>   
                 </div>

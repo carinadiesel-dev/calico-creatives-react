@@ -4,6 +4,7 @@ import { StationaryGallery } from "@/components/stationary/StationaryGallery"
 import { CustomButton } from "@/components/buttons/Button";
 import buttonVariants from "@/components/buttons/variants";
 import { Footer } from "@/components/footer/Footer";
+import { Link } from "react-router-dom";
 
 type StationaryProps = {
     title: string
@@ -23,7 +24,7 @@ export default function StationaryAndEvents(){
             <StationaryGallery />
             </div>
             <div className="px-5 py-16 lg:py-28 md:px-12 lg:px-0">
-                <CustomButton variant={"peach"} buttonText="Get a quote" />
+           <Link to="/contact"> <CustomButton variant={"peach"} buttonText="Get a quote" /></Link>
             </div>
             </div>
             <Footer backgroundColor="bg-calicoPeach-300" />

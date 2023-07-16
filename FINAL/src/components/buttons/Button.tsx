@@ -5,6 +5,7 @@ import buttonVariants from '@/components/buttons/variants'
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   buttonText : string 
   variant?: keyof typeof buttonVariants
+  
 }
 
 export const CustomButton = ({ buttonText ="Get a quote", variant = "pink", ...rest }: ButtonProps) => {

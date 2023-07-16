@@ -5,6 +5,8 @@ import buttonVariants from "@/components/buttons/variants";
 import { Footer } from "@/components/footer/Footer";
 import video from "../../assets/video/CME-animated-logo.mp4"
 import { IconPlay } from "@/components/icons/IconPlay";
+import {Link, Route, Routes} from 'react-router-dom';
+
 
 export default function AnimatedGraphics(){
     return (
@@ -18,7 +20,7 @@ export default function AnimatedGraphics(){
                 </video>
                              
                 <div className="py-28">
-                <CustomButton variant={'peach'} buttonText="Get a Quote"/>
+                <Link to="/contact"><CustomButton variant={'peach'} buttonText="Get a Quote"/></Link>
                 </div>
                 
             </div>

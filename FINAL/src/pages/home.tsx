@@ -9,18 +9,21 @@ export default function Home() {
     backgroundColor: "bg-calicoPink-400",
     image: "bg-photography",
     btnText: "Photography",
+    link: "./photography"
   };
 
   let card2 = {
     backgroundColor: "bg-calicoOrange-400",
     image: "bg-graphicDesign",
     btnText: "Graphic Design",
+    link: "#"
   };
 
   let card3 = {
     backgroundColor: "bg-calicoPeach-400",
     image: "bg-travel",
     btnText: "Travel",
+    link: "/travel-blog"
   };
 
   const cards = [card1, card2, card3];
