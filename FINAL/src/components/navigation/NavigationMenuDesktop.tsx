@@ -151,13 +151,13 @@ return (
       </NavigationMenuContent>
     </NavigationMenuItem>
 
-{/* <NavigationMenuItem>
-  <a href="#" legacyBehavior passHref>
+<NavigationMenuItem>
+  <a href="#">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photo Gallery
     </NavigationMenuLink>
   </a>
-</NavigationMenuItem> */}
+</NavigationMenuItem>
 
 <NavigationMenuItem>
   <a href="/contact">
