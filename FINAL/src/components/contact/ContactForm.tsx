@@ -122,14 +122,16 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-
-        
+        <button className="flex items-center justify-center py-5 font-sans text-xl font-bold text-white border-4 rounded-full bg-calicoPink-400 hover:text-calicoPink-400 hover:bg-white">
+          Submit
+        </button>
       </form>
     </Form>
   );
 }
 
-{/* <button className="flex justify-center items-center rounded-full bg-CalicoOrange-400 text-white h-[50px] w-[200px]">
+{
+  /* <button className="flex justify-center items-center rounded-full bg-CalicoOrange-400 text-white h-[50px] w-[200px]">
 
 {isSubmitting
   ? <div role="status">
@@ -148,4 +150,5 @@ export function ContactForm() {
   : "Submit"
 }
 
-</button> */}
+</button> */
+}
