@@ -19,9 +19,13 @@ export default function AnimatedGraphics(){
     // When done,show icon again
 
     const handleToggle = () => {
-        setIsPlaying((current) => !current);
-        setIsVisible((current) => !current)
+        setIsPlaying((current) => !current); 
+        handleVisibility();
       };
+    
+    const handleVisibility = () => {
+        setIsVisible((current) => !current)
+    }
 
     const showButtonClasses = isVisible ? 'block' : 'hidden';
     return (
@@ -33,7 +37,7 @@ export default function AnimatedGraphics(){
                 {/* <video className="w-[90vw] md:w-[75vw] xl:w-[60vw]" ref={videoRef} >
                     <source src={video} type="video/mp4"  />
                 </video> */}
-                <ReactPlayer url={video} playing={isPlaying}
+                <ReactPlayer url={video} playing={isPlaying} onEnded={handleToggle}
             />
             
             <div className={`absolute ${showButtonClasses}`}>
