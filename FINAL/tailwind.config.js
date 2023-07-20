@@ -2,10 +2,13 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    // './index.html',
+    // './pages/**/*.{ts,tsx}',
+    // './components/**/*.{ts,tsx}',
+    // './app/**/*.{ts,tsx}',
+    // './src/**/*.{ts,tsx}',
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
 	],
   theme: {
     container: {
@@ -79,19 +82,19 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage:{
-        'cloud': 'url(public/images/vectorimages/cloud.png)',
+        'cloud': 'url(src/assets/vectorimages/cloud.png)',
 
-        'homeGradient': "linear-gradient(to right, rgba(245, 168, 146, 1), rgba(255, 255, 255, 1)), url(public/images/vectorimages/cloud.png)",
+        'homeGradient': "linear-gradient(to right, rgba(245, 168, 146, 1), rgba(255, 255, 255, 1)), url(src/assets/vectorimages/cloud.png)",
 
         'heroImg': 'url(public/images/hero-images/HeroImg.png)',
 
-        'single' : 'linear-gradient(to right, rgba(255, 255, 255, 0.53), rgba(245, 168, 146, 1)), url(public/images/vectorimages/cloud.png)',
+        'single' : 'linear-gradient(to right, rgba(255, 255, 255, 0.53), rgba(245, 168, 146, 1)), url(./src/assets/vectorimages/cloud.png)',
 
-        'photography': 'url(public/images/vectorimages/Photography.png)',
+        'photography': 'url(./src/assets/vectorimages/Photography.png)',
 
-        'graphicDesign': 'url(public/images/vectorimages/GraphicDesign.png)',
+        'graphicDesign': 'url(./src/assets/vectorimages/GraphicDesign.png)',
 
-        'travel': 'url(public/images/vectorimages/Travel.png)'
+        'travel': 'url(./src/assets/vectorimages/Travel.png)'
       }
     },
   },

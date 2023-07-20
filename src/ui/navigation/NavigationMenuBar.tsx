@@ -63,7 +63,7 @@ type NavItem = {
 
 }
 
-type NavigationMenuBarProps = {
+type NavigationMenuDesktopProps = {
   navItems: NavItem[]
 }
 
