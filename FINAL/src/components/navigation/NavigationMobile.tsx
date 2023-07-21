@@ -1,6 +1,11 @@
-import React, {AnchorHTMLAttributes, FunctionComponent, PropsWithChildren, useState} from 'react'
-import { CCLogo } from '../logos/CCLogo';
-import { cn } from '@/lib/utils';
+import React, {
+  AnchorHTMLAttributes,
+  FunctionComponent,
+  PropsWithChildren,
+  useState,
+} from "react";
+import { CCLogo } from "../logos/CCLogo";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,30 +14,32 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
-import { navigationMenuTriggerStyle, } from "@/components/ui/navigation-menu";
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
+import { Route, Routes, Link } from "react-router-dom"
 
-import { IconHamburger } from '../icons/IconHamburger';
+import { Separator } from "../ui/separator";
+
+import { IconHamburger } from "../icons/IconHamburger";
 
 type NavRow = {
-  title: string
-  link: string
-  subMenu?: { title: string; href: string; description: string }[]
-}
+  title: string;
+  link: string;
+  subMenu?: { title: string; href: string; description: string }[];
+};
 
 const subMenu: { title: string; href: string; description: string }[] = [
   {
@@ -44,19 +51,18 @@ const subMenu: { title: string; href: string; description: string }[] = [
   {
     title: "Animated Graphics",
     href: "/graphic-design/logo-design",
-    description:
-      "To bring a uniqueness to your logo, we can add some motion.",
+    description: "To bring a uniqueness to your logo, we can add some motion.",
   },
   {
     title: "Web Design",
     href: "/graphic-design/web-design",
-    description:
-      "You are currently viewing one of our websites.",
+    description: "You are currently viewing one of our websites.",
   },
   {
     title: "Branding & Social",
     href: "/graphic-design/branding-and-social",
-    description: "Social media increases the amount of exposure a brand receives and increases traffic",
+    description:
+      "Social media increases the amount of exposure a brand receives and increases traffic",
   },
   {
     title: "Stationary'",
@@ -67,31 +73,24 @@ const subMenu: { title: string; href: string; description: string }[] = [
   {
     title: "Poster & Ads",
     href: "/graphic-design/posters-and-ads",
-    description:
-      "Turn anything into a poster",
+    description: "Turn anything into a poster",
   },
-]
+];
 
-type NavItem = {
-
-}
+type NavItem = {};
 
 type NavigationMenuBarProps = {
-  navItems: NavItem[]
-}
+  navItems: NavItem[];
+};
 
-const NavItem : FunctionComponent<NavRow> = ({
-  title,
-  link,
-  subMenu
-}) => {
+const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
   const hasSubMenu = subMenu !== undefined ? true : false;
   return (
-  <NavigationMenuItem className='h-full'>
-    {hasSubMenu === true ?
-      <>
-      {/* <NavigationMenuTrigger>{title}</NavigationMenuTrigger><NavigationMenuContent className='bg-calicoPink-100'> */}
-     {/* //       <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
+    <NavigationMenuItem className="h-full">
+      {hasSubMenu === true ? (
+        <>
+          {/* <NavigationMenuTrigger>{title}</NavigationMenuTrigger><NavigationMenuContent className='bg-calicoPink-100'> */}
+          {/* //       <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
 
       //           <ListItem
       //             key={item.title}
@@ -105,103 +104,113 @@ const NavItem : FunctionComponent<NavRow> = ({
       //     </NavigationMenuContent>
     */}
           <Accordion type="single" collapsible>
-  <AccordionItem value="item-1">
-    <AccordionTrigger>{title}</AccordionTrigger>
-    <AccordionContent>
-    <ul>
-    {subMenu && subMenu.map((item) => (
-                <ListItem
-                  key={item.title}
-                  title={item.title}
-                  href={item.href}
-                />
-              ))}
-    </ul>
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>
-</>
-      :
-  <a href={link}>
-    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-      {title}
-    </NavigationMenuLink>
-  </a>
-}
-</NavigationMenuItem>
-  )
-}
+            <AccordionItem value="item-1">
+              <AccordionTrigger>{title}</AccordionTrigger>
+              <AccordionContent>
+                <ul>
+                  {subMenu &&
+                    subMenu.map((item) => (
+                      <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                      />
+                    ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </>
+      ) : (
+        <Link to={link}>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            {title}
+          </NavigationMenuLink>
+        </Link>
+      )}
+    </NavigationMenuItem>
+  );
+};
 
+export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
+  return (
+    <div className="flex justify-between px-6 bg-calicoPink-100 bg-opacity-60">
+      <div className="translate-y-4">
+        <CCLogo width={223} />
+      </div>
 
-export const NavigationMobile = ({navItems}:NavigationMenuBarProps) => {
-return (
-  <div className='flex justify-between px-6 bg-calicoPink-100 bg-opacity-60'>
-<div className='translate-y-4'>
-  <CCLogo width={223}/>
-  </div>
-  
-<Popover>
-  <PopoverTrigger><IconHamburger size={2}/></PopoverTrigger>
-  <PopoverContent>
-    <NavigationMenu>
-  <NavigationMenuList>
-  
-  
-  {/* <div>
+      <Popover>
+        <PopoverTrigger>
+          <IconHamburger size={2} />
+        </PopoverTrigger>
+        <PopoverContent>
+          <NavigationMenu>
+            <NavigationMenuList className="py-8">
+              {/* <div>
   {navItems.map(navItem =>{
             return (
             <NavItem {...navItem}/>
             )
         })}
   </div> */}
-  <NavigationMenuItem>
-  <a href="/">
-    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-      Home
-    </NavigationMenuLink>
-  </a>
-</NavigationMenuItem>
-
-<NavigationMenuItem>
-  <a href="/photography">
-    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-    Photography
-    </NavigationMenuLink>
-  </a>
-</NavigationMenuItem>
-
-
-
-
-  <NavigationMenuItem>
-  <Accordion type="single" collapsible>
-  <AccordionItem value="item-1">
-    <AccordionTrigger>Graphic Design</AccordionTrigger>
-    <AccordionContent>
-    <ul className='space-y-2'>
-      <ListItem key={'Logo Design'}
-                  title={'Logo Design'}
-                   href={'/graphic-design/logo-design'} />
-      <ListItem key={'Animated Graphics'}
-                  title={'Animated Graphics'}
-                   href={'/graphic-design/animated-graphics'} />
-      <ListItem key={'Web Design'}
-                  title={'Web Design'}
-                   href={'/graphic-design/web-design'} />
-      <ListItem key={'Branding & Social'}
-                  title={'Branding & Social'}
-                   href={'/graphic-design/branding-and-social-media'} />
-      <ListItem key={'Stationary'}
-                  title={'Stationary'}
-                   href={'/graphic-design/stationary-and-events'} />
-      <ListItem key={'Poster & Ads'}
-                  title={'Poster & Ads'}
-                   href={'/graphic-design/posters-and-ads'} />
-    </ul>
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>
-      {/* <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
+              <NavigationMenuItem>
+                <Link to="/">
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Home
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+<Separator />
+              <NavigationMenuItem>
+                <Link to="/photography">
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Photography
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <Separator />
+              <NavigationMenuItem>
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>Graphic Design</AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="pt-4 space-y-4">
+                        <ListItem
+                          key={"Logo Design"}
+                          title={"Logo Design"}
+                          href={"/graphic-design/logo-design"}
+                        />
+                        <ListItem
+                          key={"Animated Graphics"}
+                          title={"Animated Graphics"}
+                          href={"/graphic-design/animated-graphics"}
+                        />
+                        <ListItem
+                          key={"Web Design"}
+                          title={"Web Design"}
+                          href={"/graphic-design/web-design"}
+                        />
+                        <ListItem
+                          key={"Branding & Social"}
+                          title={"Branding & Social"}
+                          href={"/graphic-design/branding-and-social-media"}
+                        />
+                        <ListItem
+                          key={"Stationary"}
+                          title={"Stationary"}
+                          href={"/graphic-design/stationary-and-events"}
+                        />
+                        <ListItem
+                          key={"Poster & Ads"}
+                          title={"Poster & Ads"}
+                          href={"/graphic-design/posters-and-ads"}
+                        />
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+                </NavigationMenuItem>
+                {/* <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
       <NavigationMenuContent className='bg-calicoPink-100'>
         <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
         {subMenu.map((item) => (
@@ -217,28 +226,30 @@ return (
       </NavigationMenuContent>
     </NavigationMenuItem> */}
 
-{/* <NavigationMenuItem>
-  <Link href="#" legacyBehavior passHref>
+<Separator />
+                <NavigationMenuItem>
+  <Link to="#">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photo Gallery
     </NavigationMenuLink>
-  </Link>*/}
-</NavigationMenuItem> 
+  </Link>
 
-<NavigationMenuItem>
-  <a href="/contact">
-    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-    Contact
-    </NavigationMenuLink>
-  </a>
-</NavigationMenuItem>
-  </NavigationMenuList>
-</NavigationMenu></PopoverContent>
-</Popover>
-</div>
-
-)
-}
+              </NavigationMenuItem>
+              <Separator />
+              <NavigationMenuItem>
+                <Link to="/contact">
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Contact
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </PopoverContent>
+      </Popover>
+    </div>
+  );
+};
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -250,18 +261,20 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-4xl xl:text-base hover:ring-calicoRedOrange-400 hover:ring-2",
+            "block select-none space-y-1 rounded-md p-3 text-4xl leading-none no-underline outline-none transition-colors hover:ring-2 hover:ring-calicoRedOrange-400 xl:text-base",
             className
           )}
           {...props}
         >
-          <div className="text-4xl font-bold leading-none text-calicoRedOrange-400">{title}</div>
-          <p className="text-sm leading-snug line-clamp-2 text-muted-foreground text-calicoGray-400">
+          <div className="text-4xl font-bold leading-none text-calicoRedOrange-400">
+            {title}
+          </div>
+          <p className="text-sm leading-snug text-muted-foreground line-clamp-2 text-calicoGray-400">
             {children}
           </p>
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";
