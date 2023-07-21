@@ -193,7 +193,7 @@ return (
                    href={'/graphic-design/branding-and-social-media'} />
       <ListItem key={'Stationary'}
                   title={'Stationary'}
-                   href={'/graphic-design/stationary'} />
+                   href={'/graphic-design/stationary-and-events'} />
       <ListItem key={'Poster & Ads'}
                   title={'Poster & Ads'}
                    href={'/graphic-design/posters-and-ads'} />
