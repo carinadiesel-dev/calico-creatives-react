@@ -20,7 +20,7 @@ type FooterProps = {
 
 export const Footer = ({credit, backgroundColor}: FooterProps) => {
     return (
-    <div className={`${backgroundColor} flex flex-col items-center justify-around h-64 xl:h-72 w-full xl:mt-28`}>
+    <div className={`${backgroundColor} flex flex-col items-center justify-around h-64 xl:h-72 w-full`}>
         <div className='flex gap-2 py-5 xl:gap-4'>
             <a href="mailto:info@calicocreatives.net"><IconEmail /></a>
             <a href="#"><IconWeb /></a>
