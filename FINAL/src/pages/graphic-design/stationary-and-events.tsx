@@ -23,7 +23,7 @@ export default function StationaryAndEvents(){
             <div className="px-5 md:px-12 lg:w-2/3">
             <StationaryGallery />
             </div>
-            <div className="px-5 py-16 lg:py-28 md:px-12 lg:px-0">
+            <div className="px-5 py-16 lg:py-28 xl:py-36 md:px-12 lg:px-0">
            <Link to="/contact"> <CustomButton variant={"peach"} buttonText="Get a quote" /></Link>
             </div>
             </div>

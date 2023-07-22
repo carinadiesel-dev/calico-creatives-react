@@ -26,7 +26,7 @@ export default function WebDesign() {
         <div className="w-full px-5 md:px-12 lg:px-16 xl:px-20 2xl:px-28">
           <img src={WebDesignImg} alt="" />
         </div>
-        <div className="py-28">
+        <div className="py-28 xl:mb-16">
         <Link to="/contact"> <CustomButton variant={"pink"} buttonText="Get a quote"/> </Link>
         </div>
       </div>

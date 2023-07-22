@@ -34,7 +34,7 @@ export default function Home() {
          <div>
        <Paragraph text="Once upon there was a south african girly girl named Suané. She was always drawn to light and beauty, so she decided to paint with light to show off the colours this world have to offer. She studied graphic design in vancouver, canada. Never defined by a place or a thing, she always aims to try and be a master of all trades, a jack of none." />
          </div>
-         <div className="w-full px-16 pb-16">
+         <div className="w-full px-16 pb-16 my-20">
            <Cards cards={cards}/>
          </div>
          <Footer backgroundColor="bg-calicoPink-400" />

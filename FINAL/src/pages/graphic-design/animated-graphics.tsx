@@ -46,7 +46,7 @@ export default function AnimatedGraphics(){
                 
                     
             </div>
-            <div className="py-28">
+            <div className="py-28 xl:mb-16">
                 <Link to="/contact"><CustomButton variant={'peach'} buttonText="Get a Quote"/></Link>
                 </div>
             <Footer backgroundColor="bg-calicoPeach-300"/>
