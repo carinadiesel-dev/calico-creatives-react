@@ -17,6 +17,7 @@ import Contact from "./pages/contact";
 
 // Pages coming soon
 import TravelBlog from "./pages/travel-blog";
+import PhotoGallery from "./pages/photo-gallery";
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
       <Route path="/contact" element={<Contact />} />
       {/* Pages coming soon */}
       <Route path="/travel-blog" element={<TravelBlog />} />
+      <Route path="/photo-gallery" element={<PhotoGallery />} />
     </Routes>
     </>
   )
