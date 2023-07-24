@@ -2,7 +2,6 @@ import { IconCircleFilled } from "@/components/icons/IconCircleFilled";
 import { IconOvalFilled } from "@/components/icons/IconOvalFilled";
 import { IconCloud } from "../icons/IconCloud";
 import variants from '@/components/photography/shapeVariants'
-import Image from 'next/image'
 import WeddingImg from './Assets/wedding.jpg'
 import StudioImg from './Assets/studio.jpg'
 import NewbornImg from './Assets/newborn.png'
@@ -28,7 +27,7 @@ const textClasses = `flex items-center py-8 lg:py-12 xl:py-0`
     <div className="flex flex-col justify-between xl:flex-row">
         <div className={`${shapeWrapperClasses} ${variants[variant].wrapper}`}>
 
-        <Image src={src} alt='/'
+        <img src={src} alt='/'
         height={717} className={`${photoClasses} ${variants[variant].photo} `}
         />
             <IconOvalFilled />

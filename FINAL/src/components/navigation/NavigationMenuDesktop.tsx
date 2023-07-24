@@ -1,7 +1,7 @@
 import React, {AnchorHTMLAttributes, FunctionComponent, PropsWithChildren, useState} from 'react'
 import { CCLogo } from '../logos/CCLogo';
-import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import "../../App.css";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -90,11 +90,11 @@ const NavItem : FunctionComponent<NavRow> = ({
             </ul>
           </NavigationMenuContent></>
       :
-  <Link href={link} legacyBehavior passHref>
+  <a href={link}>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
       {title}
     </NavigationMenuLink>
-  </Link>
+  </a>
 }
 </NavigationMenuItem>
   )
@@ -118,19 +118,19 @@ return (
         })}
   </div> */}
   <NavigationMenuItem>
-  <Link href="/" legacyBehavior passHref>
+  <a href="/">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
       Home
     </NavigationMenuLink>
-  </Link>
+  </a>
 </NavigationMenuItem>
 
 <NavigationMenuItem>
-  <Link href="/photography" legacyBehavior passHref>
+  <a href="/photography">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photography
     </NavigationMenuLink>
-  </Link>
+  </a>
 </NavigationMenuItem>
 
 
@@ -152,19 +152,19 @@ return (
     </NavigationMenuItem>
 
 {/* <NavigationMenuItem>
-  <Link href="#" legacyBehavior passHref>
+  <a href="#" legacyBehavior passHref>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photo Gallery
     </NavigationMenuLink>
-  </Link>
+  </a>
 </NavigationMenuItem> */}
 
 <NavigationMenuItem>
-  <Link href="/contact" legacyBehavior passHref>
+  <a href="/contact">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Contact
     </NavigationMenuLink>
-  </Link>
+  </a>
 </NavigationMenuItem>
   </NavigationMenuList>
 </NavigationMenu>

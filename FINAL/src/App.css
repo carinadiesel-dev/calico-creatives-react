@@ -1,7 +1,5 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -41,11 +39,4 @@
   color: #888;
 }
 
-@font-face {
-  font-family: 'BrilonRegular';
-  src: url('/fonts/Brilon-Regular.otf') format('otf'),
-       url('/fonts/Brilon-Regular.ttf') format('truetype');
-       font-weight: 400;
-       font-display: normal;
-       font-style: normal;
-}
+
