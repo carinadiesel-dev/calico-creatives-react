@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "@/components/home/Hero";
 import { Cards } from "@/components/home/Cards";
 import { Paragraph } from "@/components/paragraph/Paragraph";
+import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
   let card1 = {
@@ -33,6 +34,7 @@ export default function Home() {
          <div className="w-full px-16 pb-16">
            <Cards cards={cards}/>
          </div>
+         <Footer backgroundColor="bg-calicoPink-400" />
        </div>
   );
 }

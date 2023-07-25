@@ -1,7 +1,7 @@
 const text = "text-calicoGray-400";
 const hoverText = "hover:text-calicoWhite-400"
 
-const buttonVariants = {
+const buttonCustomVariants = {
   pink: {
     base: `bg-calicoPink-100 ${text}`,
     border: "border-calicoPink-400",
@@ -25,4 +25,4 @@ const buttonVariants = {
 
 }
 
-export default buttonVariants;
+export default buttonCustomVariants;
