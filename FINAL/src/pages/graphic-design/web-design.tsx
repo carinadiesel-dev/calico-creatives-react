@@ -1,5 +1,6 @@
 import { PageTitle } from "@/components/pageTitle/PageTitle";
 import { Paragraph } from "@/components/paragraph/Paragraph";
+import {Link, Route, Routes} from 'react-router-dom';
 
 import WebDesignImg from "../../assets/web-design.png";
 
@@ -26,9 +27,7 @@ export default function WebDesign() {
           <img src={WebDesignImg} alt="" />
         </div>
         <div className="py-28">
-          <CustomButton variant={"pink"} buttonText="Get a quote">
-            Get a Quote
-          </CustomButton>
+        <Link to="/contact"> <CustomButton variant={"pink"} buttonText="Get a quote"/> </Link>
         </div>
       </div>
       <Footer backgroundColor="bg-calicoPink-400" />

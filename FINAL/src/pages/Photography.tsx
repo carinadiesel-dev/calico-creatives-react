@@ -4,6 +4,7 @@ import shapeVariants from "@/components/photography/shapeVariants"
 import {CustomButton} from "@/components/buttons/Button"
 import buttonVariants from "@/components/buttons/variants"
 import { Footer } from "@/components/footer/Footer"
+import {Link, Route, Routes} from 'react-router-dom';
 
 import EngagementImg from "../assets/photography/lifestyle.jpg"
 import LifestyleImg from "../assets/photography/lifestyle.jpg"
@@ -34,8 +35,8 @@ export default function Photography() {
                 <Shapes variant="leftAligned" circleText="Studio" priceText={1000} src={StudioImg}/>
             </div>
             <div className="grid gap-8 py-48 place-items-center">
-            <CustomButton variant="pinkFocus" buttonText="View Gallery" />
-            <CustomButton variant="pink"  buttonText="Get a Quote"/>
+            <CustomButton variant="pinkFocus" buttonText="View Gallery"/>
+<Link to="/contact"><CustomButton variant="pink"  buttonText="Get a Quote"/></Link>
             </div>
             
             </div>

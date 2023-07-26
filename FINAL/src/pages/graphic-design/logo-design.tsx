@@ -7,6 +7,7 @@ import { AOCLogo } from "@/components/logos/AOCLogo"
 
 import { CustomButton } from "@/components/buttons/Button"
 import { buttonCustomVariants } from "@/components/buttons/variants"
+import {Link, Route, Routes} from 'react-router-dom';
 
 type LogoDesignProps = {
     text: string
@@ -24,7 +25,7 @@ export default function LogoDesign(){
                 <AOCLogo />
                 </div>
                 <div className="py-28">
-                <CustomButton buttonText="Get a Quote" variant="orange" /> 
+                <Link to="/contact">  <CustomButton buttonText="Get a Quote" variant="orange" /> </Link>
                 </div>
             </div>
             <Footer backgroundColor="bg-calicoOrange-400" />

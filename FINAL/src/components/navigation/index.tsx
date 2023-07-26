@@ -1,7 +1,8 @@
 import React from "react";
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop";
 import { NavigationMobile } from "./NavigationMobile";
-import "../../App.css";
+// import "../../App.css";
+import "../../index.css"
 
 let navItemHome = {
   title: "Home",
@@ -25,7 +26,7 @@ let navItemGraphicDesign = {
     },
     {
       title: "Animated Graphics",
-      href: "/graphic-design/logo-design",
+      href: "/graphic-design/animated-graphics",
       description:
         "To bring a uniqueness to your logo, we can add some motion.",
     },
@@ -36,13 +37,13 @@ let navItemGraphicDesign = {
     },
     {
       title: "Branding & Social",
-      href: "/graphic-design/branding-and-social",
+      href: "/graphic-design/branding-and-social-media",
       description:
         "Social media increases the amount of exposure a brand receives and increases traffic",
     },
     {
       title: "Stationary'",
-      href: "/graphic-design/stationary",
+      href: "/graphic-design/stationary-and-events",
       description:
         "We offer luxury stationery for all of life’s special celebrations and events.",
     },
