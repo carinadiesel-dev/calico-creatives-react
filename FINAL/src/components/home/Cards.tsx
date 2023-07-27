@@ -1,4 +1,13 @@
 import React, { FunctionComponent } from "react";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+  } from "@/components/ui/dropdown-menu"
+  
 
 type CardRow = {
     backgroundColor : string
@@ -40,33 +49,43 @@ type CardsProps = {
 export const Cards = ({cards}: CardsProps) => {
     return (
     <div className="flex flex-col lg:flex-row justify-around h-[100rem] md:h-[130rem] lg:h-[27rem] xl:h-[30rem] 2xl:h-[39rem]  gap-12 lg:gap-8">
-            {cards.map(card =>{
+            {/* {cards.map(card =>{
                 return (
                 <Card {...card}/>
-            )})}
-            {/* <div className={`${cardClasses} bg-calicoPink-400 bg-photography `}>
+            )})} */}
+            <div className={`${cardClasses} bg-calicoPink-400 bg-photography `}>
 
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
-                        href="#">
+                        href="/photography">
                             Photography</a>
                     </div>   
             </div>
                 <div className={`${cardClasses} bg-calicoOrange-400 bg-graphicDesign `}>
                     <div className={btnContainerClasses}>
-                        <a className={buttonClasses} 
-                        href="#">
-                            Graphic Design</a>
-                    </div>   
+                    <DropdownMenu>
+  <DropdownMenuTrigger className={buttonClasses}>Graphic Design</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Logo Design</DropdownMenuItem>
+    <DropdownMenuItem>Animated Graphics</DropdownMenuItem>
+    <DropdownMenuItem>Branding and Social Media</DropdownMenuItem>
+    <DropdownMenuItem>Stationary and Events</DropdownMenuItem>
+    <DropdownMenuItem>Posters and Ads</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+ 
+                </div>
                 </div>
 
                 <div className={`${cardClasses} bg-calicoPeach-400 bg-travel`}>
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
-                        href="#">
+                        href="/travel-blog">
                             Travel</a>
-                    </div>    */}
-            {/* </div> */}
+                    </div>   
+     </div>
+    
     </div>
 
     )
