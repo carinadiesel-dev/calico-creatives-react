@@ -153,7 +153,7 @@ return (
     </NavigationMenuItem>
 
 <NavigationMenuItem>
-  <Link to="#">
+  <Link to="/photo-gallery">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photo Gallery
     </NavigationMenuLink>

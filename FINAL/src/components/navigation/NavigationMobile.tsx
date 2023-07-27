@@ -24,6 +24,16 @@ import {
 } from "@/components/ui/popover";
 
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
+
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -89,20 +99,7 @@ const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
     <NavigationMenuItem className="h-full">
       {hasSubMenu === true ? (
         <>
-          {/* <NavigationMenuTrigger>{title}</NavigationMenuTrigger><NavigationMenuContent className='bg-calicoPink-100'> */}
-          {/* //       <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
-
-      //           <ListItem
-      //             key={item.title}
-      //             title={item.title}
-      //             href={item.href}
-      //           >
-      //             {item.description}
-      //           </ListItem>
-      //         ))}
-      //       </ul>
-      //     </NavigationMenuContent>
-    */}
+          
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>{title}</AccordionTrigger>
@@ -138,13 +135,12 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
       <div className="translate-y-4">
         <CCLogo width={223} />
       </div>
-
-      <Popover>
-        <PopoverTrigger>
-          <IconHamburger size={2} />
-        </PopoverTrigger>
-        <PopoverContent>
-          <NavigationMenu>
+      <Dialog>
+  <DialogTrigger><IconHamburger size={2} /></DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+    </DialogHeader>
+    <NavigationMenu>
             <NavigationMenuList className="py-8">
               {/* <div>
   {navItems.map(navItem =>{
@@ -210,25 +206,9 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
                   </AccordionItem>
                 </Accordion>
                 </NavigationMenuItem>
-                {/* <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
-      <NavigationMenuContent className='bg-calicoPink-100'>
-        <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
-        {subMenu.map((item) => (
-                <ListItem
-                  key={item.title}
-                  title={item.title}
-                  href={item.href}
-                >
-                  {item.description}
-                </ListItem>
-              ))}
-        </ul>
-      </NavigationMenuContent>
-    </NavigationMenuItem> */}
-
-<Separator />
+                <Separator />
                 <NavigationMenuItem>
-  <Link to="#">
+  <Link to="/photo-gallery">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photo Gallery
     </NavigationMenuLink>
@@ -245,8 +225,8 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-        </PopoverContent>
-      </Popover>
+  </DialogContent>
+</Dialog>
     </div>
   );
 };
