@@ -7,6 +7,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
+import { Link } from "react-router-dom";
   
 
 type CardRow = {
@@ -67,11 +68,12 @@ export const Cards = ({cards}: CardsProps) => {
   <DropdownMenuTrigger className={buttonClasses}>Graphic Design</DropdownMenuTrigger>
   <DropdownMenuContent>
     <DropdownMenuSeparator />
-    <DropdownMenuItem>Logo Design</DropdownMenuItem>
-    <DropdownMenuItem>Animated Graphics</DropdownMenuItem>
-    <DropdownMenuItem>Branding and Social Media</DropdownMenuItem>
-    <DropdownMenuItem>Stationary and Events</DropdownMenuItem>
-    <DropdownMenuItem>Posters and Ads</DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/logo-design">Logo Design</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/animated-graphics">Animated Graphics</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/web-design">Web Design</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/branding-and-social-media">Branding and Social Media</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/stationary-and-events">Stationary and Events</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/posters-and-ads">Posters and Ads</Link></DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
  
