@@ -18,13 +18,13 @@ export default function PostersAndAds(){
             <PageTitle title="Posters & Ads" backgroundGradient="bg-gradient-to-r from-calicoWhite-200 to-calicoPink-400" titleColor="text-calicoPeach-400" />
             <Paragraph text={`Turn anything into a poster. Poster advertising offers a powerful opportunity to concentrate your message and communicate it to a targeted area
             Previous Work:`} />
-            <div className="grid place-items-center">
+            <div className="grid px-5 place-items-center md:px-12 lg:px-16 xl:px-20 2xl:px-28">
 
             
-            <div className="px-5 md:px-12 lg:px-16 xl:px-20 2xl:px-28">
+            <div>
                 <PostersGallery />
             </div>
-            <div className="py-28 xl:py-36">
+            <div className="w-full py-28 xl:py-36">
             <Link to="/contact"> <CustomButton variant={"peach"} buttonText="Get a Quote"/> </Link>
             </div>
             </div>

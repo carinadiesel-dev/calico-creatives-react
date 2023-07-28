@@ -6,24 +6,19 @@ import buttonVariants from "@/components/buttons/variants";
 import { Footer } from "@/components/footer/Footer";
 import { Link } from "react-router-dom";
 
-type StationaryProps = {
-    title: string
-    titleColor: 'text-calicoPink-400'| 'text-calicoPeach-400'
-    backgroundGradient: 'bg-gradient-to-r from-calicoWhite-200 to-calicoPink-400' | 'bg-gradient-to-r from-calicoWhite-100 to-calicoOrange-400' | 'bg-gradient-to-r from-calicoWhite-300 to-calicoPeach-300'
-}
 
 export default function StationaryAndEvents(){
     return (
         <div>
             <PageTitle title="Stationary & Events" backgroundGradient="bg-gradient-to-r from-calicoWhite-300 to-calicoPeach-300" titleColor="text-calicoPink-400" />
             <Paragraph text={`We offer luxury stationery for all of life’s special celebrations and events. Birthdays, Weddings, Corporate, Baby Showers`} />
-            <div className="grid place-items-center">
+            <div className="gridplace-items-center">
                 
             
             <div className="px-5 md:px-12 lg:w-2/3">
             <StationaryGallery />
             </div>
-            <div className="px-5 py-16 lg:py-28 xl:py-36 md:px-12 lg:px-0">
+            <div className="w-full px-5 py-28 xl:py-36 md:px-12 lg:px-0">
            <Link to="/contact"> <CustomButton variant={"peach"} buttonText="Get a quote" /></Link>
             </div>
             </div>
