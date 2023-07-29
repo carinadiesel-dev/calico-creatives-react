@@ -21,8 +21,8 @@ import PhotoGallery from "./pages/photo-gallery";
 
 export default function App() {
   return (
-    <>
-    <Navbar />
+    <div className="relative"> 
+    <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/photography" element={<Photography />} />
@@ -38,6 +38,6 @@ export default function App() {
       <Route path="/travel-blog" element={<TravelBlog />} />
       <Route path="/photo-gallery" element={<PhotoGallery />} />
     </Routes>
-    </>
+    </div>
   )
 }
