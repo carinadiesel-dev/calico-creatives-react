@@ -107,7 +107,7 @@ return (
 
 <NavigationMenu className='absolute top-0 left-0 right-0'>
   <NavigationMenuList>
-  <div className='ml-10 translate-y-5'>
+  <div className='ml-10 translate-y-4'>
   <CCLogo width={223}/>
   </div>
   
