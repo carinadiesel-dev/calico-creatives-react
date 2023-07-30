@@ -14,6 +14,7 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle, } from "@/components/ui/navigation-menu";
+import { Route, Routes, Link } from "react-router-dom"
 
 type NavRow = {
   title: string
@@ -30,7 +31,7 @@ const subMenu: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Animated Graphics",
-    href: "/graphic-design/logo-design",
+    href: "/graphic-design/animated-graphics",
     description:
       "To bring a uniqueness to your logo, we can add some motion.",
   },
@@ -42,12 +43,12 @@ const subMenu: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Branding & Social",
-    href: "/graphic-design/branding-and-social",
+    href: "/graphic-design/branding-and-social-media",
     description: "Social media increases the amount of exposure a brand receives and increases traffic",
   },
   {
-    title: "Stationary",
-    href: "/graphic-design/stationary",
+    title: "Stationary & Events",
+    href: "/graphic-design/stationary-and-events",
     description:
       "We offer luxury stationery for all of life’s special celebrations and events.",
   },
@@ -90,11 +91,11 @@ const NavItem : FunctionComponent<NavRow> = ({
             </ul>
           </NavigationMenuContent></>
       :
-  <a href={link}>
+  <Link to={link}>
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
       {title}
     </NavigationMenuLink>
-  </a>
+  </Link>
 }
 </NavigationMenuItem>
   )
@@ -118,19 +119,19 @@ return (
         })}
   </div> */}
   <NavigationMenuItem>
-  <a href="/">
+  <Link to="/">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
       Home
     </NavigationMenuLink>
-  </a>
+  </Link>
 </NavigationMenuItem>
 
 <NavigationMenuItem>
-  <a href="/photography">
+  <Link to="/photography">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photography
     </NavigationMenuLink>
-  </a>
+  </Link>
 </NavigationMenuItem>
 
 
@@ -152,19 +153,19 @@ return (
     </NavigationMenuItem>
 
 <NavigationMenuItem>
-  <a href="#">
+  <Link to="#">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Photo Gallery
     </NavigationMenuLink>
-  </a>
+  </Link>
 </NavigationMenuItem>
 
 <NavigationMenuItem>
-  <a href="/contact">
+  <Link to="/contact">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
     Contact
     </NavigationMenuLink>
-  </a>
+  </Link>
 </NavigationMenuItem>
   </NavigationMenuList>
 </NavigationMenu>

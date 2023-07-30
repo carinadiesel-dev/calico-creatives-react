@@ -20,7 +20,7 @@ import TravelBlog from "./pages/travel-blog";
 
 export default function App() {
   return (
-  <Router>
+    <>
     <Navbar />
     <Routes>
       <Route path="/" element={<Home/>} />
@@ -36,6 +36,6 @@ export default function App() {
       {/* Pages coming soon */}
       <Route path="/travel-blog" element={<TravelBlog />} />
     </Routes>
-  </Router>
+    </>
   )
 }
