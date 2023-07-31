@@ -24,7 +24,7 @@ export default function LogoDesign(){
                 <CMELogo />
                 <AOCLogo />
                 </div>
-                <div className="w-full py-28">
+                <div className="w-full py-14 lg:py-28">
                 <Link to="/contact">  <CustomButton buttonText="Get a Quote" variant="orange" /> </Link>
                 </div>
             </div>

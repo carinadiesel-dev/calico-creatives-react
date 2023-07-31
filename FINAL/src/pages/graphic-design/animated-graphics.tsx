@@ -40,7 +40,7 @@ export default function AnimatedGraphics(){
                 <button onClick={handleToggle}><IconPlay/></button>
                 </div>    
             </div>
-            <div className="py-28 xl:mb-16">
+            <div className="px-5 py-14 lg:py-28 xl:mb-16">
                 <Link to="/contact"><CustomButton variant={'peach'} buttonText="Get a Quote"/></Link>
                 </div>
             <Footer backgroundColor="bg-calicoPeach-300"/>

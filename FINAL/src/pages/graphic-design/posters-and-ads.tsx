@@ -24,7 +24,7 @@ export default function PostersAndAds(){
             <div>
                 <PostersGallery />
             </div>
-            <div className="w-full py-28 xl:py-36">
+            <div className="w-full py-14 lg:py-28 xl:py-36">
             <Link to="/contact"> <CustomButton variant={"peach"} buttonText="Get a Quote"/> </Link>
             </div>
             </div>
