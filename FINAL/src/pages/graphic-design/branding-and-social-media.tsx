@@ -24,7 +24,7 @@ export default function BrandingAndSM(){
                 <div className="px-5 md:px-12 lg:px-16 xl:px-20 2xl:px-28">
                 <ImageRow />
                 </div>
-                <div className="py-28">
+                <div className="py-40">
                 <Link to="/contact"><CustomButton variant={"orange"} buttonText="Get a Quote" /> </Link>
                 </div>
                 

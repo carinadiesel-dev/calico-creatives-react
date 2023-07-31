@@ -1,4 +1,14 @@
 import React, { FunctionComponent } from "react";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+  } from "@/components/ui/dropdown-menu"
+import { Link } from "react-router-dom";
+  
 
 type CardRow = {
     backgroundColor : string
@@ -40,33 +50,44 @@ type CardsProps = {
 export const Cards = ({cards}: CardsProps) => {
     return (
     <div className="flex flex-col lg:flex-row justify-around h-[100rem] md:h-[130rem] lg:h-[27rem] xl:h-[30rem] 2xl:h-[39rem]  gap-12 lg:gap-8">
-            {cards.map(card =>{
+            {/* {cards.map(card =>{
                 return (
                 <Card {...card}/>
-            )})}
-            {/* <div className={`${cardClasses} bg-calicoPink-400 bg-photography `}>
+            )})} */}
+            <div className={`${cardClasses} bg-calicoPink-400 bg-photography `}>
 
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
-                        href="#">
+                        href="/photography">
                             Photography</a>
                     </div>   
             </div>
                 <div className={`${cardClasses} bg-calicoOrange-400 bg-graphicDesign `}>
                     <div className={btnContainerClasses}>
-                        <a className={buttonClasses} 
-                        href="#">
-                            Graphic Design</a>
-                    </div>   
+                    <DropdownMenu>
+  <DropdownMenuTrigger className={buttonClasses}>Graphic Design</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/logo-design">Logo Design</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/animated-graphics">Animated Graphics</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/web-design">Web Design</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/branding-and-social-media">Branding and Social Media</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/stationary-and-events">Stationary and Events</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/posters-and-ads">Posters and Ads</Link></DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+ 
+                </div>
                 </div>
 
                 <div className={`${cardClasses} bg-calicoPeach-400 bg-travel`}>
                     <div className={btnContainerClasses}>
                         <a className={buttonClasses} 
-                        href="#">
+                        href="/travel-blog">
                             Travel</a>
-                    </div>    */}
-            {/* </div> */}
+                    </div>   
+     </div>
+    
     </div>
 
     )

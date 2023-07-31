@@ -100,7 +100,7 @@ const useMediaQuery = (width) => {
 };
 
 export default function Navbar() {
-  const isBreakpoint = useMediaQuery(768);
+  const isBreakpoint = useMediaQuery(1024);
 
   return (
     <div>
