@@ -21,7 +21,10 @@ import PhotoGallery from "./pages/photo-gallery";
 
 export default function App() {
   return (
-    <div className="relative"> 
+    
+      <div className="relative">
+
+      
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>} />

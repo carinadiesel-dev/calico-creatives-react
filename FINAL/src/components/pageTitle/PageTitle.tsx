@@ -7,8 +7,8 @@ type PageTitleProps = {
 
 export const PageTitle = ({title,titleColor,backgroundGradient}: PageTitleProps) => {
     return (
-    <div className={`flex flex-wrap items-end ${backgroundGradient} h-36 md:h-44 xl:h-56`}>
-        <h2 className={`font-brilon text-4xl lg:text-start text-center md:text-6xl xl:text-7xl pb-10 pl-6 xl:pl-12 ${titleColor}`}>{title}</h2>
+    <div className={`flex flex-wrap items-end ${backgroundGradient} h-36 md:h-44 lg:h-64 xl:h-72`}>
+        <h2 className={`flex font-brilon text-4xl md:text-6xl xl:text-7xl pb-10 pl-6 xl:pl-12 ${titleColor}`}>{title}</h2>
     </div>
     )
 }
