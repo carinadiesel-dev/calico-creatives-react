@@ -51,12 +51,13 @@ export function ContactForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="flex flex-col gap-8 px-12 py-20 border-2 border-transparent rounded-3xl bg-calicoPink-400"
       >
+        <div className="flex justify-between">
         <FormField
           control={form.control}
           name="firstName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>First Name</FormLabel>
+              <FormLabel className="flex items-start">First Name</FormLabel>
               <FormControl>
                 <Input placeholder="Jane" {...field} />
               </FormControl>
@@ -73,7 +74,7 @@ export function ContactForm() {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Last Name</FormLabel>
+              <FormLabel className="flex items-start">Last Name</FormLabel>
               <FormControl>
                 <Input placeholder="Doe" {...field} />
               </FormControl>
@@ -84,13 +85,15 @@ export function ContactForm() {
             </FormItem>
           )}
         />
+        </div>
+        
 
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="flex items-start">Email</FormLabel>
               <FormControl>
                 <Input placeholder="email@website.com" {...field} />
               </FormControl>
@@ -107,7 +110,7 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel className="flex items-start">Message</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Type your message here"
