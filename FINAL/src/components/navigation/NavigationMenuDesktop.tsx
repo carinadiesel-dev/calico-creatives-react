@@ -105,9 +105,9 @@ const NavItem : FunctionComponent<NavRow> = ({
 export const NavigationMenuDesktop = ({navItems}:NavigationMenuDesktopProps) => {
 return (
 
-<NavigationMenu>
+<NavigationMenu className='absolute top-0 left-0 right-0'>
   <NavigationMenuList>
-  <div className='ml-10 translate-y-2'>
+  <div className='ml-10 translate-y-4'>
   <CCLogo width={223}/>
   </div>
   

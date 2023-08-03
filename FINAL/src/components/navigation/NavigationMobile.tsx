@@ -30,8 +30,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-
+} from "@/components/ui/dialog";
 
 import {
   Accordion,
@@ -39,7 +38,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Route, Routes, Link } from "react-router-dom"
+import { Route, Routes, Link } from "react-router-dom";
 
 import { Separator } from "../ui/separator";
 
@@ -99,7 +98,6 @@ const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
     <NavigationMenuItem className="h-full">
       {hasSubMenu === true ? (
         <>
-          
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>{title}</AccordionTrigger>
@@ -131,24 +129,22 @@ const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
 
 export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
   return (
-    <div className="flex justify-between px-6 bg-calicoPink-100 bg-opacity-60">
+    <div className="flex justify-between px-6 bg-calicoPink-100/40">
       <div className="translate-y-4">
         <CCLogo width={223} />
       </div>
       <Dialog>
-  <DialogTrigger><IconHamburger size={2} /></DialogTrigger>
-  <DialogContent>
-    <DialogHeader>
-    </DialogHeader>
-    <NavigationMenu>
-            <NavigationMenuList className="py-8">
-              {/* <div>
-  {navItems.map(navItem =>{
-            return (
-            <NavItem {...navItem}/>
-            )
-        })}
-  </div> */}
+        <DialogTrigger>
+          <IconHamburger size={2} />
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader className="relative">
+            <div className="h-20 overflow-hidden translate-x-4 translate-y-4">
+              <CCLogo width={223} />
+            </div>
+          </DialogHeader>
+          <NavigationMenu className="pt-10 -translate-y-32 ">
+            <NavigationMenuList>
               <NavigationMenuItem>
                 <Link to="/">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -156,7 +152,6 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-<Separator />
               <NavigationMenuItem>
                 <Link to="/photography">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -164,13 +159,12 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-              <Separator />
               <NavigationMenuItem>
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
                     <AccordionTrigger>Graphic Design</AccordionTrigger>
                     <AccordionContent>
-                      <ul className="pt-4 space-y-4">
+                      <ul className="pt-2 space-y-4">
                         <ListItem
                           key={"Logo Design"}
                           title={"Logo Design"}
@@ -205,17 +199,14 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
-                </NavigationMenuItem>
-                <Separator />
-                <NavigationMenuItem>
-  <Link to="/photo-gallery">
-    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-    Photo Gallery
-    </NavigationMenuLink>
-  </Link>
-
               </NavigationMenuItem>
-              <Separator />
+              <NavigationMenuItem>
+                <Link to="/photo-gallery">
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Photo Gallery
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link to="/contact">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -225,8 +216,8 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-  </DialogContent>
-</Dialog>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
@@ -241,15 +232,15 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 text-4xl leading-none no-underline outline-none transition-colors hover:ring-2 hover:ring-calicoRedOrange-400",
+            "block select-none space-y-2 rounded-md text-4xl leading-none no-underline outline-none transition-colors hover:text-calicoPink-100",
             className
           )}
           {...props}
         >
-          <div className="text-5xl font-bold leading-none text-calicoRedOrange-400">
+          <div className="text-xl font-bold leading-none text-calicoRedOrange-400">
             {title}
           </div>
-          <p className="text-2xl leading-snug line-clamp-2 text-calicoGray-400">
+          <p className="text-xl leading-snug line-clamp-2 text-calicoGray-400">
             {children}
           </p>
         </a>

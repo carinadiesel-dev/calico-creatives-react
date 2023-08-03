@@ -12,7 +12,7 @@ const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      "relative z-10 flex flex-1 bg-opacity-60 items-center justify-evenly xl:justify-start bg-calicoPink-100/100",
+      "relative z-50 flex flex-1 justify-center xl:items-center xl:justify-start bg-calicoPink-100 lg:bg-calicoPink-100 lg:h-24",
       className
     )}
     {...props}
@@ -30,7 +30,7 @@ const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      "group flex flex-1 list-none items-center justify-center space-y-10 xl:space-y-0 lg:space-x-2 xl:space-x-4 flex-col lg:flex-row",
+      "group flex flex-1 list-none items-center justify-center space-y-5 xl:space-y-0 lg:space-x-2 xl:space-x-4 flex-col lg:flex-row",
       className
     )}
     {...props}
@@ -41,7 +41,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "inline-flex items-center justify-center rounded-md font-sans font-bold text-5xl lg:text-xl xl:text-2xl text-calicoRedOrange-400 transition-colors focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none hover:bg-calicoRedOrange-400 hover:text-calicoPink-200 data-[state=open]:bg-accent/50 data-[active]:text-calicoRedOrange-400 py-6 px-4 group w-max"
+  "inline-flex items-center justify-center rounded-md font-sans font-bold text-2xl lg:text-xl xl:text-2xl text-calicoRedOrange-400 transition-colors focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none hover:bg-calicoRedOrange-400 hover:text-calicoPink-200 data-[state=open]:bg-accent data-[active]:text-calicoRedOrange-400 py-6 px-4 group w-max"
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -69,7 +69,7 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute",
+      "left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto",
       className
     )}
     {...props}
@@ -83,10 +83,10 @@ const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
 >(({ className, ...props }, ref) => (
-  <div className={cn("absolute left-0 top-full flex justify-center")}>
+  <div className={cn("relative left-0 top-full flex justify-center")}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "origin-top-center relative translate-x-2/3 mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-calicoPink-100 text-calicoGray-400 shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)] dark:border-slate-800 dark:bg-slate-950 dark:text-slate-50",
+        "origin-top-center absolute -translate-x-3/4 -translate-y-10 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-calicoPink-100/80 text-calicoGray-400 shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)] dark:border-slate-800 dark:bg-slate-950 dark:text-slate-50",
         className
       )}
       ref={ref}

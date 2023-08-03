@@ -7,7 +7,6 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
-import { Link } from "react-router-dom";
   
 
 type CardRow = {
@@ -19,7 +18,7 @@ type CardRow = {
 
 const cardClasses = 'flex flex-col justify-end items-center h-full lg:w-1/3 bg-contain bg-no-repeat bg-bottom';
 const btnContainerClasses = 'flex w-11/12 my-4';
-const buttonClasses = "bg-white/80 w-full font-brilon text-[2.5rem] lg:text-3xl text-center text-calicoGray-400 py-4 rounded-full hover:bg-white";
+const buttonClasses = "bg-white/80 w-full font-brilon text-3xl md:text-[2.5rem] lg:text-3xl text-center text-calicoGray-400 py-4 rounded-full hover:bg-white";
 
 const Card: FunctionComponent<CardRow> = ({
     backgroundColor,
@@ -68,12 +67,12 @@ export const Cards = ({cards}: CardsProps) => {
   <DropdownMenuTrigger className={buttonClasses}>Graphic Design</DropdownMenuTrigger>
   <DropdownMenuContent>
     <DropdownMenuSeparator />
-    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/logo-design">Logo Design</Link></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/animated-graphics">Animated Graphics</Link></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/web-design">Web Design</Link></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/branding-and-social-media">Branding and Social Media</Link></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/stationary-and-events">Stationary and Events</Link></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><Link to="/graphic-design/posters-and-ads">Posters and Ads</Link></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/logo-design">Logo Design</a></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/animated-graphics">Animated Graphics</a></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/web-design">Web Design</a></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/branding-and-social-media">Branding and Social Media</a></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/stationary-and-events">Stationary and Events</a></DropdownMenuItem>
+    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/posters-and-ads">Posters and Ads</a></DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
  
