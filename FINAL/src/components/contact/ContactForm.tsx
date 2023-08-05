@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -28,7 +29,7 @@ export const contactSchema = z.object({
 
 export function ContactForm() {
   //  // 1. Define your form.
-  const form = useForm<z.infer<typeof contactSchema>>({
+ const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       firstName: "",
@@ -51,7 +52,7 @@ export function ContactForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="flex flex-col gap-8 px-12 py-20 border-2 border-transparent rounded-3xl bg-calicoPink-400"
       >
-        <div className="flex justify-between">
+        <div className="flex flex-col justify-between gap-8 md:flex-row">
         <FormField
           control={form.control}
           name="firstName"
@@ -125,9 +126,12 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <button className="flex items-center justify-center py-5 font-sans text-xl font-bold text-white border-4 rounded-full bg-calicoPink-400 hover:text-calicoPink-400 hover:bg-white">
+        <div className="w-full translate-y-5">
+        <button className="flex items-center justify-center w-full py-5 font-sans text-xl font-bold text-white border-4 rounded-full bg-calicoPink-400 hover:text-calicoPink-400 hover:bg-white">
           Submit
         </button>
+        </div>
+        
       </form>
     </Form>
   );

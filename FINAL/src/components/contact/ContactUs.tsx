@@ -5,7 +5,7 @@ import { ContactForm } from "./ContactForm"
 
 export const ContactUs = () => {
     return (
-      <div className="flex flex-col-reverse gap-8 px-16 py-16 lg:justify-around lg:flex-row">
+      <div className="flex flex-col gap-8 px-16 py-16 lg:justify-around lg:flex-row">
         
         <div className="">
          <SingleHeader title="Contact Us" />
