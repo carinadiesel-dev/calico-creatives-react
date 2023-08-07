@@ -18,11 +18,11 @@ circleText?: string
 
 export const Shapes = ({priceText,variant = "leftAligned",src, circleText}: ShapesProps) => {
 const shapeWrapperClasses = `relative pt-36 lg:pt-44`;
-const circleClasses = `absolute flex items-center justify-center lg:top-40 -translate-y-[110%] lg:translate-y-0`;
+const circleClasses = `absolute flex items-center md:justify-center lg:top-40 -translate-y-[110%] lg:translate-y-0`;
 const cloudClasses = `hidden lg:block lg:absolute lg:-top-12`;
 const cloudSize = 0.9;
 const photoClasses = `lg:absolute lg:top-2 xl:-top-4 z-10 w-[90vw] lg:w-[30rem] xl:w-7/12 `
-const textClasses = `flex items-center py-12 lg:py-4 lg:py-12 xl:py-0`
+const textClasses = `flex items-center py-28 lg:py-12 xl:py-0`
     return (
     <div className="flex flex-col lg:justify-between xl:flex-row">
         <div className={`${shapeWrapperClasses} ${variants[variant].wrapper}`}>
@@ -32,15 +32,15 @@ const textClasses = `flex items-center py-12 lg:py-4 lg:py-12 xl:py-0`
         />
             <IconOvalFilled className="hidden lg:block"/>
             <div className={`${circleClasses} ${variants[variant].circle}`}>
-                <IconCircleFilled/>
-                <span className="absolute text-5xl font-brilon text-calicoGray-400">{circleText}</span>
+                <IconCircleFilled className="hidden md:block"/>
+                <span className="absolute text-5xl font-bold pt-28 md:pt-0 md:font-normal font-brilon text-calicoPink-400 md:text-calicoGray-400">{circleText}</span>
             </div>
             <div className={`${cloudClasses} ${variants[variant].cloud}`}>
                 <IconCloud size={cloudSize}/>
             </div>
         </div>
         <div className={`${textClasses} ${variants[variant].mobileTextAligned}`}>
-        <span className="text-[2.5rem] text-center font-brilon text-calicoGray-400">Starting from R{priceText}</span>
+        <span className="text-2xl md:text-[2.5rem] text-center font-brilon text-calicoGray-400">Starting from R{priceText}</span>
         </div>
     </div>
     
