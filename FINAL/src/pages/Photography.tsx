@@ -34,7 +34,7 @@ export default function Photography() {
                 <Shapes variant="rightAligned" circleText="Lifestyle" priceText={750} src={LifestyleImg}/>
                 <Shapes variant="leftAligned" circleText="Studio" priceText={1000} src={StudioImg}/>
             </div>
-            <div className="grid justify-center gap-8 py-28 lg:py-48 ">
+            <div className="grid gap-8 lg:justify-center py-28 lg:py-48 ">
             <CustomButton variant="pinkFocus" buttonText="View Gallery"/>
 <Link to="/contact"><CustomButton variant="pink"  buttonText="Get a Quote"/></Link>
             </div>
