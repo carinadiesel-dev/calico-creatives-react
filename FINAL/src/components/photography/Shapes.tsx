@@ -40,7 +40,7 @@ const textClasses = `flex items-center py-28 md:py-16 lg:py-12 xl:py-0`
             </div>
         </div>
         <div className={`${textClasses} ${variants[variant].mobileTextAligned}`}>
-        <span className="text-2xl sm:text-[2.5rem] text-center font-brilon sm:pt-5 md:pt-0 text-calicoGray-400">Starting from R{priceText}</span>
+        <span className="text-2xl sm:text-[2.5rem] leading-normal text-center font-brilon sm:pt-5 md:pt-0 text-calicoGray-400">Starting from R{priceText}</span>
         </div>
     </div>
     
