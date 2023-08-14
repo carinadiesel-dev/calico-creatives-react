@@ -111,13 +111,6 @@ return (
   <CCLogo width={223}/>
   </div>
   
-  {/* <div>
-  {navItems.map(navItem =>{
-            return (
-            <NavItem {...navItem}/>
-            )
-        })}
-  </div> */}
   <NavigationMenuItem>
   <Link to="/">
     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -134,7 +127,7 @@ return (
   </Link>
 </NavigationMenuItem>
 
-
+{/* Scroll and open this submenu when clicking on Graphic Design Card */}
   <NavigationMenuItem>
       <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
       <NavigationMenuContent className='bg-calicoPink-100'>
