@@ -16,7 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form"
 
 export const contactSchema = z.object({
   firstName: z.string({ required_error: "First name is required" }),
@@ -29,7 +29,14 @@ export const contactSchema = z.object({
 
 export function ContactForm() {
   //  // 1. Define your form.
- const form = useForm<z.infer<typeof contactSchema>>({
+ const form
+/*  {
+  register,
+  handleSubmit,
+  watch,
+  formState: { errors },} 
+*/
+  = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       firstName: "",
@@ -38,6 +45,7 @@ export function ContactForm() {
       message: "",
     },
   });
+  // const onSubmit = handleSubmit((data) => console.log(data))
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof contactSchema>) {
