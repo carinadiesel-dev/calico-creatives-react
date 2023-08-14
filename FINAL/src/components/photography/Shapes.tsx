@@ -17,20 +17,20 @@ circleText?: string
 }
 
 export const Shapes = ({priceText,variant = "leftAligned",src, circleText}: ShapesProps) => {
-const shapeWrapperClasses = `relative pt-44`;
-const circleClasses = `absolute flex items-center justify-center top-40 `;
-const cloudClasses = `absolute -top-12`;
+const shapeWrapperClasses = `relative pt-36 lg:pt-44`;
+const circleClasses = `absolute flex items-center justify-center lg:top-40 -translate-y-[110%] lg:translate-y-0`;
+const cloudClasses = `hidden lg:block lg:absolute lg:-top-12`;
 const cloudSize = 0.9;
-const photoClasses = `absolute top-2 xl:-top-4 z-10 w-[30rem] xl:w-7/12`
-const textClasses = `flex items-center py-8 lg:py-12 xl:py-0`
+const photoClasses = `lg:absolute lg:top-2 xl:-top-4 z-10 w-[90vw] lg:w-[30rem] xl:w-7/12 `
+const textClasses = `flex items-center py-12 lg:py-4 lg:py-12 xl:py-0`
     return (
-    <div className="flex flex-col justify-between xl:flex-row">
+    <div className="flex flex-col lg:justify-between xl:flex-row">
         <div className={`${shapeWrapperClasses} ${variants[variant].wrapper}`}>
 
         <img src={src} alt='/'
         height={717} className={`${photoClasses} ${variants[variant].photo} `}
         />
-            <IconOvalFilled />
+            <IconOvalFilled className="hidden lg:block"/>
             <div className={`${circleClasses} ${variants[variant].circle}`}>
                 <IconCircleFilled/>
                 <span className="absolute text-5xl font-brilon text-calicoGray-400">{circleText}</span>
@@ -40,7 +40,7 @@ const textClasses = `flex items-center py-8 lg:py-12 xl:py-0`
             </div>
         </div>
         <div className={`${textClasses} ${variants[variant].mobileTextAligned}`}>
-        <span className="text-[2.5rem]  text-center font-brilon text-calicoGray-400">Starting from R{priceText}</span>
+        <span className="text-[2.5rem] text-center font-brilon text-calicoGray-400">Starting from R{priceText}</span>
         </div>
     </div>
     
