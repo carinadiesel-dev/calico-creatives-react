@@ -3,7 +3,7 @@ import "./index.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/navigation";
+import Layout from "./components/navigation";
 import Home from "./pages/home";
 import Photography from "./pages/photography";
 import LogoDesign from "./pages/graphic-design/logo-design";
@@ -25,8 +25,9 @@ export default function App() {
       <div className="relative">
 
       
-    <Navbar/>
+    <Layout/>
     <Routes>
+      <Route element={<Layout />}>
       <Route path="/" element={<Home/>} />
       <Route path="/photography" element={<Photography />} />
       <Route path="/graphic-design/logo-design" element={<LogoDesign/>} />
@@ -40,6 +41,7 @@ export default function App() {
       {/* Pages coming soon */}
       <Route path="/travel-blog" element={<TravelBlog />} />
       <Route path="/photo-gallery" element={<PhotoGallery />} />
+      </Route>
     </Routes>
     </div>
   )

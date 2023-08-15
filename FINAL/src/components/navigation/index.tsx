@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop";
 import { NavigationMobile } from "./NavigationMobile";
 // import "../../App.css";
@@ -72,6 +73,7 @@ let navItems = [
 ];
 
 import { useState, useCallback, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
@@ -99,10 +101,14 @@ const useMediaQuery = (width) => {
   return targetReached;
 };
 
-export default function Navbar() {
+export default function Layout() {
   const isBreakpoint = useMediaQuery(1024);
-
+  const scrollRef = useRef(null);
+  const scrollToNavigation = () => {
+    scrollRef?.current?.scrollIntoView({behavior: "smooth"});
+  }
   return (
+    <>
     <div>
       {isBreakpoint ? (
         <div>
@@ -110,9 +116,11 @@ export default function Navbar() {
         </div>
       ) : (
         <div>
-          <NavigationMenuDesktop navItems={navItems} />
+          <NavigationMenuDesktop navItems={navItems} scrollRef={scrollRef}/>
         </div>
       )}
     </div>
+    <Outlet context={[scrollToNavigation]} />
+    </>
   );
 }

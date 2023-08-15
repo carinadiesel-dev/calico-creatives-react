@@ -7,6 +7,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
+import { useOutletContext } from "react-router-dom";
   
 
 type CardRow = {
@@ -47,6 +48,7 @@ type CardsProps = {
 }
 
 export const Cards = ({cards}: CardsProps) => {
+    const [scrollToNavigation] = useOutletContext();
     return (
     <div className="flex flex-col lg:flex-row justify-around h-[100rem] md:h-[130rem] lg:h-[27rem] xl:h-[30rem] 2xl:h-[39rem]  gap-12 lg:gap-8">
             {/* {cards.map(card =>{
@@ -63,19 +65,8 @@ export const Cards = ({cards}: CardsProps) => {
             </div>
                 <div className={`${cardClasses} bg-calicoOrange-400 bg-graphicDesign `}>
                     <div className={btnContainerClasses}>
-                    <DropdownMenu>
-  <DropdownMenuTrigger className={buttonClasses}>Graphic Design</DropdownMenuTrigger>
-  <DropdownMenuContent>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/logo-design">Logo Design</a></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/animated-graphics">Animated Graphics</a></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/web-design">Web Design</a></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/branding-and-social-media">Branding and Social Media</a></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/stationary-and-events">Stationary and Events</a></DropdownMenuItem>
-    <DropdownMenuItem className={buttonClasses}><a href="/graphic-design/posters-and-ads">Posters and Ads</a></DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
- 
+                    <button className={buttonClasses} onClick={scrollToNavigation}>
+                            Graphic Design</button>
                 </div>
                 </div>
 

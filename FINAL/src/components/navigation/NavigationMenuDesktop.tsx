@@ -1,4 +1,5 @@
-import React, {AnchorHTMLAttributes, FunctionComponent, PropsWithChildren, useState} from 'react'
+import React, {AnchorHTMLAttributes, FunctionComponent, PropsWithChildren, Ref, useState} from 'react'
+import { useRef } from 'react';
 import { CCLogo } from '../logos/CCLogo';
 import { cn } from '@/lib/utils';
 import "../../App.css";
@@ -15,6 +16,11 @@ import {
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle, } from "@/components/ui/navigation-menu";
 import { Route, Routes, Link } from "react-router-dom"
+
+// Make a ref
+// Use ref to identify specific element
+// Function to scroll to ref element
+// As part of function,engage code that opens the navigation menu
 
 type NavRow = {
   title: string
@@ -65,7 +71,8 @@ type NavItem = {
 }
 
 type NavigationMenuDesktopProps = {
-  navItems: NavItem[]
+  navItems: NavItem[];
+  scrollRef: Ref<HTMLDivElement>;
 }
 
 const NavItem : FunctionComponent<NavRow> = ({
@@ -102,10 +109,10 @@ const NavItem : FunctionComponent<NavRow> = ({
 }
 
 
-export const NavigationMenuDesktop = ({navItems}:NavigationMenuDesktopProps) => {
+export const NavigationMenuDesktop = ({navItems, scrollRef}:NavigationMenuDesktopProps) => {
+  
 return (
-
-<NavigationMenu className='absolute top-0 left-0 right-0'>
+<NavigationMenu ref={scrollRef} className='absolute top-0 left-0 right-0'>
   <NavigationMenuList>
   <div className='ml-10 translate-y-4'>
   <CCLogo width={223}/>
