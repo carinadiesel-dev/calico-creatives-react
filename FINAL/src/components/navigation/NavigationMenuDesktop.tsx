@@ -112,7 +112,7 @@ const NavItem : FunctionComponent<NavRow> = ({
 export const NavigationMenuDesktop = ({navItems, scrollRef}:NavigationMenuDesktopProps) => {
   
 return (
-<NavigationMenu ref={scrollRef} className='absolute top-0 left-0 right-0'>
+<NavigationMenu ref={scrollRef} className='absolute top-0 left-0 right-0 hidden lg:block '>
   <NavigationMenuList>
   <div className='ml-10 translate-y-4'>
   <CCLogo width={223}/>
