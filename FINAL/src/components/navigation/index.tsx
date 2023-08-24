@@ -118,7 +118,11 @@ export default function Layout() {
       <div>
         {isMobileBreakpoint ? (
           <div>
-            <NavigationMobile navItems={navItems} scrollRef={scrollRef} />
+            <NavigationMobile
+              navItems={navItems}
+              scrollRef={scrollRef}
+              triggerRef={triggerRef}
+            />
             {/* Dialog trigger  onClick={() => setOpen(false)} 
           Open accordion ? */}
           </div>
