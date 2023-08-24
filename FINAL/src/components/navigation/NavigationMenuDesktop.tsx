@@ -73,6 +73,7 @@ type NavItem = {
 type NavigationMenuDesktopProps = {
   navItems: NavItem[];
   scrollRef: Ref<HTMLDivElement>;
+  triggerRef: Ref<HTMLDivElement>;
 }
 
 const NavItem : FunctionComponent<NavRow> = ({
@@ -81,10 +82,11 @@ const NavItem : FunctionComponent<NavRow> = ({
   subMenu
 }) => {
   const hasSubMenu = subMenu !== undefined ? true : false;
+  
   return (
   <NavigationMenuItem>
     {hasSubMenu === true ?
-      <><NavigationMenuTrigger>{title}</NavigationMenuTrigger><NavigationMenuContent className='bg-calicoPink-100'>
+      <><NavigationMenuTrigger ref={triggerRef}>{title}</NavigationMenuTrigger><NavigationMenuContent className='bg-calicoPink-100'>
             <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
               {subMenu && subMenu.map((item) => (
                 <ListItem
@@ -109,7 +111,7 @@ const NavItem : FunctionComponent<NavRow> = ({
 }
 
 
-export const NavigationMenuDesktop = ({navItems, scrollRef}:NavigationMenuDesktopProps) => {
+export const NavigationMenuDesktop = ({navItems, scrollRef, triggerRef}:NavigationMenuDesktopProps) => {
   
 return (
 <NavigationMenu ref={scrollRef} className='absolute top-0 left-0 right-0 hidden lg:block '>
@@ -143,7 +145,7 @@ return (
 
 
   <NavigationMenuItem>
-      <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
+      <NavigationMenuTrigger ref={triggerRef}>Graphic Design</NavigationMenuTrigger>
       <NavigationMenuContent className='bg-calicoPink-100'>
         <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
         {subMenu.map((item) => (

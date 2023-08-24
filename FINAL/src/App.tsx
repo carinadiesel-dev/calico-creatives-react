@@ -25,7 +25,7 @@ export default function App() {
       <div className="relative">
 
       
-    <Layout/>
+    {/* <Layout/> */}
     <Routes>
       <Route element={<Layout />}>
       <Route path="/" element={<Home/>} />

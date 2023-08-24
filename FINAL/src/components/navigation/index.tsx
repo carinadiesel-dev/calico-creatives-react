@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop";
 import { NavigationMobile } from "./NavigationMobile";
 // import "../../App.css";
-import "../../index.css"
+import "../../index.css";
 
 let navItemHome = {
   title: "Home",
@@ -102,27 +102,37 @@ const useMediaQuery = (width) => {
 };
 
 export default function Layout() {
-  const isBreakpoint = useMediaQuery(1024);
+  // Different variable
+  const isMobileBreakpoint = useMediaQuery(1024);
+  const triggerRef = useRef(null);
   const scrollRef = useRef(null);
   const scrollToNavigation = () => {
-    scrollRef?.current?.scrollIntoView({behavior: "smooth"});
-  }
+    scrollRef?.current?.scrollIntoView({ behavior: "smooth" });
+    triggerRef?.current?.dispatchEvent(
+      new MouseEvent("click", { bubbles: true }),
+    );
+  };
+  // alert(isMobileBreakpoint)
   return (
     <>
-    <div>
-      {isBreakpoint ? (
-        <div>
-          <NavigationMobile navItems={navItems} scrollRef={scrollRef} />
-          {/* Dialog trigger  onClick={() => setOpen(false)} 
+      <div>
+        {isMobileBreakpoint ? (
+          <div>
+            <NavigationMobile navItems={navItems} scrollRef={scrollRef} />
+            {/* Dialog trigger  onClick={() => setOpen(false)} 
           Open accordion ? */}
-        </div>
-      ) : (
-        <div>
-          <NavigationMenuDesktop navItems={navItems} scrollRef={scrollRef}/>
-        </div>
-      )}
-    </div>
-    <Outlet context={[scrollToNavigation]} />
+          </div>
+        ) : (
+          <div>
+            <NavigationMenuDesktop
+              navItems={navItems}
+              scrollRef={scrollRef}
+              triggerRef={triggerRef}
+            />
+          </div>
+        )}
+      </div>
+      <Outlet context={[scrollToNavigation]} />
     </>
   );
 }

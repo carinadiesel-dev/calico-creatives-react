@@ -46,12 +46,6 @@ const handleSubmit = async(data) => {
 export function ContactForm() {
   //  // 1. Define your form.
  const form
-/*  {
-  register,
-  handleSubmit,
-  watch,
-  formState: { errors },} 
-*/
   = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -86,9 +80,6 @@ export function ContactForm() {
               <FormControl>
                 <Input placeholder="Jane" {...field} />
               </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -103,9 +94,6 @@ export function ContactForm() {
               <FormControl>
                 <Input placeholder="Doe" {...field} />
               </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -143,9 +131,6 @@ export function ContactForm() {
                   {...field}
                 />
               </FormControl>
-              {/* <FormDescription>
-                You can <span>@mention</span> other users and organizations.
-              </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -160,6 +145,11 @@ export function ContactForm() {
     </Form>
   );
 }
+
+// Form state
+
+// Submitting : Button 'submitting' and spinner + skeleton over form
+// Submitted : Form overlay + "thank you for your submission" + hide button
 
 {
   /* <button className="flex justify-center items-center rounded-full bg-CalicoOrange-400 text-white h-[50px] w-[200px]">
