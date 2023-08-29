@@ -123,8 +123,6 @@ export default function Layout() {
               scrollRef={scrollRef}
               triggerRef={triggerRef}
             />
-            {/* Dialog trigger  onClick={() => setOpen(false)} 
-          Open accordion ? */}
           </div>
         ) : (
           <div>
