@@ -50,6 +50,8 @@ type NavRow = {
   subMenu?: { title: string; href: string; description: string }[];
 };
 
+// const [open, setOpen] = useState(false);
+
 const subMenu: { title: string; href: string; description: string }[] = [
   {
     title: "Logo Design",
@@ -90,6 +92,8 @@ type NavItem = {};
 
 type NavigationMenuBarProps = {
   navItems: NavItem[];
+  scrollRef: Ref<HTMLDivElement>;
+  triggerRef: Ref<HTMLDivElement>;
 };
 
 const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
@@ -127,14 +131,23 @@ const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
   );
 };
 
-export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
+export const NavigationMobile = ({
+  navItems,
+  scrollRef,
+  triggerRef,
+  ref,
+}: NavigationMenuBarProps) => {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="flex justify-between px-6 bg-calicoPink-100/40">
+    <div
+      className="flex justify-between px-6 bg-calicoPink-100/40"
+      ref={scrollRef}
+    >
       <div className="translate-y-4">
         <CCLogo width={223} />
       </div>
-      <Dialog>
-        <DialogTrigger>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger ref={triggerRef}>
           <IconHamburger size={2} />
         </DialogTrigger>
         <DialogContent>
@@ -147,14 +160,20 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link to="/">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onSelect={() => setOpen(false)}
+                  >
                     Home
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link to="/photography">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onSelect={() => setOpen(false)}
+                  >
                     Photography
                   </NavigationMenuLink>
                 </Link>
@@ -170,31 +189,37 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
                           key={"Logo Design"}
                           title={"Logo Design"}
                           href={"/graphic-design/logo-design"}
+                          onSelect={() => setOpen(false)}
                         />
                         <ListItem
                           key={"Animated Graphics"}
                           title={"Animated Graphics"}
                           href={"/graphic-design/animated-graphics"}
+                          onSelect={() => setOpen(false)}
                         />
                         <ListItem
                           key={"Web Design"}
                           title={"Web Design"}
                           href={"/graphic-design/web-design"}
+                          onSelect={() => setOpen(false)}
                         />
                         <ListItem
                           key={"Branding & Social"}
                           title={"Branding & Social"}
                           href={"/graphic-design/branding-and-social-media"}
+                          onSelect={() => setOpen(false)}
                         />
                         <ListItem
                           key={"Stationary"}
                           title={"Stationary"}
                           href={"/graphic-design/stationary-and-events"}
+                          onSelect={() => setOpen(false)}
                         />
                         <ListItem
                           key={"Poster & Ads"}
                           title={"Poster & Ads"}
                           href={"/graphic-design/posters-and-ads"}
+                          onSelect={() => setOpen(false)}
                         />
                       </ul>
                     </AccordionContent>
@@ -203,14 +228,20 @@ export const NavigationMobile = ({ navItems }: NavigationMenuBarProps) => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link to="/photo-gallery">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onSelect={() => setOpen(false)}
+                  >
                     Photo Gallery
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link to="/contact">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onSelect={() => setOpen(false)}
+                  >
                     Contact
                   </NavigationMenuLink>
                 </Link>
@@ -234,7 +265,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-2 rounded-md text-4xl leading-none no-underline outline-none transition-colors hover:text-calicoPink-100",
-            className
+            className,
           )}
           {...props}
         >

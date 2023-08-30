@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
+
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop";
 import { NavigationMobile } from "./NavigationMobile";
 // import "../../App.css";
-import "../../index.css"
+import "../../index.css";
 
 let navItemHome = {
   title: "Home",
@@ -72,6 +73,7 @@ let navItems = [
 ];
 
 import { useState, useCallback, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
@@ -99,20 +101,40 @@ const useMediaQuery = (width) => {
   return targetReached;
 };
 
-export default function Navbar() {
-  const isBreakpoint = useMediaQuery(1024);
-
+export default function Layout() {
+  // Different variable
+  const isMobileBreakpoint = useMediaQuery(1024);
+  const triggerRef = useRef(null);
+  const scrollRef = useRef(null);
+  const scrollToNavigation = () => {
+    scrollRef?.current?.scrollIntoView({ behavior: "smooth" });
+    triggerRef?.current?.dispatchEvent(
+      new MouseEvent("click", { bubbles: true }),
+    );
+  };
+  // alert(isMobileBreakpoint)
   return (
-    <div>
-      {isBreakpoint ? (
-        <div>
-          <NavigationMobile navItems={navItems} />
-        </div>
-      ) : (
-        <div>
-          <NavigationMenuDesktop navItems={navItems} />
-        </div>
-      )}
-    </div>
+    <>
+      <div>
+        {isMobileBreakpoint ? (
+          <div>
+            <NavigationMobile
+              navItems={navItems}
+              scrollRef={scrollRef}
+              triggerRef={triggerRef}
+            />
+          </div>
+        ) : (
+          <div>
+            <NavigationMenuDesktop
+              navItems={navItems}
+              scrollRef={scrollRef}
+              triggerRef={triggerRef}
+            />
+          </div>
+        )}
+      </div>
+      <Outlet context={[scrollToNavigation]} />
+    </>
   );
 }
