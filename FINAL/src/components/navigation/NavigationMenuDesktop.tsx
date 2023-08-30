@@ -151,10 +151,9 @@ export const NavigationMenuDesktop = ({
           </Link>
         </NavigationMenuItem>
 
+        {/* Scroll and open this submenu when clicking on Graphic Design Card */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger ref={triggerRef}>
-            Graphic Design
-          </NavigationMenuTrigger>
+          <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-calicoPink-100">
             <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
               {subMenu.map((item) => (

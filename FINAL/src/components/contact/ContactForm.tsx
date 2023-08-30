@@ -16,7 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForm, SubmitHandler } from "react-hook-form"
+import { useForm, SubmitHandler } from "react-hook-form";
 
 export const contactSchema = z.object({
   firstName: z.string({ required_error: "First name is required" }),
@@ -55,7 +55,7 @@ export function ContactForm() {
       message: "",
     },
   });
-  // const onSubmit = handleSubmit((data) => console.log(data))
+  const onSubmit = handleSubmit((data) => console.log(data));
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof contactSchema>) {
@@ -99,7 +99,6 @@ export function ContactForm() {
           )}
         />
         </div>
-        
 
         <FormField
           control={form.control}
@@ -136,11 +135,10 @@ export function ContactForm() {
           )}
         />
         <div className="w-full translate-y-5">
-        <button className="flex items-center justify-center w-full py-5 font-sans text-xl font-bold text-white border-4 rounded-full bg-calicoPink-400 hover:text-calicoPink-400 hover:bg-white">
-          Submit
-        </button>
+          <button className="flex items-center justify-center w-full py-5 font-sans text-xl font-bold text-white border-4 rounded-full bg-calicoPink-400 hover:text-calicoPink-400 hover:bg-white">
+            Submit
+          </button>
         </div>
-        
       </form>
     </Form>
   );
@@ -172,4 +170,3 @@ export function ContactForm() {
 }
 
 </button> */
-}

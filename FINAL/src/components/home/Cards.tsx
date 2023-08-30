@@ -39,8 +39,6 @@ const Card: FunctionComponent<CardRow> = ({
   );
 };
 
-type Card = {};
-
 type CardsProps = {
   cards: Card[];
 };

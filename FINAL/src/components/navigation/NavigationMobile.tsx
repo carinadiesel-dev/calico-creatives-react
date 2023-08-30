@@ -181,6 +181,7 @@ export const NavigationMobile = ({
               <NavigationMenuItem>
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
+                    {/* Scroll and open this submenu when clicking on Graphic Design Card */}
                     <AccordionTrigger>Graphic Design</AccordionTrigger>
                     <AccordionContent>
                       <ul className="pt-2 space-y-4">
