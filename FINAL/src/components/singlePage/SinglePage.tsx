@@ -1,18 +1,21 @@
-import { SingleHeader } from "./SingleHeader"
+import { SingleHeader } from "./SingleHeader";
 
 type SinglePageProps = {
-    headerText: string
-    headerPositionAlign : 'self-end' | 'self-center',
-    headerPositionJustify : string
-}
+  headerText: string;
+  headerPositionAlign: "self-end" | "self-center";
+  headerPositionJustify: string;
+};
 
-
-export const SinglePage = ({headerText,headerPositionAlign, headerPositionJustify}:SinglePageProps) => {
-    return (
-      <div className="grid h-[45rem] lg:h-[55rem] bg-center bg-no-repeat bg-contain lg:bg-single bg-none xl:pb-10">
-        <div className={`${headerPositionAlign} ${headerPositionJustify} pr-20`}>
-          <SingleHeader title={headerText} />
-        </div>
-      </div> 
-    )
-}
+export const SinglePage = ({
+  headerText,
+  headerPositionAlign,
+  headerPositionJustify,
+}: SinglePageProps) => {
+  return (
+    <div className="grid h-[45rem] lg:h-[55rem] bg-center bg-no-repeat bg-contain lg:bg-single bg-none xl:pb-10">
+      <div className={`${headerPositionAlign} ${headerPositionJustify} pr-20`}>
+        <SingleHeader title={headerText} />
+      </div>
+    </div>
+  );
+};

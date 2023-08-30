@@ -1,12 +1,4 @@
 import React, { FunctionComponent } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { useOutletContext } from "react-router-dom";
 
 type CardRow = {

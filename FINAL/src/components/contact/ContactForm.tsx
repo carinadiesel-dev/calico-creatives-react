@@ -23,43 +23,33 @@ export const contactSchema = z.object({
   lastName: z.string({ required_error: "Last name is required" }),
   email: z.string({ required_error: "Email is required" }).email(),
   message: z.string(),
-  // .length(5, { message: "Message must be at least 100 characters long" }),
 });
-
-// Function when submitting - async
-// Wait for function to complete. If okay ? success : error handling
-
-const handleSubmit = async (data) => {
-  const response = await fetch(`https://api.scryfasdwall.com/cards/random`);
-  if (!response.ok) {
-    alert("This wasn't ok");
-  }
-
-  const parsedResponse = await response.json();
-  // Success State
-  // If success state,show the sucess message,else show form
-
-  console.log(parsedResponse);
-};
 
 export function ContactForm() {
   //  // 1. Define your form.
-  const form = useForm<z.infer<typeof contactSchema>>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      message: "",
-    },
-  });
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const form =
+    /*  // React Hook form variables:  {
+  register,
+  handleSubmit,
+  watch,
+  formState: { errors },} 
+*/
+    useForm<z.infer<typeof contactSchema>>({
+      resolver: zodResolver(contactSchema),
+      defaultValues: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      },
+    });
+  // const onSubmit = handleSubmit((data) => console.log(data))
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof contactSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    handleSubmit(values);
+    console.log(values);
   }
 
   return (
