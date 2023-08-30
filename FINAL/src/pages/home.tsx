@@ -12,6 +12,7 @@ export default function Home() {
     link: "./photography"
   };
 
+  // This is the button that should initiate scroll to navbar
   let card2 = {
     backgroundColor: "bg-calicoOrange-400",
     image: "bg-graphicDesign",
