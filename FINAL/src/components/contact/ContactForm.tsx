@@ -30,7 +30,7 @@ export const contactSchema = z.object({
 export function ContactForm() {
   //  // 1. Define your form.
  const form
-/*  {
+/*  // React Hook form variables:  {
   register,
   handleSubmit,
   watch,
@@ -70,9 +70,6 @@ export function ContactForm() {
               <FormControl>
                 <Input placeholder="Jane" {...field} />
               </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -87,9 +84,6 @@ export function ContactForm() {
               <FormControl>
                 <Input placeholder="Doe" {...field} />
               </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -127,9 +121,6 @@ export function ContactForm() {
                   {...field}
                 />
               </FormControl>
-              {/* <FormDescription>
-                You can <span>@mention</span> other users and organizations.
-              </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -145,6 +136,8 @@ export function ContactForm() {
   );
 }
 
+
+// Button changes to spinner when submitting
 {
   /* <button className="flex justify-center items-center rounded-full bg-CalicoOrange-400 text-white h-[50px] w-[200px]">
 
