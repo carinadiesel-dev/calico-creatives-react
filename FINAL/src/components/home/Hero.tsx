@@ -1,7 +1,5 @@
-import { FunctionComponent, useState, useEffect } from "react";
 import { CCLogo } from "../logos/CCLogo";
-import React from "react";
-import heroLarge from "./Assets/hero-large.png";
+import heroLarge from "../../assets/home-images/hero-large.png";
 
 export default function Hero() {
   return (
