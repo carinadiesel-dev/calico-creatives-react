@@ -15,7 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialogForm";
 
 const defaultValues = {
   fName: "",
@@ -113,19 +113,23 @@ export function ContactForm() {
           Submit
         </button>
       </div>
-      {state.succeeded && (
+      {/* {state.succeeded && ( */}
+      <div>
         <Dialog open={open} onOpenChange={setOpen}>
-          {/* <DialogTrigger>Open</DialogTrigger> */}
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Success !</DialogTitle>
-              <DialogDescription>
+              <DialogTitle className="text-center text-white lg:text-5xl">
+                Success !
+              </DialogTitle>
+              <DialogDescription className="font-sans text-xl font-bold text-center text-white">
+                <p className="pb-5 text-2xl">Thank you for contacting us.</p>
                 We have received your message and will get back to you soon.
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
         </Dialog>
-      )}
+      </div>
+      {/* )} */}
     </form>
   );
 }
