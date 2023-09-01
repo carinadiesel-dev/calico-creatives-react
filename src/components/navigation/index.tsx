@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop";
 import { NavigationMobile } from "./NavigationMobile";
@@ -56,10 +56,10 @@ let navItemGraphicDesign = {
   ],
 };
 
-// let navItemPhotoGallery = {
-//   title: 'Photo Gallery',
-//   link: '#',
-// }
+let navItemPhotoGallery = {
+  title: "Photo Gallery",
+  link: "",
+};
 
 let navItemContact = {
   title: "Contact",
@@ -109,7 +109,7 @@ export default function Layout() {
   const scrollToNavigation = () => {
     scrollRef?.current?.scrollIntoView({ behavior: "smooth" });
     triggerRef?.current?.dispatchEvent(
-      new MouseEvent("click", { bubbles: true }),
+      new MouseEvent("click", { bubbles: true })
     );
   };
   // alert(isMobileBreakpoint)

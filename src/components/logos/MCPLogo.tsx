@@ -1,5 +1,3 @@
-import React from "react";
-
 type MCPLogoProps = {
   width?: number;
   height?: number;

@@ -38,9 +38,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Route, Routes, Link } from "react-router-dom";
-
-import { Separator } from "../ui/separator";
+import { Link } from "react-router-dom";
 
 import { IconHamburger } from "../icons/IconHamburger";
 

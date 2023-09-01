@@ -1,9 +1,7 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { Textarea } from "@/components/ui/textarea";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { Input } from "@/components/ui/input";
 import { ValidationError, useForm } from "@formspree/react";
@@ -14,15 +12,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialogForm";
-
-const defaultValues = {
-  fName: "",
-  lName: "",
-  email: "",
-  message: "",
-};
 
 export function ContactForm() {
   const [state, handleSubmit] = useForm("meqbkojq");
@@ -32,12 +22,10 @@ export function ContactForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = async (e: any) => {
     e.preventDefault();
     await handleSubmit(e);
 
-    // console.log(email, password);
-    // clearing the values
     setFname("");
     setLname("");
     setEmail("");

@@ -1,10 +1,9 @@
-import React, { SVGProps } from "react";
+import { SVGProps } from "react";
 
 type IconCircleFilledProps = SVGProps<SVGSVGElement> & { size?: number };
 
 export const IconCircleFilled = ({
   size = 1,
-  circleText = "Text",
   ...rest
 }: IconCircleFilledProps) => {
   return (

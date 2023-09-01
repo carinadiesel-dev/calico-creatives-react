@@ -1,31 +1,16 @@
-import React, {
-  AnchorHTMLAttributes,
-  FunctionComponent,
-  PropsWithChildren,
-  Ref,
-  useState,
-} from "react";
-import { useRef } from "react";
+import React, { FunctionComponent, Ref } from "react";
 import { CCLogo } from "../logos/CCLogo";
 import { cn } from "@/lib/utils";
 import "../../App.css";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
+  NavigationMenuContent,
+  NavigationMenuLink,
+  NavigationMenu,
+  NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import { Route, Routes, Link } from "react-router-dom";
-
-// Make a ref
-// Use ref to identify specific element
-// Function to scroll to ref element
-// As part of function,engage code that opens the navigation menu
+import { Link } from "react-router-dom";
 
 type NavRow = {
   title: string;
@@ -196,7 +181,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-4 rounded-md p-3 leading-none no-underline outline-none transition-colors text-xs xl:text-xl hover:ring-calicoRedOrange-400 hover:ring-2",
-            className,
+            className
           )}
           {...props}
         >

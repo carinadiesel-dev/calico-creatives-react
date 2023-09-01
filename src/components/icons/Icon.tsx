@@ -1,4 +1,3 @@
-import React, { SVGProps } from "react";
 import { IconEmail } from "./IconEmail";
 import { IconWeb } from "./IconWeb";
 import { IconFacebook } from "./IconFacebook";

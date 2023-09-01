@@ -4,21 +4,14 @@ import { IconFacebook } from "../icons/IconFacebook";
 import { IconInsta } from "../icons/IconInsta";
 import { IconWhatsapp } from "../icons/IconWhatsapp";
 
-const footerColor = {
-  pink: "bg-calicoPink-400",
-  peach: "bg-calicoPeach-300",
-  orange: "bg-calicoOrange-400",
-};
-
 type FooterProps = {
-  credit?: string;
   backgroundColor:
     | "bg-calicoPink-400"
     | "bg-calicoOrange-400"
     | "bg-calicoPeach-300";
 };
 
-export const Footer = ({ credit, backgroundColor }: FooterProps) => {
+export const Footer = ({ backgroundColor }: FooterProps) => {
   return (
     <div
       className={`${backgroundColor} flex flex-col justify-around items-center lg:items-center lg:justify-around h-96 sm:h-64 xl:h-72 w-full`}

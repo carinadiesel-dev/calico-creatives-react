@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from "react";
 import { useOutletContext } from "react-router-dom";
 
 type CardRow = {
@@ -14,25 +13,10 @@ const btnContainerClasses = "flex w-11/12 my-4";
 const buttonClasses =
   "bg-white/80 w-full font-brilon text-3xl md:text-[2.5rem] lg:text-3xl text-center text-calicoGray-400 py-4 rounded-full hover:bg-white";
 
-const Card: FunctionComponent<CardRow> = ({
-  backgroundColor,
-  image,
-  btnText,
-  link,
-}) => {
-  return (
-    <div className={`${cardClasses} ${backgroundColor} ${image}`}>
-      <div className={btnContainerClasses}>
-        <a className={buttonClasses} href={link}>
-          {btnText}
-        </a>
-      </div>
-    </div>
-  );
-};
+type NewType = Card;
 
 type CardsProps = {
-  cards: Card[];
+  cards: NewType[];
 };
 
 export const Cards = ({ cards }: CardsProps) => {

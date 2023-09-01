@@ -1,5 +1,3 @@
-import React from "react";
-
 type AOCLogoProps = {
   width?: number;
   height?: number;
