@@ -2,8 +2,11 @@ import { useRef } from "react";
 
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop";
 import { NavigationMobile } from "./NavigationMobile";
-// import "../../App.css";
 import "../../index.css";
+import { useState, useCallback, useEffect } from "react";
+import { Outlet } from "react-router-dom";
+
+// type ContextType = {};
 
 let navItemHome = {
   title: "Home",
@@ -58,7 +61,7 @@ let navItemGraphicDesign = {
 
 let navItemPhotoGallery = {
   title: "Photo Gallery",
-  link: "",
+  link: "/photo-gallery",
 };
 
 let navItemContact = {
@@ -69,16 +72,14 @@ let navItems = [
   navItemHome,
   navItemPhotography,
   navItemGraphicDesign,
+  navItemPhotoGallery,
   navItemContact,
 ];
 
-import { useState, useCallback, useEffect } from "react";
-import { Outlet } from "react-router-dom";
-
-const useMediaQuery = (width) => {
+const useMediaQuery = (width: number) => {
   const [targetReached, setTargetReached] = useState(false);
 
-  const updateTarget = useCallback((e) => {
+  const updateTarget = useCallback((e: any) => {
     if (e.matches) {
       setTargetReached(true);
     } else {
@@ -101,18 +102,17 @@ const useMediaQuery = (width) => {
   return targetReached;
 };
 
-export default function Layout() {
+export default function NavIndex() {
   // Different variable
   const isMobileBreakpoint = useMediaQuery(1024);
-  const triggerRef = useRef(null);
-  const scrollRef = useRef(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const scrollToNavigation = () => {
     scrollRef?.current?.scrollIntoView({ behavior: "smooth" });
     triggerRef?.current?.dispatchEvent(
       new MouseEvent("click", { bubbles: true })
     );
   };
-  // alert(isMobileBreakpoint)
   return (
     <>
       <div>

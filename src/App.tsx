@@ -2,7 +2,7 @@ import "./index.css";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import Layout from "./components/navigation";
+import NavIndex from "./components/navigation/index";
 import Home from "./pages/home";
 import Photography from "./pages/photography";
 import LogoDesign from "./pages/graphic-design/logo-design";
@@ -22,7 +22,7 @@ export default function App() {
     <div className="relative">
       {/* <Layout/> */}
       <Routes>
-        <Route element={<Layout />}>
+        <Route element={<NavIndex />}>
           <Route path="/" element={<Home />} />
           <Route path="/photography" element={<Photography />} />
           <Route path="/graphic-design/logo-design" element={<LogoDesign />} />

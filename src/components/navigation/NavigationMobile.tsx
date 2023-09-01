@@ -1,35 +1,19 @@
-import React, {
-  AnchorHTMLAttributes,
-  FunctionComponent,
-  PropsWithChildren,
-  useState,
-} from "react";
+import React, { FunctionComponent, Ref, useState } from "react";
 import { CCLogo } from "../logos/CCLogo";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 
 import {
   Dialog,
-  DialogContent,
-  DialogDescription,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
+  DialogContent,
 } from "@/components/ui/dialog";
 
 import {
@@ -48,50 +32,48 @@ type NavRow = {
   subMenu?: { title: string; href: string; description: string }[];
 };
 
-// const [open, setOpen] = useState(false);
-
-const subMenu: { title: string; href: string; description: string }[] = [
-  {
-    title: "Logo Design",
-    href: "/graphic-design/logo-design",
-    description:
-      "We create professional logos from scratch based on your needs and preferences",
-  },
-  {
-    title: "Animated Graphics",
-    href: "/graphic-design/logo-design",
-    description: "To bring a uniqueness to your logo, we can add some motion.",
-  },
-  {
-    title: "Web Design",
-    href: "/graphic-design/web-design",
-    description: "You are currently viewing one of our websites.",
-  },
-  {
-    title: "Branding & Social",
-    href: "/graphic-design/branding-and-social",
-    description:
-      "Social media increases the amount of exposure a brand receives and increases traffic",
-  },
-  {
-    title: "Stationary'",
-    href: "/graphic-design/stationary",
-    description:
-      "We offer luxury stationery for all of life’s special celebrations and events.",
-  },
-  {
-    title: "Poster & Ads",
-    href: "/graphic-design/posters-and-ads",
-    description: "Turn anything into a poster",
-  },
-];
+// const subMenu: { title: string; href: string; description: string }[] = [
+//   {
+//     title: "Logo Design",
+//     href: "/graphic-design/logo-design",
+//     description:
+//       "We create professional logos from scratch based on your needs and preferences",
+//   },
+//   {
+//     title: "Animated Graphics",
+//     href: "/graphic-design/logo-design",
+//     description: "To bring a uniqueness to your logo, we can add some motion.",
+//   },
+//   {
+//     title: "Web Design",
+//     href: "/graphic-design/web-design",
+//     description: "You are currently viewing one of our websites.",
+//   },
+//   {
+//     title: "Branding & Social",
+//     href: "/graphic-design/branding-and-social",
+//     description:
+//       "Social media increases the amount of exposure a brand receives and increases traffic",
+//   },
+//   {
+//     title: "Stationary'",
+//     href: "/graphic-design/stationary",
+//     description:
+//       "We offer luxury stationery for all of life’s special celebrations and events.",
+//   },
+//   {
+//     title: "Poster & Ads",
+//     href: "/graphic-design/posters-and-ads",
+//     description: "Turn anything into a poster",
+//   },
+// ];
 
 type NavItem = {};
 
 type NavigationMenuBarProps = {
   navItems: NavItem[];
   scrollRef: Ref<HTMLDivElement>;
-  triggerRef: Ref<HTMLDivElement>;
+  triggerRef: Ref<HTMLButtonElement>;
 };
 
 const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
@@ -130,10 +112,8 @@ const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
 };
 
 export const NavigationMobile = ({
-  navItems,
   scrollRef,
   triggerRef,
-  ref,
 }: NavigationMenuBarProps) => {
   const [open, setOpen] = useState(false);
   return (
@@ -263,7 +243,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-2 rounded-md text-4xl leading-none no-underline outline-none transition-colors hover:text-calicoPink-100",
-            className,
+            className
           )}
           {...props}
         >

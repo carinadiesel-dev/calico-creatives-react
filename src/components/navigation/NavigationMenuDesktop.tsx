@@ -3,6 +3,7 @@ import { CCLogo } from "../logos/CCLogo";
 import { cn } from "@/lib/utils";
 import "../../App.css";
 import {
+  NavigationMenuItem,
   NavigationMenuTrigger,
   NavigationMenuContent,
   NavigationMenuLink,
@@ -16,6 +17,7 @@ type NavRow = {
   title: string;
   link: string;
   subMenu?: { title: string; href: string; description: string }[];
+  // triggerRef: Ref<HTMLDivElement>;
 };
 
 const subMenu: { title: string; href: string; description: string }[] = [
@@ -58,8 +60,8 @@ type NavItem = {};
 
 type NavigationMenuDesktopProps = {
   navItems: NavItem[];
-  scrollRef: Ref<HTMLDivElement>;
-  triggerRef: Ref<HTMLDivElement>;
+  scrollRef: Ref<HTMLElement>;
+  triggerRef: Ref<HTMLButtonElement>;
 };
 
 const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
@@ -69,9 +71,7 @@ const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
     <NavigationMenuItem>
       {hasSubMenu === true ? (
         <>
-          <NavigationMenuTrigger ref={triggerRef}>
-            {title}
-          </NavigationMenuTrigger>
+          <NavigationMenuTrigger>{title}</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-calicoPink-100">
             <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
               {subMenu &&
@@ -99,7 +99,7 @@ const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
 };
 
 export const NavigationMenuDesktop = ({
-  navItems,
+  // navItems,
   scrollRef,
   triggerRef,
 }: NavigationMenuDesktopProps) => {
@@ -113,13 +113,6 @@ export const NavigationMenuDesktop = ({
           <CCLogo width={223} />
         </div>
 
-        {/* <div>
-  {navItems.map(navItem =>{
-            return (
-            <NavItem {...navItem}/>
-            )
-        })}
-  </div> */}
         <NavigationMenuItem>
           <Link to="/">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -138,7 +131,9 @@ export const NavigationMenuDesktop = ({
 
         {/* Scroll and open this submenu when clicking on Graphic Design Card */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Graphic Design</NavigationMenuTrigger>
+          <NavigationMenuTrigger ref={triggerRef}>
+            Graphic Design
+          </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-calicoPink-100">
             <ul className="grid w-[25rem] gap-3 p-4 md:w-[31.25rem] md:grid-cols-2 lg:w-[37.5rem] ">
               {subMenu.map((item) => (

@@ -10,7 +10,7 @@ import { IconHamburger } from "./IconHamburger";
 import { IconPlay } from "./IconPlay";
 import { IconEnvelope } from "./IconEnvelope";
 
-const _icons = {
+export const _icons = {
   email: IconEmail,
   web: IconWeb,
   facebook: IconFacebook,

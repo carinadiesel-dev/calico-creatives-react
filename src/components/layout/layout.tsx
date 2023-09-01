@@ -1,9 +1,9 @@
-import { NavigationMenuDesktop } from "../navigation/NavigationMenuDesktop";
+// import { NavigationMenuDesktop } from "../navigation/NavigationMenuDesktop";
 
-export default function Layout({ children }) {
-  return (
-    <div>
-      <NavigationMenuDesktop>{children}</NavigationMenuDesktop>
-    </div>
-  );
-}
+// export default function Layout({ children }) {
+//   return (
+//     <div>
+//       <NavigationMenuDesktop>{children}</NavigationMenuDesktop>
+//     </div>
+//   );
+// }

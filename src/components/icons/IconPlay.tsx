@@ -2,7 +2,7 @@ import { SVGProps } from "react";
 
 type IconPlayProps = SVGProps<SVGSVGElement> & { size?: number };
 
-export const IconPlay = ({ size = 1 }: IconPlayProps) => {
+export const IconPlay = ({}: IconPlayProps) => {
   return (
     <svg
       id="Group_26"
