@@ -9,7 +9,7 @@ module.exports = {
     // './src/**/*.{ts,tsx}',
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-	],
+  ],
   theme: {
     container: {
       center: true,
@@ -21,51 +21,49 @@ module.exports = {
     extend: {
       colors: {
         calicoPink: {
-          '400': '#F48987',
-          '200': '#FACCCB',
-          '100': '#FFDAD965'
+          400: "#F48987",
+          200: "#FACCCB",
+          100: "#FFDAD965",
         },
         calicoPeach: {
-          '400': '#F98678',
-          '300': '#F5A892'
+          400: "#F98678",
+          300: "#F5A892",
         },
         calicoOrange: {
-          '400': '#F5AC6D'
+          400: "#F5AC6D",
         },
         calicoRedOrange: {
-          '400': '#F75742'
+          400: "#F75742",
         },
         calicoGray: {
-          '400': '#707070',
-          '200': '#A8A3A3'
+          400: "#707070",
+          200: "#A8A3A3",
         },
         calicoWhite: {
-          '400': '#FFFFFF',
-          '300': '#FFFFFF88',
-          '200': '#FFFFFF4D',
-          '100': '#FFFFFF91'
-  
+          400: "#FFFFFF",
+          300: "#FFFFFF88",
+          200: "#FFFFFF4D",
+          100: "#FFFFFF91",
         },
       },
       fontFamily: {
-        'brilon': 'BrilonRegular',
+        brilon: "BrilonRegular",
         sans: [
           '"Helvetica Neue"',
-          'Roboto',
-          'Arial',
-          'ui-sans-serif',
-          'system-ui',
-          '-apple-system',
-          'BlinkMacSystemFont',
+          "Roboto",
+          "Arial",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
           '"Segoe UI"',
           '"Noto Sans"',
-          'sans-serif',
+          "sans-serif",
           '"Apple Color Emoji"',
           '"Segoe UI Emoji"',
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
-         
       },
       keyframes: {
         "accordion-down": {
@@ -81,22 +79,24 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      backgroundImage:{
-        'cloud': 'url(src/assets/vectorimages/cloud.png)',
+      backgroundImage: {
+        cloud: "url(src/assets/vectorimages/cloud.png)",
 
-        'homeGradient': "linear-gradient(to right, rgba(245, 168, 146, 1), rgba(255, 255, 255, 1)), url(src/assets/vectorimages/cloud.png)",
+        homeGradient:
+          "linear-gradient(to right, rgba(245, 168, 146, 1), rgba(255, 255, 255, 1)), url(src/assets/vectorimages/cloud.png)",
 
-        'heroImg': 'url(public/images/hero-images/HeroImg.png)',
+        heroImg: "url(public/images/hero-images/HeroImg.png)",
 
-        'single' : 'linear-gradient(to right, rgba(255, 255, 255, 0.53), rgba(245, 168, 146, 1)), url(./src/assets/vectorimages/cloud.png)',
+        single:
+          "linear-gradient(to right, rgba(255, 255, 255, 0.53), rgba(245, 168, 146, 1)), url(./src/assets/vectorimages/cloud.png)",
 
-        'photography': 'url(./src/assets/vectorimages/Photography.png)',
+        photography: "url(/src/assets/vectorimages/Photography.png)",
 
-        'graphicDesign': 'url(./src/assets/vectorimages/GraphicDesign.png)',
+        graphicDesign: "url(/src/assets/vectorimages/GraphicDesign.png)",
 
-        'travel': 'url(./src/assets/vectorimages/Travel.png)'
-      }
+        travel: "url(/src/assets/vectorimages/Travel.png)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

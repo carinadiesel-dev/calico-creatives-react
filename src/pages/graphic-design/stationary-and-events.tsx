@@ -16,7 +16,7 @@ export default function StationaryAndEvents() {
       <Paragraph
         text={`We offer luxury stationery for all of life’s special celebrations and events. Birthdays, Weddings, Corporate, Baby Showers`}
       />
-      <div className="gridplace-items-center">
+      <div className="grid place-items-center">
         <div className="px-5 md:px-12 lg:w-2/3">
           <StationaryGallery />
         </div>
