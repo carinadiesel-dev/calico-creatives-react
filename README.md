@@ -12,7 +12,7 @@
   <p align="center">
     Calico Creatives Website
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://calicocreatives-e35c8.firebaseapp.com/">View Demo</a>
     ·
     <a href="https://github.com/carinadiesel-dev/calico-creatives-react/issues">Report Bug</a>
 </div>
