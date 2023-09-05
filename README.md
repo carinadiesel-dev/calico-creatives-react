@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="/src/assets/home-images/logo-small.png" alt="Logo" width="80" height="80">
+    <img src="/src/assets/home-images/logo-small.png" alt="Logo" width="140" height="80">
   </a>
 
 <h3 align="center">Calico Creatives</h3>
@@ -12,7 +12,7 @@
   <p align="center">
     Calico Creatives Website
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://calicocreatives-e35c8.firebaseapp.com/">View Demo</a>
     ·
     <a href="https://github.com/carinadiesel-dev/calico-creatives-react/issues">Report Bug</a>
 </div>
