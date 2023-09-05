@@ -74,6 +74,7 @@ type NavigationMenuBarProps = {
   navItems: NavItem[];
   scrollRef: Ref<HTMLDivElement>;
   triggerRef: Ref<HTMLButtonElement>;
+  accordionRef: Ref<HTMLButtonElement>;
 };
 
 const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
@@ -114,6 +115,7 @@ const NavItem: FunctionComponent<NavRow> = ({ title, link, subMenu }) => {
 export const NavigationMobile = ({
   scrollRef,
   triggerRef,
+  accordionRef,
 }: NavigationMenuBarProps) => {
   const [open, setOpen] = useState(false);
   return (
@@ -129,13 +131,13 @@ export const NavigationMobile = ({
           <IconHamburger size={2} />
         </DialogTrigger>
         <DialogContent>
-          <DialogHeader className="relative">
-            <div className="h-20 overflow-hidden translate-x-4 translate-y-4">
+          <DialogHeader className="relative h-0">
+            <div className="h-20 overflow-hidden translate-x-4 translate-y-4 ">
               <CCLogo width={223} />
             </div>
           </DialogHeader>
-          <NavigationMenu className="pt-10 -translate-y-32 ">
-            <NavigationMenuList>
+          <NavigationMenu className="pt-40">
+            <NavigationMenuList className="-translate-y-16">
               <NavigationMenuItem>
                 <Link to="/">
                   <NavigationMenuLink
@@ -160,7 +162,9 @@ export const NavigationMobile = ({
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
                     {/* Scroll and open this submenu when clicking on Graphic Design Card */}
-                    <AccordionTrigger>Graphic Design</AccordionTrigger>
+                    <AccordionTrigger ref={accordionRef}>
+                      Graphic Design
+                    </AccordionTrigger>
                     <AccordionContent>
                       <ul className="pt-2 space-y-4">
                         <ListItem

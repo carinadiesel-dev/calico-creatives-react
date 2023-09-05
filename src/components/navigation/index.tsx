@@ -107,11 +107,17 @@ export default function NavIndex() {
   const isMobileBreakpoint = useMediaQuery(1024);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const accordionRef = useRef<HTMLButtonElement>(null);
   const scrollToNavigation = () => {
     scrollRef?.current?.scrollIntoView({ behavior: "smooth" });
     triggerRef?.current?.dispatchEvent(
       new MouseEvent("click", { bubbles: true })
     );
+    setTimeout(() => {
+      accordionRef?.current?.dispatchEvent(
+        new MouseEvent("click", { bubbles: true })
+      );
+    }, 400);
   };
   return (
     <>
@@ -122,6 +128,7 @@ export default function NavIndex() {
               navItems={navItems}
               scrollRef={scrollRef}
               triggerRef={triggerRef}
+              accordionRef={accordionRef}
             />
           </div>
         ) : (
